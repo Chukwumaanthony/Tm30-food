@@ -1,0 +1,9 @@
+.radio-sty{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    padding-block: 20px 80px;
+    /* align-items: baseline; */
+}

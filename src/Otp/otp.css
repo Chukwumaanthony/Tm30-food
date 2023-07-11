@@ -1,0 +1,193 @@
+.login {
+  display: flex;
+}
+
+.left-side {
+  width: 50%;
+  height: 100vh;
+  background-color: #56a4c4;
+}
+.right-side {
+  width: 50%;
+  height: 100vh;
+}
+.rightotp {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  /* gap: 0.1px; */
+  padding-top: 50px;
+}
+
+.bolds {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+}
+.spa {
+  font-weight: 600;
+  font-size: 18px;
+}
+.paragr {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #a3a3a3;
+}
+.img {
+  padding: 40px;
+  width: 200px;
+}
+.food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-family: 'DM Sans'; */
+  font-style: normal;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 10px;
+  color: #ffffff;
+}
+.button {
+  border: none;
+  outline: none;
+  width: 3rem;
+  background-color: white;
+  border-bottom: 5px solid #6bcdf5;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttons {
+  border: none;
+  outline: none;
+  border-bottom: 5px solid #6bcdf5;
+  font-size: 40px;
+  font-weight: 400;
+  width: 35px;
+  padding-left: 15px;
+}
+.butts {
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.resend {
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #56a4c4;
+  background-color: #ffffff;
+  /* width: 131px; */
+  width: 11rem;
+  color: #56a4c4;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}
+.verify {
+  border-radius: 10px;
+  /* padding: 12px; */
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  background-color: #9bd2e9;
+ padding-inline: 50px;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}
+.Retp {
+  display: flex;
+  gap: 30px;
+  padding-block: 40px;
+}
+.exsistacc {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+  background-color: #b5e6fa;
+  width: 16rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+.ptag {
+  color: #6bcdf5;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 100px;
+}
+
+.foods {
+  padding: 15px;
+  width: 400px;
+  height: 280px;
+}
+.para {
+  border-bottom: 1px solid white;
+  border-radius: 95%;
+  width: 14rem;
+  height: 2rem;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (max-width:40em) {
+  .otpimg{
+     width: 120px;
+  }
+  .rightotp{
+    padding-top: 20px;
+
+  }
+  .paragr{
+    font-size: 12px;
+  }
+  .spa{
+    font-size: 12px;
+  }
+  .ptag{
+    font-size: 12px;
+    padding-block: 20px;
+  }
+  .buttons{
+    width: 1.2rem;
+    height: 1.5rem;
+    padding: 2px;
+    font-size: 19px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .resend{
+    width: 7rem;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 10px;
+  }
+  .verify{
+    width: 7rem;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .Retp{
+    padding: 30px;
+  }
+  .exsistacc{
+    width: 14rem;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+
+  }
+

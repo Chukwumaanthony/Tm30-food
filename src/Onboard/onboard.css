@@ -1,0 +1,116 @@
+.navbarr{
+    display: flex;
+    gap: 150px;
+}
+.Onboard{
+    padding: 0;
+    margin: 0;
+}
+.onboardlogo{
+    width: 6rem;
+    height: 1.8rem;
+}
+.onboard-input{
+    width: 25rem;
+    border-radius: 10px;
+    height: 1.4rem;
+    outline: none;
+    background-color: #ebebeb;
+    border: none ;
+    font-weight: 300;
+    font-size: 12px;
+}
+.inputlogo{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    
+}
+.onboardint{
+    width: 40rem;
+    height: 2.5rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: #ebebeb;
+    gap: 7px;
+   
+}
+.searchicon{
+    color:#919191;
+    display: flex;
+}
+.navtwo{
+    display: flex;
+    gap: 30px;
+     
+}
+.nav-two{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.navthree{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav-three{
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+}
+.adeleke{
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+}
+.ade-mail{
+    /* font-family: 'DM Sans'; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #A3A3A3;
+}
+.pics-img{
+       display: flex;
+}
+.picss{
+    width: 40px;
+}
+
+.Dsec{
+    background-image: url(./foodlogo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55vh;
+    /* width: 100vw; */
+}
+.D-sec{
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin-left: 100px;
+    padding-top: 45px;
+    /* gap: 1px; */
+    
+}
+.welcome-food{
+      font-weight: 400;
+      font-size: 20px;
+      padding-bottom: 10px;
+}
+.welcome-two{
+    font-weight: 400;
+    font-size: 20px;
+}
+.hone{
+    font-weight: 500;
+    font-size: 35px;
+}

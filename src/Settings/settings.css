@@ -1,0 +1,120 @@
+.Card-sett{
+    background-color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  
+}
+.walet{
+    padding-block: 10px;
+    border-bottom: 1px solid #bfbfbf;
+    font-size: 16px;
+    font-weight: 500;
+}
+.add-newcard{
+    display: flex;
+    gap: 50px;
+    /* padding-block: 20px; */
+}
+
+.setcard-tex{
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 4px;
+    /* border-bottom: 4px solid #3fa4cd; */
+    /* color: #3fa4cd; */
+    padding: 10px;
+    color: black;
+}
+.setadd-new{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 4px;
+    color: black;
+}
+.change-pass{
+    display: flex;
+    flex-direction: column;
+}
+.change-text{
+    font-size: 15px;
+    font-weight: 500;
+}
+.can-change{
+    font-size: 15px;
+    font-weight: 500;
+    color: #bfbfbf;
+}
+.pass-sectt{
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.Sett-Pass{
+    border: 1px solid #BFBFBF;
+    padding: 5px;
+    width: 16rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.sett-pas{
+    padding: 5px;
+    outline: none;
+    border: none;
+    color: #BFBFBF;
+    font-size: 13px;
+    width: 13rem;
+}
+.pass-label{
+    font-size: 15px;
+    font-weight: 500;
+}
+.btns{
+    font-size: 17px;
+    display: flex;
+    border: none;
+    outline: none;
+    background-color: white;
+}
+.set-afternav{
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.label-gap{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.setting-allinput{
+    display: flex;
+    align-items: flex-end;
+    gap: 150px;
+}
+.setting-btn{
+    display: flex;
+    background: #36aad9;
+    align-items: center;
+    cursor: pointer;
+    /* justify-content: center; */
+    /* height: 2rem; */
+    padding: 8px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: white;
+}
+.fatherset-pass{
+    display: flex;
+    gap: 15px;
+}

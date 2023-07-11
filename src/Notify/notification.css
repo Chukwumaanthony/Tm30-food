@@ -1,0 +1,59 @@
+.not-passlock{
+    display: flex;
+    border-left: 3px solid #36aad9;
+    padding: 15px;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    /* overflow: scroll; */
+}
+.passchange-succ{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.password-note{
+    font-size: 14px;
+    font-weight: 500;
+}
+.notedate{
+    color: #a3a3a3;
+    font-size: 12px;
+    font-weight: 400;
+}
+.notifymap{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+}
+.dbuttnot{
+    border-top: 2px solid #ececec;
+    padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     /* overflow: hidden; */
+
+}
+.viewallnot{
+    background-color: #36aad9;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.viewallnott{
+    background-color: #f6f6f6;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    color: #36aad9;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}

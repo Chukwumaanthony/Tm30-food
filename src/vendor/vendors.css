@@ -1,0 +1,58 @@
+.htwo{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #0E89BB;
+    margin: 0;
+    padding-left: 100px;
+}
+.mamaj{
+    width: 220px;
+}
+.mamajline{
+    margin-left: 100px;
+    display: flex;
+    gap: 50px;
+}
+.starline{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.Dstar{
+    width: 16px;
+    height: 16px;
+    display: flex;
+}
+.mamajsec{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 2px;
+
+}
+.Mamajtext{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    color: black
+}
+.fou9text{
+    font-style: normal;
+font-weight: 700;
+font-size: 15px;
+color: black;
+/* font-family: 'DM Sans'; */
+
+}
+.fhund{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.3);
+    font-family: 'DM Sans';
+
+}
+.other-vendors{
+    padding-block: 50px 100px;
+}

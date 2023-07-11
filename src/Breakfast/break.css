@@ -1,0 +1,226 @@
+.Breakfast-div {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .breakfast-cont {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 180px;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 4px solid #e6e6e6;
+  }
+  .breakfast-text {
+    padding: 13px 25px;
+    color: #ffffff;
+    background: #36aad9;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .lunch {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .dinner {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+.breakfast-sect{
+    padding: 1rem;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    border-top:  2px solid #e6e6e6; ;
+    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    width:  95%;
+}
+.Yam-Cont{
+    display: flex;
+    align-items: last baseline;
+    /* gap: 32px; */
+    width: 45%;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.Yam-Conts{
+    display: flex;
+    align-items: last baseline;
+    gap: 50px;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+    padding: 10px;
+}
+.Yam-Contss{
+    display: flex;
+    align-items: last baseline;
+    gap: 54px;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+    padding: 10px;
+}
+.dis-cont{
+  width: 10rem;
+  height: 5rem;
+  /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: column;
+}
+.yamcont{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   
+}
+.dis-conts{
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}
+.yamconts{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   
+}
+.yamndegg{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+.discount{
+    background: #d7eef7;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    color: #158DBE;
+    padding: 3px;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.plusicon{
+    background-color: #d7eef7;
+    color: #158DBE;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+}
+.naira6{
+    font-style: normal;
+font-weight: 400;
+font-size: 14px
+}
+.Yam-img{
+    width: 100px;
+}
+.cancel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid #ECECEC; */
+
+}
+.Canc-line{
+  border: none;
+  background-color: #ECECEC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 10px;
+}
+.father-two {
+  background-image: url(./bukkataste.png);
+  background-repeat: no-repeat;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  /* background-position: center; */
+  /* background-size: cover; */
+}
+.exceptional {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 300px;
+  padding: 10px;
+}
+.fathertwo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mamj {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+}
+.xeptional {
+  /* font-family: "DM Sans"; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #3c3c3c;
+}
+.taste {
+  padding: 5px 1rem;
+  border-radius: 5px;
+  /* background-color: #4da4c7fb; */
+  background-image: linear-gradient(to right, #4da4c7fb, transparent);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 16px;
+  /* border: 1px solid #36aad9; */
+}
+.housevend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vends {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+.point49 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+.taste-line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mamaj-input {
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  font-size: 15px;
+  color: #3c3c3c;
+  align-items: center;
+  padding-left: 15px;
+}
+.mamajinput {
+  padding: 3px;
+  width: 37rem;
+  border: none;
+  outline: none;
+  color: #3c3c3c;
+  background-color: #ededed;
+}

@@ -1,0 +1,39 @@
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    width: 8%;
+    height: 100vh;
+    /* border: 1px solid black; */
+}
+.Map{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #A3A3A3;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+}
+.icon{
+    font-size: 25px;
+    color: #a3a3a3;
+    display: flex;
+    justify-content: center;
+}
+.dash-loc{
+    margin-top: 50px;
+    padding: 10px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.horiz{
+    margin-top: 50px;
+    width: 6.7rem;
+    color: #A3A3A3;
+    /* border: 0.1px  #A3A3A3; */
+}

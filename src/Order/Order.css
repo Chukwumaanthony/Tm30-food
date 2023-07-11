@@ -1,0 +1,70 @@
+.ordermap{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* padding: 35px; */
+}
+
+.ordchange{
+      display: flex;
+      width: 44%;
+      /* background-color: red; */
+}
+.ordname{
+    font-size: 14px;
+    font-weight: 500;
+}
+.orddate{
+    color: #a3a3a3;
+    font-size: 12px;
+    font-weight: 400;
+}
+.ordprog{
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px;
+    border-radius: 10px;
+
+}
+.dbuttord{
+    margin-top: 5%;
+    padding: 20px 0;
+    cursor: pointer;
+    border-top: 2px solid #e6e6e6;
+}
+.viewallord{
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #36aad9;
+    color: white;
+}
+.columnord{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.work{
+    border-left: 2px solid #c3af6a;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+    padding: 8px;
+    border-radius: 0 10px 10px 0;  
+    cursor: pointer;
+ 
+}
+.works{
+    border-left: 2px solid #239735;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: white;
+    padding: 8px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}

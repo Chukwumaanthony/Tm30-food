@@ -1,0 +1,214 @@
+.login {
+    display: flex;
+  }
+  
+  .left-side {
+    width: 50%;
+    background-color: #56a4c4;
+    
+  }
+  .signimg{
+    width: 160px;
+  }
+  .right-side {
+    width: 50%;
+    height: 100vh;
+  }
+  .rightone {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    /* gap: 0.1px; */
+    padding-top: 50px;
+  }
+ 
+  .bolds{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 30px;
+      
+  }
+  .parag {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #a3a3a3;
+  }
+  .img {
+    padding: 40px;
+    width: 200px;
+  }
+  .food{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* font-family: 'DM Sans'; */
+      font-style: normal;
+      font-weight: 100;
+      font-size: 18px;
+      line-height: 10px;
+  color: #FFFFFF;
+  
+  
+      
+  }
+  .foods{
+      padding: 15px;
+      width: 400px;
+      height: 280px;   
+  }
+  .para{
+      border-bottom: 1px solid white;
+      border-radius: 95%;
+      width: 14rem;
+      height: 2rem;
+      padding: 0;
+      margin: 0;
+  }
+  .EMAILOG{
+      display: flex;
+  }
+  .locks {
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+  }
+  
+  .ints {
+    border: none;
+    outline: none;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 12px;
+    width: 100%;
+    /* color: black; */
+    padding: 0.6rem 0;
+  }
+ 
+  /* .ints::placeholder {
+    color: #333;
+  } */
+  .inputs {
+    border: 1px solid #e6e6e6;
+    border-radius: 0px 10px 10px 0px;
+    width: 70%;
+    height: 30px;
+    padding: 5px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 35px;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    padding-left: 100px;
+    padding-block: 5px;
+  }
+  
+  .check{
+     display: flex;
+     color:#c7c2c2;
+  }
+  
+  
+  .logs{
+      border: 1px solid transparent;
+      outline: none;
+      border-radius: 10px;
+      background-color: #6BCDF5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 82%;
+      height: 40px;
+      padding: 3px;
+      font-weight: 600;
+      color: white;
+  }
+  .enterr{
+      padding-left: 100px;
+      cursor: pointer;
+      padding-block: 20px;
+  }
+  .sign{
+      color: #56a4c4;
+  }
+  .signuplast{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      font-weight: 400;
+      font-size: 15.5778px;  
+      line-height: normal; 
+  }
+  
+  
+  .btn{
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+  }
+   @media screen and (max-width:40em) {
+    .signimg{
+       width: 120px;
+    }
+    .rightone{
+      padding-top: 20px;
+      /* display: flex; */
+    }
+    .parag{
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .inputs{
+      width: 200px;
+      height: 1.9rem;
+      /* padding-left: 4px; */
+  
+    }
+    .ints{
+      width: 520px;
+      /* height: 1rem; */
+      font-size: 9px;
+    }
+    .Detail{
+      font-size: 14px;
+      font-weight: 500;
+      padding-left: 10px;
+    }
+    .locks{
+      width: 25px;
+    }
+    .enterr{
+      padding: 5px;
+      padding-left: 15px;
+
+    }
+    .logs{
+      width: 250px;
+      height: 1.8rem;
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .signuplast{
+      font-size: 13px;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+  }
+  

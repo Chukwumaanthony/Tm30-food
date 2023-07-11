@@ -1,0 +1,41 @@
+.tableline{
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    gap: 10px;
+}
+.table-line{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 20px;
+}
+.tableline2{
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+.Table{
+    background-color: #36AAD9;
+    padding-block: 50px;
+    padding-left: 70px;
+    display: flex;
+    gap: 100px;
+    /* position: absolute; */
+}
+.places{
+    font-style: normal;
+font-weight: 500;
+font-size: 20px;
+}
+.platres{
+    display: flex;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px;
+    padding-left: 70px;
+    gap: 10px;
+    /* position: fixed; */
+}

@@ -1,0 +1,48 @@
+.HOTDEALS{
+    background-image: url(./watchcup.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 100vw; */
+    height: 35vh;
+}
+.HR{
+    width: 6rem;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.hot-logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.Hotext{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+.hotlogo{
+    padding-left: 350px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+.fast-food{
+    display: flex;
+    gap: 15px;
+}
+.fastfood{
+    border: .5px solid white;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    
+}
+.fastt{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

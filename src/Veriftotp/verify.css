@@ -1,0 +1,118 @@
+.login {
+    display: flex;
+  }
+  .left-side {
+    width: 50%;
+    height: 100vh;
+    background-color: #56a4c4;
+  }
+  .right-side {
+    width: 50%;
+    height: 100vh;
+  }
+  .img {
+    padding: 40px;
+    width: 200px;
+  }
+  .food {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* font-family: 'DM Sans'; */
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 10px;
+    color: #ffffff;
+  }
+  .foods {
+    padding: 15px;
+    width: 400px;
+    height: 280px;
+  }
+  .check-cont{
+    background: #FFFFFF;
+    border-width: 2px 2px 0px 2px;
+    border: 1px solid #36AAD9;
+    border-radius: 20px 20px 0px 0px;
+    width: 25rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 50px;
+  }
+  .proceed-cont{
+    border: 1px solid #36AAD9;
+    background: #36AAD9;
+    width: 25rem;
+    height: 7rem;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .proceedbutton{
+    background: #FFFFFF;
+    border-radius: 10px;
+    color: #36AAD9;
+    border: none;
+    width: 18rem;
+    height: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: 'DM Sans';
+    cursor: pointer;
+  }
+  .awesome-cont{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .awesometext{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .text{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #A3A3A3
+  }
+  @media screen and (max-width:40em) {
+    .check-cont{
+      width: 13rem;
+      height: 8rem;
+      padding: 10px;
+    }
+    .proceed-cont{
+      width: 13rem;
+      height: 4rem;
+      padding: 10px;
+    }
+    .proceedbutton{
+      width: 10rem;
+      height: 2rem;
+      font-size: 12px;
+
+    }
+    .text{
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .awesometext{
+      font-size: 18px;
+    }
+    .verifyimg{
+      width: 50px;
+    }
+  }

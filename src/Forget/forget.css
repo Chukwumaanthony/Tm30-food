@@ -1,0 +1,226 @@
+@media screen and (min-width: 40em) {
+  .mother {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .immm{
+    width: 40px;
+  }
+  .father {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fogetpass {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+  }
+  .textwo {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: #a3a3a3;
+  }
+  /* .recieve {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px; 
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.7);
+  } */
+  .resend {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #56a4c4;
+  }
+  .both {
+    display: flex;
+    gap: 5px;
+  }
+  .buttone {
+    width: 28rem;
+    height: 60px;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    padding-block: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .buttwo {
+    width: 28rem;
+    height: 45px;
+    background: #36aad9;
+    border-radius: 15px;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #ffffff;
+  }
+  .Via {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 3px;
+  }
+  .btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sect {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 10px;
+  }
+  .maildev {
+    /* font-family: 'DM Sans'; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .linkset {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #a3a3a3;
+    flex: none;
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .login {
+    flex-direction: column;
+  }
+  .left-side {
+    width: 100%;
+    height: 45vh;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right-side {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .foods {
+    height: 70px;
+    width: 100px;
+  }
+
+  .img {
+    width: 100px;
+    display: flex;
+    /* padding-left: 110px; */
+    padding-block: 10px;
+  }
+  .father {
+    display: flex;
+  }
+  .mother {
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    align-items: center;
+    justify-content: center;
+    width: 28rem;
+    gap: 10px;
+  }
+  .buttone {
+    width: 290px;
+    background-color: white;
+    outline: none;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding-block: 3px;
+  }
+  .buttwo {
+    width: 290px;
+    font-size: 10px;
+    color: white;
+    outline: none;
+    border: 1px solid #36AAD9;
+    background-color: #36AAD9;
+    height: 2rem;
+    border-radius: 10px;
+  }
+  .sect{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    }
+    .Via{
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      gap: 5px;
+      width: 16rem;
+    }
+    .btn{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+    }
+  .fogetpass {
+    padding-top: 15px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #000000;
+
+  }
+  .textwo {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    color: #A3A3A3;
+  }
+  .maildev {
+    font-size: 10px;
+    font-style: normal;
+     font-weight: 700;
+
+  }
+  .linkset {
+    font-size: 10px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #A3A3A3;
+  }
+  .both {
+    font-size: 12px;
+    display: flex;
+    gap: 5px;
+      }
+  .immm{
+     width: 30px;
+}
+    }
