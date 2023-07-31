@@ -7,7 +7,7 @@ const HOTDEALS = () => {
     <div className="HOTDEALS">
       <div className="hotlogo">
         <span className="hot-logo">
-          <img src={Hotspring} alt="" style={{ width: "25px" }} />
+          <img className="hotimg-sty" src={Hotspring} alt="" />
           <span className="Hotext">HotDeals</span>
           <span className="HR"></span>
         </span>

@@ -55,7 +55,7 @@ const Otp = () => {
                   key={index}
                   value={data}
                   onChange={(e) => handleChange(e.target, index)}
-                  onFocus={(e) => e.target.select()}
+                  // onFocus={(e) => e.target.select()}
                 />
               );
             })}

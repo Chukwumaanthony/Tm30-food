@@ -8,6 +8,8 @@
 }
 .right-side {
   width: 50%;
+  /* justify-content: center; */
+  align-items: center;
   height: 100vh;
 }
 .right{
@@ -15,12 +17,12 @@
     flex-direction: column;
     justify-self: center;
     align-items: center;
-    gap: 1px;
-    padding-top: 100px;
+    gap: 5px;
+    /* padding-top: 100px; */
 }
 .loginbolds {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 25px;
 }
 .paras{
   font-style: normal;
@@ -34,7 +36,7 @@
   width: 200px;
 }
 .loginimg{
-  width: 120px;
+  width: 100px;
 }
 .food {
   display: flex;
@@ -47,6 +49,10 @@
   font-size: 18px;
   line-height: 10px;
   color: #ffffff;
+}
+.Details label{
+  font-size: 18px;
+  font-weight: 500;
 }
 .foods {
   padding: 15px;
@@ -63,6 +69,7 @@
 }
 .EMAILOG {
   display: flex;
+  width: 100%;
 }
 .lock{
     border: 1px solid #E6E6E6;
@@ -71,23 +78,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
+    width: 25px;
 }
 .int{
     border: none;
     outline: none;
     font-style: normal;
-    font-weight: 100;
-    font-size: 17px;
+    font-weight: 400;
+    font-size: 15px;
     width: 100%;
-    padding: .93rem 0;
+    padding: .45rem 0;
     }
+.darticle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+.artdfirst{
+  justify-content: center;
+  align-items: center;
 
+}
 .input{
     border: 1px solid #E6E6E6;
     border-radius:0px 10px 10px  0px  ;
-    width: 70%;
-    height: 40px;
+    width: 350px;
+    height: 30px;
     padding: 5px;
     padding-right: 15px;
     display: flex;
@@ -101,8 +118,6 @@
     line-height: 35px;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    padding-left: 100px;
     }
 .check {
   display: flex;
@@ -110,15 +125,14 @@
 }
 .checks {
   display: flex;
-  align-items: baseline;
-  justify-content: space-around ;
+  align-items: center;
+  justify-content: space-between ;
   gap: 11px;
   color: #d7d7d7;
   font-weight: 400;
   font-size: 15.5778px;
 }
 .ints {
-  /* color: #d7d7d7; */
   outline: none;
 }
 .logsPg {
@@ -129,16 +143,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 82%;
+  width: 100%;
   height: 40px;
   padding: 3px;
+  cursor: pointer;
   font-weight: 600;
   color: white;
 }
-.enter {
-  padding-left: 100px;
-  cursor: pointer;
-}
+
 .sign {
   color: #56a4c4;
 }

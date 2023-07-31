@@ -12,6 +12,7 @@
 .mamajline{
     margin-left: 100px;
     display: flex;
+    flex-wrap: wrap;
     gap: 50px;
 }
 .starline{
@@ -55,4 +56,39 @@ color: black;
 }
 .other-vendors{
     padding-block: 50px 100px;
+}
+@media screen and (max-width: 40em) {
+   
+    .mamaj{
+        width: 120px;
+    }
+    .Mamajtext{
+        font-size: 10px;
+    }
+    .mamajline{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-left: 10px;
+        /* padding: 10px; */
+    }
+    .htwo{
+        padding: 10px;
+        font-size: 20px;
+    }
+    .mamajsec{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 2px;
+    }    
+    .Dstar{
+        width: 13%;
+    }
+    .fou9text{
+        font-size: 12px;
+    }
+    .fhund{
+        font-size: 12px
+    }
 }

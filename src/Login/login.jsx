@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 // import sidebar from "../image/full.svg";
 import logo from "../image/tmlogo.png";
 import food from "../image/Food.png";
@@ -9,43 +9,59 @@ import pass from "../image/pass.png";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 const Login = () => {
- 
-    const [inputType, setInputType] = useState('password')
-    const [show, setshow] = useState(false)
+  const [message, setMessage] = useState("");
 
-    const handleShow = () => {
-        setshow(!show)
-        setInputType(inputType === 'password' ? 'text' : 'password')
-    };
+  const [inputType, setInputType] = useState("password");
+  const [show, setshow] = useState(false);
 
+  const handleShow = () => {
+    setshow(!show);
+    setInputType(inputType === "password" ? "text" : "password");
+  };
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-  
-    const handleSubmit = async (e) => {
-      // e.preventDefault();
-  
-      try {
-        const response = await fetch('http://89.38.135.41:5112/auth/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email, password }),
-        });
-        let data = await response.json()
-        return data
-  
-        // if (response.data) {
-        //   console.log(data)
-        //   // Login successful, perform further actions
-        // } else {
-        //   // Login failed, handle error
-        // }
-      } catch (error) {
-        // Handle error
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const Navigate = useNavigate()
+  const authenticateUser = async () => {
+    try {
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({
+        email: email,
+        password: password,
+      });
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      const response = await fetch(
+        "http://89.38.135.41:7654/api/auth/authenticate",
+        requestOptions
+      );
+      const result = await response.json();
+      if (result.status) {
+          setTimeout(() => {
+            Navigate("/Onboard")
+          }, 5000);
+        console.log(result)
       }
-    };
+      setMessage(result.message);
+      console.log(result.status);
+      console.log(message);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    authenticateUser();
+  };
   return (
     <div className="login">
       <div className="left-side">
@@ -65,71 +81,80 @@ const Login = () => {
       </div>
 
       <div className="right-side" onSubmit={handleSubmit}>
-        <div className="right">
-          <img src={logo} alt="" className="loginimg" srcset="" />
-          <b className="loginbolds">Welcome Back</b>
-          <p className="paras">Sign in with your email address and password</p>
-        </div>
-        <div className="Details">
-          <b>Email Address</b>
-          <section className="EMAILOG">
-            <div className="lock">
-              <img src={mail} alt="" srcset="" />
-            </div>
-            <div className="input">
-              <input
-                className="int"
-                type="email"
-                value={email}
-                onChange={(e)=> setEmail(e.target.value)}
-                placeholder="Enter your email address"
-              />
-            </div>
-          </section>
-        </div>
+        <article className="artdfirst">
+          <div className="right">
+            {message}
+            <img src={logo} alt="" className="loginimg" srcset="" />
+            <b className="loginbolds">Welcome Back</b>
+            <p className="paras">
+              Sign in with your email address and password
+            </p>
+          </div>
 
-        <div className="Details">
-          <b>Password</b>
-          <section className="EMAILOG">
-            <div className="lock">
-              <img src={pass} alt="" srcset="" />
+          <article className="darticle">
+            <div className="Details">
+              <label>Email Address</label>
+              <section className="EMAILOG">
+                <div className="lock">
+                  <img src={mail} alt="" srcset="" />
+                </div>
+                <div className="input">
+                  <input
+                    className="int"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                  />
+                </div>
+              </section>
             </div>
-            <div className="input">
-              <input
-                className="int"
-                type={inputType}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-              />
-              <button onClick={handleShow}  className="btn">{show ? <AiOutlineEyeInvisible/> : <AiOutlineEye/>}</button>
-            </div>
-            
-          </section>
-        </div>
-        <div className="checks">
-          <p className="check">
-            <input className="intsss" type="checkbox" />
-            Remember Me
-          </p>
-          <Link to= "/forget">
-          <p className="check">Forget Password?</p>
-          </Link>
-        </div>
 
-        <Link to= "/Onboard" type="submit">
-        <section className="enter">
-          <button onClick={(e) => handleSubmit(e)} className="logsPg">Login</button>
-        </section>
-        </Link>
-       
-        <span className="lastLg">
-          <p>Don't have an account? </p> 
-          {/* <p className="sign">  Sign up </p> */}
-          <Link  to= '/signup'> 
-          Sign up
-          </Link>
-        </span>
+            <div className="Details">
+              <label>Password</label>
+              <section className="EMAILOG">
+                <div className="lock">
+                  <img src={pass} alt="" srcset="" />
+                </div>
+                <div className="input">
+                  <input
+                    className="int"
+                    type={inputType}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter your password"
+                  />
+                  <button onClick={handleShow} className="btn">
+                    {show ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                  </button>
+                </div>
+              </section>
+            </div>
+          </article>
+          <div className="checks">
+            <p className="check">
+              <input className="intsss" type="checkbox" />
+              Remember Me
+            </p>
+            <Link to="/forget">
+              <p className="check">Forget Password?</p>
+            </Link>
+          </div>
+
+          {/* <Link to= "/Onboard" type="submit"> */}
+          <section className="enter">
+            <button onClick={handleSubmit} className="logsPg">
+              Login
+            </button>
+          </section>
+          {/* </Link> */}
+
+          <span className="lastLg">
+            <p>Don't have an account? </p>
+            {/* <p className="sign">  Sign up </p> */}
+            <Link to="/signup">Sign up</Link>
+          </span>
+        </article>
       </div>
     </div>
   );

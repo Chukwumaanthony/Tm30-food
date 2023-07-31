@@ -37,3 +37,10 @@
     color: #A3A3A3;
     /* border: 0.1px  #A3A3A3; */
 }
+@media screen and (max-width:40em) {
+    .side-bar{
+        display: none;
+    }
+    
+    
+}

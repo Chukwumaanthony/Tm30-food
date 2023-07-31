@@ -1,4 +1,4 @@
-import React from "react";
+// import React, {useState} from "react";
 import "./vendors.css";
 import Mamaj from "../image/Mama j.png";
 import Star from "../image/Star.png";
@@ -16,9 +16,53 @@ import Shop33 from "../image/Shop33.png";
 import { Link } from "react-router-dom";
 
 const vendor = () => {
+
+  
+  // const [message, setMessage] = useState("");
+  // const [loading, setLoading] = useState(false);
+  // const navigate = useNavigate();
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+
+  //   try {
+  //     const requestOptions = {
+  //       method: "GET",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({
+                  
+  //       }),
+  //     };
+
+  //     const response = await fetch(
+  //     `http://89.38.135.41:7654/api/admin/all-vendors`,
+  //       requestOptions
+  //     );
+  //     const result = await response.json();
+  //     setMessage(result.data);
+
+  //     if (result.status) {
+  //       setLoading(false);
+  //       setTimeout(() => {
+  //       //   history.push("/Otp");
+  //       navigate('/Otp')
+  //       }, 5000);
+  //     }
+
+  //     console.log(result.status);
+  //     console.log(message);
+  //   } catch (error) {
+  //       setLoading(false);
+  //     console.log("error", error);
+  //   }
+  // };
+
   return (
     <div>
-      <div>
+      <div style={{
+        paddingTop:"30px"
+      }}>
         <h2 className="htwo">Top Vendors</h2>
 
         <div className="mamajline">

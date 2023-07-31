@@ -23,3 +23,43 @@
   border: none;
   height: 2rem;
 }
+.dart{
+  font-display: none;
+}
+.dart{
+  display: none;
+}
+/* @media screen and (max-width:40em) {
+  .inputlogo{
+    display: none;
+  }
+  .nots{
+   display: none;
+  }
+  .navthree{
+    display: none;
+  }
+  .navtwo{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .navbar{
+    width: 100vw;
+    padding:5px ;
+    background-color: #36aad9;
+  }
+  .media-logo{
+    width: 55px;
+  }
+  .media-dash{
+    color: white;
+    font-size: 20px;
+  }
+  .dart{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+} */

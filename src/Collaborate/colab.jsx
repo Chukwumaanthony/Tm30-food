@@ -16,13 +16,13 @@ const colab = () => {
      <div className='hold-coll'>
         <section className='vendone'>
             <img className='vend-img' src={Vend} alt="" />
-            <h2>Become a Vendor</h2>
+            <h2 className='vend-head'>Become a Vendor</h2>
             <span className='expand-coll'>Expand your food sales and get more customers.</span>
             <button className='collab-sign'>Sign Up</button>
         </section>
         <section className='vendone'>
             <img className='vend-img' src={Vendone} alt="" />
-            <h2>Register your Company</h2>
+            <h2 className='vend-head'>Register your Company</h2>
             <span className='expand-coll'>Easy way to order delicious food for their staffs.</span>
             <button className='collab-sign'>Sign Up</button>
         </section>

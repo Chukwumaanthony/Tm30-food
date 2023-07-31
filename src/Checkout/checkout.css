@@ -1,0 +1,94 @@
+.backcheckout{
+        display: flex;
+        padding: 20px;
+}
+.dback{
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* padding: 25px; */
+}
+.backcontcheck{
+    display: flex;
+    flex-direction: column;
+}
+.ordersumm{
+    color: #A3A3A3;
+    font-weight: 400;
+    font-size: 13px;
+    display: flex;
+    text-align: start;
+    
+}
+.rec-lab{
+    display: flex;
+    flex-direction: column;
+    align-items: first ;
+    justify-content: center;
+}
+.ordersummary{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+.onek{
+    color: #1997cb;
+}
+.totpay{
+    font-size: 15px;
+    font-style: 500;
+    color: black;
+}
+.total-pay{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    background-color: white;
+    justify-content: space-between;
+    padding: 15px;
+    width: 50%;
+    border-radius: 10px;
+}
+.total-payy{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    background-color: white;
+    justify-content: space-between;
+    padding: 15px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.total-cent{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+       
+}
+.inhouseph{
+    display: flex;
+    gap: 10px;
+}
+.topaycheck{
+    color: white;
+    background-color: #1997cb;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 52.5%;
+}
+

@@ -7,8 +7,11 @@ import Nots from "../image/nots.png";
 import Notss from "../image/notss.png";
 import Pics from "../image/pic.png";
 import { BiSearch } from "react-icons/bi";
-import {TiDelete} from "react-icons/ti"
+import {TiDelete} from "react-icons/ti";
+import {AiOutlineAlignLeft } from "react-icons/ai";
+import Onboardimg from "../image/tmonboard.svg";
 import "./navbar.css";
+import Media from "../Onboard/Mediainput"
 import Notify from '../Notify/Notification';
 import Order from '../Order/order';
 
@@ -19,7 +22,24 @@ const Navbar = () => {
   return (
     <div className="Onboard">
         {/* NavBar  */}
+       
       <navbar className="navbar">
+
+         {/* medianav */}
+         <article className='dart'>
+          <div className='media-dash'>
+          <  AiOutlineAlignLeft/>
+
+          </div>
+          <img 
+          className="media-logo" 
+          src={Onboardimg} 
+          alt="" />
+
+           <Media/>
+
+        </article>
+        {/* end */}
         <div className="inputlogo">
           <div className="onboardint">
             <div className="searchicon">
@@ -36,6 +56,7 @@ const Navbar = () => {
         </div>
 
         <div className="navtwo">
+
           <div className="nav-two">
             <section
             onClick={()=>{

@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Breakfast from "../Breakfast/breakfast";
 import Servefood from "../image/servefood.png";
 import Defaultt from "../DefaultOrder/Default";
+import Carousel from "../Caruosel/Carosel";
+// import checkout from "../Checkout/Checkoutspg";
 // import Breakft from "../Breakfast/breakfast";
 
 
@@ -55,7 +57,7 @@ const Dashboard = () => {
                       
                     </div>
 
-                    <div className="ordertime">
+                    {/* <div className="ordertime">
                       <span className="countdow-holder">
                         <div className="may8">
                           <span className="mayy">8</span>
@@ -68,7 +70,11 @@ const Dashboard = () => {
                           </span>
                         </div>
                       </span>
+                    </div> */}
+                    <div className="ordertype-two">
+                    <Carousel/>
                     </div>
+
                   </div>
              
                   {Default && <Defaultt/>}
@@ -96,7 +102,12 @@ const Dashboard = () => {
                                 <input type="text" placeholder="Cashback" className="cash-back" />
                                 <span className="one-thousand">-&#8358;1000.00</span>
                             </span>
-                            <button className="proceed-btn">PROCEED TO CHECKOUT</button>
+                            <Link 
+                            to="/checkout"
+                            className="proceed-btn"
+                            >
+                            PROCEED TO CHECKOUT
+                            </Link>
                         </section>
                         
                     </div>
