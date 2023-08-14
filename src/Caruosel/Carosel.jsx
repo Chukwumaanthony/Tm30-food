@@ -1,6 +1,6 @@
-import Property from "../image/Propertyone.png"
-import image2 from "../image/Propertytwo.png"
-import Property2 from "../image/Propertythree.png"
+import Property from "./Property141.svg"
+import image2 from "./Property132.svg"
+import Property2 from "./Property133.svg"
 
 import React, { useState, useEffect } from 'react';
 

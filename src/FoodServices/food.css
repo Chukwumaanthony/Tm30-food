@@ -10,7 +10,8 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #e6e6e6;
-    padding-bottom: 9px;
+    padding: 1rem;
+    /* padding-bottom: 9px; */
   }
   .Breaks-btns{
     border: none;
@@ -27,4 +28,7 @@
     border-bottom: 3px solid #36aad9;
     width: fit-content;
     /* margin */
+  }
+  .categories{
+    display: flex;
   }

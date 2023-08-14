@@ -1,97 +1,56 @@
-import React,{ useState } from "react";
-import BreakDash from "../Breakdash/BreakDash";
-import Rice from "../Rice/Riced";
+import React, { useContext, useState, useEffect } from "react";
+import Swallow from "../Swallows/Swallow";
+import { VendorContext } from "../ContextApi/VendorContextProvider";
 import "./food.css";
-import Pasta from "../Pasta/Pastries";
-import Swallows from "../Swallows/Swallow";
-import Other from "../Others/Other";
-
+import Ricee from "../Rice/Riced";
 const Foods = () => {
-  // const [active, setActive] = useState("1")
-  // const [tabs, setTabs] = useState(false)
+  const { data, loading } = useContext(VendorContext);
+  const [currentTab, setcurrentTab] = useState("Rice");
+  const [currCategoryMenu, setCurrCategoryMenu] = useState();
 
-  // const  [Cards, setCards] = useState(true);
-  // const  [AddNew, setAddNew] = useState(false);
-  const Map = [
-    {
-      Name: "Breakfast",
-      id: 1,
-      component: <BreakDash />
-    },
-    {
-      Name: "Rice",
-      id: 2,
-      component: <Rice />
-    },
-    {
-      Name: "Pasta",
-      id: 3,
-      component: <Pasta/>
-    },
-    {
-      Name: "Swallows",
-      id: 4,
-      component: <Swallows/>
-    },
-    {
-      Name: "Others",
-      id: 5,
-      component: <Other/>
-    },
-  ];
-  const [currentTab, setCurrentTab] = useState('1');
-  const handleClick = (e) => {
-    setCurrentTab(e.target.id)
-  }
-  const O1 = 'One';
-  const O2 = 'one'
-  if ( O1 === O2) {
-    console.log('true')
-  }
+  console.log(data, loading);
+  let itemCatgories = data?.itemCategories;
+  const filterItemCategory = (currTab) => {
+    let filteredCat = itemCatgories?.filter(
+      (category) => category?.categoryName === currTab
+    );
+    console.log(filteredCat);
+    return loading === false ? filteredCat[0] : null;
+  };
+
+  useEffect(() => {
+    filterItemCategory(currentTab);
+  }, [loading]);
+
+  useEffect(() => {
+    setCurrCategoryMenu(filterItemCategory(currentTab)?.itemMenus);
+  }, []);
   return (
+    <div className="breakss">
+      {data?.itemCategories?.map((m) => {
+        console.log(m?.catergoryId);
+        return (
+          <div
+            onClick={() => {
+              alert(m?.categoryName);
+            }}
+            className="Breaks-btns"
+            key={m?.catergoryId}
+            id={m?.catergoryId}
+          >
+            {m?.categoryName}
+          </div>
+        );
+      })}
 
-    <section className="Declan-Rice">
-      <div className="breakss">
-        {Map.map((m) => {
-          return(
-            <div className="brspo">
-
-            <button 
-            className="Breaks-btns" 
-            key={m.id} 
-            id={m.id} 
-            disabled={currentTab == m.id} 
-            onClick={handleClick}
-              >
-                {m.Name}
-            </button>
-            </div>
-          )
-        })}
-
-      </div>
-      <div>
-          {Map.map((m) => {
-            // const {Name, id, component} = m;
-            return(
-            
-
-              <div key={m.id}>
-                {currentTab === `${m.id}` && 
-                  <div>
-                    {m.component}
-                  </div>
-                }
-              </div>
-            
-            )
+      {loading === false && filterItemCategory(currentTab)?.itemMenus && (
+        <div>
+          {currCategoryMenu?.map((menu, idx) => {
+            return <Ricee key={idx} item={menu} />;
           })}
-
-      </div>
-
-     </section>
-     
-    
+        </div>
+      )}
+    </div>
   );
 };
 

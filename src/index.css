@@ -1,13 +1,12 @@
-*{
-  font-family: 'DM Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
+* {
+  font-family: "DM Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 body {
   margin: 0;
   /* overflow-x: hidden; */
-   
 }
-a{
+a {
   text-decoration: none;
 }
 
@@ -18,8 +17,8 @@ a{
 
 .slide-container {
   overflow: hidden;
-  /* width: 100%; */
-  width: 345px;
+  width: 100%;
+  /* width: 345px; */
 }
 .slide {
   display: flex;
@@ -30,6 +29,10 @@ a{
   /* margin-right: 15px; */
 }
 .slide-item img {
-  width:100%;
+  width: 100%;
   height: auto;
+}
+input::placeholder {
+  font-size: 0.7rem;
+  /* color: red; */
 }

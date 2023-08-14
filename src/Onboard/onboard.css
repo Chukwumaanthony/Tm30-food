@@ -1,27 +1,30 @@
 .navbarr-var {
   display: flex;
-  width:100%;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 }
 .navbarr {
   display: flex;
-  width:100vw;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  /* gap: 150px; */
+  padding: 1rem;
+  border-bottom: 1px solid #ebebeb;
 }
 .Onboard {
   width: 100%;
+  /* overflow: hidden; */
   padding: 0;
   margin: 0;
 }
-.notss{
+.notss {
   font-size: 25px;
   color: #4c4c4c;
 }
-.nots{
+.nots {
   font-size: 25px;
   color: #4c4c4c;
 }
@@ -39,7 +42,7 @@
   font-weight: 300;
   font-size: 12px;
 }
-.text-search{
+.text-search {
   width: 90%;
 }
 .inputlogo {
@@ -104,54 +107,273 @@
   width: 40px;
 }
 
-.Dsec {
-  background-image: url(./RICEBOX.png);
-  display: flex;
-  padding-inline: 6.1rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* width: 100%; */
+.media-sp {
+  display: none;
+}
+/* second line styling */
+.welcome-food {
+  color: #36aad9;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  border-left: 0.2rem solid #36aad9;
 }
 .D-sec {
-  width: 100%;
   display: flex;
+  padding: 0 1rem;
   justify-content: space-between;
-  color: #fff;
 }
-.welcome-food {
-  font-weight: 500;
-  font-size: 19px;
+.food-platform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 45%;
+  /* border: 1px solid red; */
 }
-.border-meal{
-  border: 1px solid white;
-  width: 30%;
+.food-desk {
+  width: 100%;
+  /* height: 12rem; */
 }
-.welcome-two {
-  font-weight: 500;
-  font-size: 19px;
+.foodesk {
+  width: 45%;
+  /* border: 1px solid red; */
+}
+.foodesk img {
+  width: 100%;
+  object-fit: cover;
 }
 .hone {
-  width: 70%;
+  margin: 0;
+}
+.tasty-meal {
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 23px;
+  border-left: 0.2rem solid #36aad9;
+}
+.anytime {
+  font-size: 17px;
+  padding-left: 10px;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 20px;
+  border-left: 0.2rem solid #36aad9;
 }
-.ricedbox {
-  position: relative;
-  top: 30%;
-  left: 20%;
-}
-/* .platform-img{
-  
-} */
-.food-platform{
+.taste-anytime {
   display: flex;
-  width: fit-content;
-  padding-top: 60px;
   flex-direction: column;
-  gap: 20px;
+  align-items: baseline;
 }
-.media-sp{
-    display: none;
+.Delicious-food {
+  font-size: 15px;
+  color: #777777;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 17px;
+  border-left: 0.2rem solid #36aad9;
+}
+.vendor-search {
+  border: 1px solid#DDDDDD;
+  width: 70%;
+  padding: 5px;
+  justify-content: space-between;
+  display: flex;
+  border-radius: 10px;
+}
+.vendor-search input {
+  /* background-color: red; */
+  padding: 7px;
+  width: 80%;
+  border: none;
+  outline: none;
+}
+.vendor-search button {
+  padding-inline: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  background-color: #36aad9;
+}
+.peter-expense {
+  padding: 1rem;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.peter-welcome {
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+}
+.peter-welcome img {
+  width: 1.3rem;
+  padding-left: 15px;
+}
+.bal-expense {
+  font-size: 13px;
+  color: #777777;
+}
+.ubalance-div {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.ubalance-sec {
+  border: 1px solid #dddddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  width: 34%;
+}
+.ubalance-tran {
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  width: 62%;
+  padding: 10px;
+}
+.rec-view {
+  display: flex;
+  justify-content: space-between;
+}
+.view-icn {
+  display: flex;
+  font-size: 15px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}
+.rec-trn {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.total-ubalc {
+  display: flex;
+  justify-content: space-between;
+}
+.right-arw {
+  display: flex;
+  font-weight: 600;
+  font-size: 16px;
+}
+.ubalc-button {
+  background: linear-gradient(308.86deg, #ffffff -7.25%, #36aad9 27.69%);
+  border: none;
+  outline: none;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.baley-btn {
+  color: #919191;
+  display: flex;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+
+  /* background-color: white; */
+}
+.fund-wallet {
+  padding: 0.4rem;
+  color: white;
+  width: 6rem;
+  background-color: #36aad9;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+}
+.total-baley {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+.mapped-tbl {
+  font-size: 15px;
+  padding-block: 0.4rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+.aug-month {
+  font-size: 13px;
+  font-weight: 400;
+}
+.date-t {
+  font-size: 14px;
+}
+
+tr {
+  height: 40px;
+  border-collapse: collapse;
+  padding: 0 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.t-name {
+  font-weight: 600;
+  width: 20%;
+}
+.t-amount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  color: green;
+  width: 20%;
+}
+.t-dnum {
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
+  /* width: 10%; */
+}
+.d-idfort {
+  color: #00000080;
+}
+.date-sec {
+  display: flex;
+  flex-direction: column;
+  background-color: #a3a3a3;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 13px;
+  width: 5%;
+}
+.d-outcome {
+  color: white;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
+}
+.d-outcome button {
+  width: 5rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 0.4rem;
+  padding: 0.4rem;
 }
 @media screen and (max-width: 40em) {
   .D-sec {
@@ -162,7 +384,7 @@
   }
   .Dsec {
     display: none;
-    }
+  }
   .onboardlogo {
     width: 23%;
   }
@@ -195,29 +417,29 @@
     font-weight: 300;
     font-size: 11px;
   }
-  .inputlogo{
+  .inputlogo {
     display: flex;
     width: 100vw;
     justify-content: space-between;
     padding: 10px;
   }
-  .navthree{
+  .navthree {
     display: none;
   }
-  .notss{
+  .notss {
     display: none;
   }
-  .searchicon{
+  .searchicon {
     width: 12px;
     display: flex;
   }
-  .Onboard{
+  .Onboard {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-  .media-sp{
+  .media-sp {
     display: block;
-}
+  }
 }

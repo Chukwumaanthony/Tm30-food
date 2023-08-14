@@ -1,18 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import Onboardimg from "../image/tmonboard.svg";
 import Pics from "../image/pic.png";
 import Vendor from "../vendor/vendor";
-import { BiSearch } from "react-icons/bi";
+// import { BiSearch } from "react-icons/bi";
 import { MdNotificationsActive } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiListIndefinite } from "react-icons/ri";
+import { BsExclamationCircleFill } from "react-icons/bs";
+import { AiFillEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import Wave from "../image/wave.png";
 import HotDeals from "../HotDeals/HOTDEALS";
 import Collab from "../Collaborate/colab";
 import Table from "../Onboardtable/table";
-import foodlogo from "../Onboard/Foodlogo.png";
+import Fooddesk from "../image/onbordimg.png";
 import Media from "./Mediainput";
 import "./onboard.css";
 
 const Onboard = () => {
+  const RecentTrx = [
+    {
+      Date: "7",
+      Month: "Aug",
+      Name: "Fund Deposit",
+      Math: "+",
+      Amount: "6,500",
+      Id: "ID",
+      No: "283947",
+      Outcome: true,
+    },
+    {
+      Date: "7",
+      Month: "Aug",
+      Name: "Food Purchased",
+      Math: "-",
+      Amount: "2,200",
+      Id: "ID",
+      No: "283947",
+      Outcome: false,
+    },
+  ];
+
+  const [loading, setLoading] = useState(true);
+
+  const Click = () => {
+    setLoading(!loading);
+  };
+
   return (
     <div className="Onboard">
       {/* NavBar  */}
@@ -20,18 +53,7 @@ const Onboard = () => {
         <section className="navbarr">
           <div className="inputlogo">
             <img className="onboardlogo" src={Onboardimg} alt="" />
-            <div className="onboardint">
-              <div className="searchicon">
-                <BiSearch />
-              </div>
-              <div className="text-search">
-                <input
-                  className="onboard-input"
-                  type="text"
-                  placeholder="Search for anything..."
-                />
-              </div>
-            </div>
+
             <span className="media-sp">
               <Media />
             </span>
@@ -60,41 +82,114 @@ const Onboard = () => {
       </navbar>
       {/* End of NavBar */}
 
-      <div className="Dsec">
-        <div className="D-sec">
-          <div className="food-platform">
-            <div style={{
-              display:"flex",
-              alignItems:"center",
-              gap:"10px"
-            }}>
-              <span className="welcome-food">
-                Welcome to TM30 Food Platform
-              </span>
-              <div className="border-meal"></div>
-            </div>
-
-            <div>
-              <h1 className="hone" style={{ margin: "0" }}>
-                Order your best meal anytime.
-              </h1>
-              <span className="welcome-two">
-                Delicious food is waiting for you
-              </span>
-            </div>
+      <div className="D-sec">
+        <div className="food-platform">
+          <div>
+            <span className="welcome-food">Welcome to TM30 Food Platform</span>
+            <div className="border-meal"></div>
           </div>
-          <div className="platform-img">
-            <img
-              className="ricedbox"
-              style={{
-                width: "65%",
-              }}
-              src={foodlogo}
-              alt=""
-            />
+          <div className="taste-anytime">
+            <span className="tasty-meal">Tasty Meal</span>
+            <span className="anytime">Anytime.</span>
+          </div>
+          <div className="Delicious-food">
+            Delicious food is waiting for you
+          </div>
+          <div className="vendor-search">
+            <input type="text" placeholder="Search for vendor" />
+            <button>GO</button>
           </div>
         </div>
+        <div className="foodesk">
+          <div className="food-desk">
+            <img src={Fooddesk} alt="" />
+          </div>
+        </div>
+        {/* <div className="platform-img">
+            <img className="ricedbox" src={foodlogo} alt="" />
+          </div> */}
       </div>
+      <section>
+        <div className="peter-expense">
+          <div className="peter-welcome">
+            Welcome Back, Peters <img src={Wave} alt="" />
+          </div>
+          <div className="bal-expense">Balance and Expenses</div>
+        </div>
+
+        <div className="ubalance-div">
+          <section className="ubalance-sec">
+            <div className="total-wallet">
+              <div className="total-ubalc">
+                <span className="total-baley">
+                  <span>Total Balance</span>
+                  <button onClick={Click} className="baley-btn">
+                    {" "}
+                    {loading ? <AiOutlineEyeInvisible /> : <AiFillEye />}
+                  </button>
+                </span>
+                <button className="ubalc-button">
+                  UBALANCE
+                  <BsExclamationCircleFill />
+                </button>
+              </div>
+              <h3 style={{ margin: "0", paddingBlock: ".4rem 1.5rem" }}>
+                &#8358;{loading ? 6800.0 : "*****"}
+              </h3>
+            </div>
+            <button className="fund-wallet">Fund Wallet</button>
+          </section>
+          <section className="ubalance-tran">
+            <div className="rec-view">
+              <span className="rec-trn">Recent Transactions</span>
+              <span className="view-icn">
+                <span> View all</span>
+                <span className="right-arw">
+                  <MdKeyboardArrowRight />{" "}
+                </span>
+              </span>
+            </div>
+            {RecentTrx.slice(0, 2)?.map((t, i) => {
+              return (
+                <table className="mapped-tbl" key={i}>
+                  <tbody>
+                    <tr
+                      className=""
+                      style={{ background: i % 2 === 0 ? "#fafafa" : "#fff" }}
+                    >
+                      <td className="date-sec">
+                        <div>{t.Date}</div>
+                        <div> {t.Month}</div>
+                      </td>
+                      <td className="t-name">{t.Name}</td>
+                      <td className="t-amount" style={{ width: "20%" }}>
+                        <div>{t.Math}</div>
+                        <div> &#8358;{t.Amount}</div>
+                      </td>
+                      <td className="t-dnum" style={{ width: "20%" }}>
+                        <div>{t.Id}</div>
+                        <div className="d-idfort">{t.No}</div>
+                      </td>
+                      <td className="d-outcome">
+                        {t.Outcome ? (
+                          <button style={{ background: "green" }}>
+                            Successful
+                          </button>
+                        ) : (
+                          <button style={{ background: "rgb(240, 70, 70)" }}>
+                            Failed
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              );
+            })}
+          </section>
+        </div>
+      </section>
+
       <Vendor />
       <HotDeals />
       <Collab />

@@ -1,231 +1,83 @@
-// import React, {useState} from "react";
+import React, { useState } from "react";
 import "./vendors.css";
-import Mamaj from "../image/Mama j.png";
-import Star from "../image/Star.png";
-import Choice from "../image/Choice M.png";
-import Kobe from "../image/Kobe.png";
-import Gidi from "../image/Gidi.png";
-import Iya from "../image/Iya Skye.png";
-import TKO from "../image/TKO.png";
-import ITEM from "../image/Item77.png";
-import Anoint from "../image/Anointing.png";
-import Odobe from "../image/Odobe.png";
-import Crown from "../image/Crown.png";
-import Tega from "../image/Tega.png";
-import Shop33 from "../image/Shop33.png";
-import { Link } from "react-router-dom";
+import Topvend from "./topvend";
+import Othervend from "./othervend";
 
-const vendor = () => {
-
-  
-  // const [message, setMessage] = useState("");
-  // const [loading, setLoading] = useState(false);
-  // const navigate = useNavigate();
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-
-  //   try {
-  //     const requestOptions = {
-  //       method: "GET",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({
-                  
-  //       }),
-  //     };
-
-  //     const response = await fetch(
-  //     `http://89.38.135.41:7654/api/admin/all-vendors`,
-  //       requestOptions
-  //     );
-  //     const result = await response.json();
-  //     setMessage(result.data);
-
-  //     if (result.status) {
-  //       setLoading(false);
-  //       setTimeout(() => {
-  //       //   history.push("/Otp");
-  //       navigate('/Otp')
-  //       }, 5000);
-  //     }
-
-  //     console.log(result.status);
-  //     console.log(message);
-  //   } catch (error) {
-  //       setLoading(false);
-  //     console.log("error", error);
-  //   }
-  // };
-
+const Vendor = () => {
+  const [top, setTop] = useState(true);
+  const [other, setOther] = useState();
   return (
-    <div>
-      <div style={{
-        paddingTop:"30px"
-      }}>
-        <h2 className="htwo">Top Vendors</h2>
-
-        <div className="mamajline">
-          <Link to="/dash">
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Mamaj} alt="" />
-            </span>
-            <span className="Mamajtext">Mama J Bukka</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(500+)</span>
-            </span>
-          </section>
-          
-          </Link>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Choice} alt="" />
-            </span>
-            <span className="Mamajtext">Choice Meal</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.7</span>
-              <span className="fhund">(500+)</span>
-            </span>
-          </section>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Kobe} alt="" />
-            </span>
-            <span className="Mamajtext">Kobe Delicious</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(374)</span>
-            </span>
-          </section>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Gidi} alt="" />
-            </span>
-            <span className="Mamajtext">Gidi Grills</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(404)</span>
-            </span>
-          </section>
-        </div>
+    <div className="Flexcontainer">
+      <div className="topvend">
+        <button
+          onClick={() => {
+            setTop(true);
+            setOther(false);
+          }}
+          style={{
+            background: top ? "#36aad9" : "",
+            color: top ? "white" : "",
+          }}
+        >
+          Top Vendors
+        </button>
+        <button
+          onClick={() => {
+            setOther(true);
+            setTop(false);
+          }}
+          style={{
+            background: other ? "#36aad9" : "",
+            color: other ? "white" : "",
+          }}
+        >
+          Other Vendors
+        </button>
       </div>
 
-
-      <div className="other-vendors">
-        <h2 className="htwo">Other Vendors</h2>
-
-        <div className="mamajline">
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Iya} alt="" />
-            </span>
-            <span className="Mamajtext">Iya Skye Bukka hut</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(500+)</span>
-            </span>
-          </section>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={TKO} alt="" />
-            </span>
-            <span className="Mamajtext">TKO</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(500+)</span>
-            </span>
-          </section>
-
-          
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={ITEM} alt="" />
-            </span>
-            <span className="Mamajtext">Item 7 Meal</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(374)</span>
-            </span>
-          </section>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Anoint} alt="" />
-            </span>
-            <span className="Mamajtext">Anointing Bukka Spot</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(404)</span>
-            </span>
-          </section>
-        </div>
-        <div className="mamajline">
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Odobe} alt="" />
-            </span>
-            <span className="Mamajtext">Odobe Bukka</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(500+)</span>
-            </span>
-          </section>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Crown} alt="" />
-            </span>
-            <span className="Mamajtext">Crown Meal</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(500+)</span>
-            </span>
-          </section>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Tega} alt="" />
-            </span>
-            <span className="Mamajtext">Tega Delicious</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(374)</span>
-            </span>
-          </section>
-
-          <section className="mamajsec">
-            <span>
-              <img className="mamaj" src={Shop33} alt="" />
-            </span>
-            <span className="Mamajtext">Shop 33 Pizza</span>
-            <span className="starline">
-              <img className="Dstar" src={Star} alt="" />
-              <span className="fou9text">4.9</span>
-              <span className="fhund">(404)</span>
-            </span>
-          </section>
-        </div>
-      </div>
+      {top && <Topvend />}
+      {other && <Othervend />}
     </div>
   );
 };
 
-export default vendor;
+export default Vendor;
+
+// const [message, setMessage] = useState("");
+// const Navigate = useNavigate();
+
+//Try and Catch Method
+
+// const requestOptions = {
+//   method: "GET",
+//   headers: {
+//     "Content-Type": "application/json",
+//     Authorization: `Bearer ${getToken}`,
+//   },
+// };
+
+// useEffect(() => {
+//   fetchData();
+// });
+
+// const fetchData = async () => {
+//   try {
+//     const response = await fetch(
+//       "http://89.38.135.41:7654/api/users/dashboard",
+//       requestOptions
+//     );
+//     const result = await response.json();
+//     console.log(result);
+//     setMessage(result.data);
+
+//     if (result.status) {
+//       //   setTimeout(() => {
+//       //     Navigate("/dash");
+//       //   }, 5000);
+//     }
+//     console.log(result.status);
+//     console.log(message);
+//   } catch (error) {
+//     console.log("error", error);
+//   }
+// };

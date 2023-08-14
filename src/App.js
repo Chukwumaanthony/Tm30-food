@@ -19,6 +19,7 @@ import WithCard from "./Paywithcard/WithCard";
 import Corosel from "./Caruosel/Carosel";
 // import test from "./test/test";
 import Reset from "./reset/Reset";
+import Ricee from "./Rice/Riced";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
           <Route path="/verifyy" element={<Verify />} />
           <Route path="/forget" element={<Forget />} />
           <Route path="/reset" element={<Reset />} />
-          <Route path="/Confirm" element={<Confirm/>}/>
+          <Route path="/Confirm" element={<Confirm />} />
           <Route path="/Onboard" element={<OnBoard />} />
           <Route path="/dash" element={<Dash />} />
           <Route path="/services" element={<Service />} />
@@ -41,6 +42,7 @@ function App() {
           <Route path="/checkout" element={<Checkoutspg />} />
           <Route path="/Withcard" element={<WithCard />} />
           <Route path="/logout" element={<Corosel />} />
+          <Route path="/Rice" element={<Ricee />} />
         </Routes>
       </Router>
     </>

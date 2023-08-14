@@ -21,7 +21,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
   const authenticateUser = async () => {
     try {
       const myHeaders = new Headers();
@@ -44,11 +44,14 @@ const Login = () => {
         requestOptions
       );
       const result = await response.json();
+      console.log(result.data.accessToken);
+      localStorage.setItem("token", result.data.accessToken);
       if (result.status) {
-          setTimeout(() => {
-            Navigate("/Onboard")
-          }, 5000);
-        console.log(result)
+        setTimeout(() => {
+          Navigate("/Onboard");
+        }, 5000);
+        // console.log(result)
+        sessionStorage.setItem("userDetails", JSON.stringify(result));
       }
       setMessage(result.message);
       console.log(result.status);

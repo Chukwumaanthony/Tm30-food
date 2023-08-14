@@ -11,7 +11,7 @@ import  Eba from "../image/Eba 1 1.png";
 
 
 
-const Swallow = () => {
+const Swallow = ({image, foodName, discount, amount}) => {
     const [show, setShow] = useState(false);
 
     const Map = [
