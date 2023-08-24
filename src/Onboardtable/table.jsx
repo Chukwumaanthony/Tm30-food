@@ -6,84 +6,71 @@ import Reserved from "../image/reserved.png";
 
 const table = () => {
   return (
-    <div className="parent">
-      <div className="Table">
-        <table className="table-line">
-          <th className="places">Places</th>
-          <tr className="tableline">
-            <td>Lagos</td>
-            <td>Abuja</td>
-            <td>Ibadan</td>
-            <td>Lekki - Lagos</td>
-            <td>Island - Lagos</td>
-            <td>Mainland - Lagos</td>
-            <td>Yaba - Lagos</td>
-            <td>Victoria Island - Lagos</td>
-            <td>Ikoyi - Lagos</td>
-          </tr>
-        </table>
-        <table className="table-line">
-          <th className="places">Culinary Art</th>
-          <tr className="tableline">
-            <td>Nigerian Food</td>
-            <td>Pasta</td>
-            <td>African Food</td>
-            <td>Sandwiches</td>
-            <td>Pizza</td>
-            <td>Breakfast</td>
-            <td>Traditional</td>
-          </tr>
-        </table>
-        <table className="table-line">
-          <th className="places">Popular Vendor</th>
-          <tr className="tableline">
-            <td>Mama J Bukka</td>
-            <td>Choice Meal</td>
-            <td>Kobe Delicious</td>
-            <td>Gidi Grills</td>
-            <td>Item 7 Meal</td>
-            <td>Iya Skye Bukka Hut</td>
-          </tr>
-        </table>
-        <table className="table-line">
-          <th className="places">Collaboration</th>
-          <tr className="tableline">
-            <td>Sell On TM30 Food Platform</td>
-            <td>Order For your Company staffs</td>
-          </tr>
-        </table>
-        <table className="table-line">
-          <th className="places">TM30 Food Platform</th>
-          <tr className="tableline">
-            <td>About </td>
-            <td>Help Page</td>
-            <td>Terms and Conditions</td>
-            <td>Privacy Policy</td>
-          </tr>
-          <th className="places">Connect with us</th>
-          <tr className="tableline">
-            <td className="tableline2">
-                <img src={Facebook} style={{width:'15px'}} alt="" />
-                Instagram
-            </td>
-            <td className="tableline2">
-                <img src={Twitter} style={{width:'15px'}} alt="" />
-                Twitter
-            </td>
-            <td className="tableline2">
-                <img src={Facebook} style={{width:'15px'}} alt="" />
-                Facebook
-            </td>
-          </tr>
-        </table>
+    <section>
+      <div className="parent-tb">
+        <div className="places">
+          <h3>Places</h3>
+          <span>Lagos</span>
+          <span>Abuja</span>
+          <span>Ibadan</span>
+          <span>Lekki - Lagos</span>
+          <span>Island - Lagos</span>
+          <span>Mainland - Lagos</span>
+          <span>Yaba - Lagos</span>
+          <span>Victoria Island - Lagos</span>
+          <span>Ikoyi - Lagos</span>
+        </div>
+        <div className="places">
+          <h3>Culinary Art</h3>
+          <span>Nigerian Food</span>
+          <span>Pasta</span>
+          <span>African Food</span>
+          <span>Sandwich</span>
+          <span>Pizza</span>
+          <span>Breakfast</span>
+          <span>Traditional</span>
+        </div>
+        <div className="places">
+          <h3>Popular Vendor</h3>
+          <span>Mama J Bukka</span>
+          <span>Choice Meal</span>
+          <span>Kobe Delicious</span>
+          <span>Gidi Grills</span>
+          <span>Item 7 Meal</span>
+          <span>Iya Skye Bukka Hut</span>
+        </div>
+        <div className="places">
+          <h3>Collaboration</h3>
+          <span>Sell on TM30 Food Platform</span>
+          <span>Order for your company staffs</span>
+        </div>
+        <div className="places">
+          <h3>TM30 Food Platform</h3>
+          <span>About</span>
+          <span>Help Page</span>
+          <span>Terms and Conditions</span>
+          <span>Privacy policy</span>
+          <h3>Connect with us</h3>
+          <span>
+            <img width="20rem" src={Facebook} alt="" /> Facebook
+          </span>
+          <span>
+            <img width="20rem" src={Twitter} alt="" />
+            Twitter
+          </span>
+          <span className="facebook">
+            <img width="20rem" src={Facebook} alt="" />
+            Instagram
+          </span>
+        </div>
       </div>
 
-
-      <section className="platres">
+      <footer>
+        {" "}
         <img src={Reserved} alt="" />
-        <span>2023 TM30 Food Platform All rights reserved</span>
-      </section>
-    </div>
+        2023 TM30 Food Platform All rights reserved
+      </footer>
+    </section>
   );
 };
 

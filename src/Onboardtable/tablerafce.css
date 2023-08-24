@@ -1,88 +1,24 @@
-.tableline {
-  display: flex;
-  flex-direction: column;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  gap: 10px;
-}
-.table-line {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  gap: 20px;
-}
-.tableline2 {
-  display: flex;
-  align-items: baseline;
-  gap: 15px;
-}
-.Table {
+.parent-tb {
   background-color: #36aad9;
-  padding-block: 50px;
-  padding-left: 70px;
+  padding: 2rem;
   display: flex;
-  gap: 100px;
-  /* position: absolute; */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .places {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-}
-.platres {
   display: flex;
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 15px;
-  padding-left: 70px;
   gap: 10px;
-  /* position: fixed; */
+  flex-direction: column;
 }
-@media screen and (max-width: 40em) {
-  .Table {
-    background-color: #36aad9;
-    padding: 10px;
-    flex-wrap: wrap;
-    /* padding-left: 20px; */
-    display: flex;
-    gap: 10px;
-    /* position: absolute; */
-  }
-  .table-line {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 10px;
-  }
-  .places {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    
-  }
-  .tableline {
-    display: flex;
-    flex-direction: column;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    gap: 7px;
-  }
-  .platres {
-    display: flex;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    padding: 8px;
-    /* padding-left: 10px; */
-    gap: 10px;
-  }
-  .platres img{
-    width: 5%;
-    height: 5%;
-  }
-  .platres span{
-    font-size: 12px;
-  }
+.places span {
+  display: flex;
+  gap: 5px;
+}
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 10px;
 }

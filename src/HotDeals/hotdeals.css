@@ -1,66 +1,67 @@
-.HOTDEALS{
-    background-image: url(./watchcup.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* width: 100vw; */
-    height: 35vh;
+.HOTDEALS {
+  background-image: url(./watchcup.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 45vh; */
+  padding-block: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.HR{
-    width: 6rem;
-    color: white;
-    border-bottom: 1px solid white;
+.HR {
+  width: 6rem;
+  color: white;
+  border-bottom: 1px solid white;
 }
-.hot-logo{
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.hot-logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
-.Hotext{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    color: white;
+.Hotext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
 }
-.hotlogo{
-    padding-left: 350px;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    
+.hotlogo {
+  /* padding-left: 350px; */
+  /* padding-top: 50px; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.hotimg-sty{
-    width: 25px;
+.hotimg-sty {
+  width: 25px;
 }
 
-.fast-food{
-    display: flex;
-    gap: 15px;
+.fast-food {
+  display: flex;
+  gap: 15px;
 }
-.fastfood{
-    border: .5px solid white;
-    color: white;
-    padding: 6px;
-    border-radius: 5px;   
+.fastfood {
+  border: 0.5px solid white;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
 }
-.fastt{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.fastt {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-@media screen and (max-width:40em) {
-
-    .HOTDEALS{
+@media screen and (max-width: 40em) {
+  .HOTDEALS {
     background-image: url(./watchcup.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
     height: fit-content;
-}
+  }
 
-.hotlogo{
+  .hotlogo {
     padding: 20px;
     /* padding-top: 20px; */
     display: flex;
@@ -68,34 +69,31 @@
     /* justify-content: center; */
     align-items: center;
     gap: 10px;
-    
-}
-.Hotext{
+  }
+  .Hotext {
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
     color: white;
-}
-.hotimg-sty{
+  }
+  .hotimg-sty {
     width: 15px;
-}
-.HR{
+  }
+  .HR {
     width: 4rem;
     color: white;
     border-bottom: 1px solid white;
-}
-.fast-food{
+  }
+  .fast-food {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-}
-.fastfood{
-    border: .5px solid white;
+  }
+  .fastfood {
+    border: 0.5px solid white;
     color: white;
     padding: 3px;
-    border-radius: 5px;   
+    border-radius: 5px;
     font-size: 12px;
-}
-
-
+  }
 }

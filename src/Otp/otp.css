@@ -1,16 +1,16 @@
 .login {
   display: flex;
 }
-
+/* 
 .left-side {
   width: 50%;
   height: 100vh;
   background-color: #56a4c4;
-}
-.right-side {
+} */
+/* .right-side {
   width: 50%;
   height: 100vh;
-}
+} */
 .rightotp {
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@
   align-items: center;
   border: 1px solid transparent;
   background-color: #9bd2e9;
- padding-inline: 50px;
+  padding-inline: 50px;
   color: white;
   font-style: normal;
   font-weight: 500;
@@ -137,25 +137,27 @@
   padding: 0;
   margin: 0;
 }
-@media screen and (max-width:40em) {
-  .otpimg{
-     width: 120px;
+@media screen and (max-width: 40em) {
+  .left-side {
+    display: none;
   }
-  .rightotp{
+  .otpimg {
+    width: 120px;
+  }
+  .rightotp {
     padding-top: 20px;
-
   }
-  .paragr{
+  .paragr {
     font-size: 12px;
   }
-  .spa{
+  .spa {
     font-size: 12px;
   }
-  .ptag{
+  .ptag {
     font-size: 12px;
     padding-block: 20px;
   }
-  .buttons{
+  .buttons {
     width: 1.2rem;
     height: 1.5rem;
     padding: 2px;
@@ -164,13 +166,13 @@
     display: flex;
     align-items: center;
   }
-  .resend{
+  .resend {
     width: 7rem;
     font-size: 10px;
     font-weight: 500;
     padding: 10px;
   }
-  .verify{
+  .verify {
     width: 7rem;
     font-size: 10px;
     font-weight: 500;
@@ -179,15 +181,12 @@
     align-items: center;
     justify-content: center;
   }
-  .Retp{
+  .Retp {
     padding: 30px;
   }
-  .exsistacc{
+  .exsistacc {
     width: 14rem;
     font-size: 12px;
     font-weight: 500;
   }
-
-
-  }
-
+}

@@ -1,23 +1,19 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
-// import sidebar from "../image/full.svg";
+import Load from "../Animations/anime.svg";
 import logo from "../image/tmlogo.png";
 import food from "../image/Food.png";
 import mail from "../image/Mail.png";
 import pass from "../image/pass.png";
+import { ToastContainer, toast } from "react-toastify";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import styled from "styled-components";
 
 const Login = () => {
   const [message, setMessage] = useState("");
-
-  const [inputType, setInputType] = useState("password");
+  const [loading, setLoading] = useState(false);
   const [show, setshow] = useState(false);
-
-  const handleShow = () => {
-    setshow(!show);
-    setInputType(inputType === "password" ? "text" : "password");
-  };
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,16 +40,22 @@ const Login = () => {
         requestOptions
       );
       const result = await response.json();
+      console.log(result.data);
       console.log(result.data.accessToken);
       localStorage.setItem("token", result.data.accessToken);
+
       if (result.status) {
+        toast.success(result.data.message);
         setTimeout(() => {
           Navigate("/Onboard");
         }, 5000);
         // console.log(result)
         sessionStorage.setItem("userDetails", JSON.stringify(result));
       }
-      setMessage(result.message);
+      // else {
+      //   toast.error(result.data.message);
+      // }
+      setMessage(result.data.message);
       console.log(result.status);
       console.log(message);
     } catch (error) {
@@ -62,6 +64,7 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     authenticateUser();
   };
@@ -85,14 +88,14 @@ const Login = () => {
 
       <div className="right-side" onSubmit={handleSubmit}>
         <article className="artdfirst">
-          <div className="right">
-            {message}
+          <Div1 className="right">
+            <div>{message}</div>
             <img src={logo} alt="" className="loginimg" srcset="" />
             <b className="loginbolds">Welcome Back</b>
             <p className="paras">
               Sign in with your email address and password
             </p>
-          </div>
+          </Div1>
 
           <article className="darticle">
             <div className="Details">
@@ -122,12 +125,13 @@ const Login = () => {
                 <div className="input">
                   <input
                     className="int"
-                    type={inputType}
+                    // type={inputType}
+                    type={show ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                   />
-                  <button onClick={handleShow} className="btn">
+                  <button onClick={() => setshow(!show)} className="btn">
                     {show ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
                   </button>
                 </div>
@@ -135,10 +139,7 @@ const Login = () => {
             </div>
           </article>
           <div className="checks">
-            <p className="check">
-              <input className="intsss" type="checkbox" />
-              Remember Me
-            </p>
+            <p className="check">- Remember Me</p>
             <Link to="/forget">
               <p className="check">Forget Password?</p>
             </Link>
@@ -146,21 +147,44 @@ const Login = () => {
 
           {/* <Link to= "/Onboard" type="submit"> */}
           <section className="enter">
-            <button onClick={handleSubmit} className="logsPg">
-              Login
+            <button
+              disabled={!email && !password}
+              onClick={handleSubmit}
+              className="logsPg"
+            >
+              {loading ? <img src={Load} alt="" /> : "Login"}
             </button>
           </section>
           {/* </Link> */}
 
           <span className="lastLg">
             <p>Don't have an account? </p>
-            {/* <p className="sign">  Sign up </p> */}
-            <Link to="/signup">Sign up</Link>
+            <Link className="signd" to="/signup">
+              Register
+            </Link>
           </span>
         </article>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
 
 export default Login;
+
+const Div1 = styled.section`
+  div {
+    color: #36aad9;
+  }
+`;

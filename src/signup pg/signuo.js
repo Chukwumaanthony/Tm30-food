@@ -23,15 +23,6 @@ const Signuo = () => {
     setshow(!show);
     setInputType(inputType === "password" ? "text" : "password");
   };
- 
-  // const details = {
-  //   email,
-  //   firstName,
-  //   lastName,
-  //   phone,
-  //   password,
-  //   confirmPassword,
-  // };
 
   const SignupHandler = async () => {
     try {
@@ -39,12 +30,12 @@ const Signuo = () => {
       myHeaders.append("Content-Type", "application/json");
 
       const raw = JSON.stringify({
-             email: email,
-             firstName: firstName,
-             lastName: lastName,
-             phone: phone,
-             password: password,
-             confirmPassword: confirmPassword,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        phone: phone,
+        password: password,
+        confirmPassword: confirmPassword,
       });
 
       const requestOptions = {
@@ -61,7 +52,6 @@ const Signuo = () => {
       const result = await response.json();
       if (result) {
         console.log(result);
-        
       }
       // console.log(message);
     } catch (error) {
@@ -97,15 +87,15 @@ const Signuo = () => {
           <img src={logo} alt="" className="signimg" srcset="" />
           <p className="parag">Please fill in your details to get started</p>
         </div>
-        <div className="Detail">
+        <div className="Details">
           <label>First Name</label>
           <section className="EMAILOG">
-            <div className="locks">
+            <div className="lock">
               <img src={mail} alt="" srcset="" />
             </div>
-            <div className="inputs">
+            <div className="input">
               <input
-                className="ints"
+                className="int"
                 type="text"
                 placeholder="Enter your email address"
                 onChange={(e) => setFirstname(e.target.value)}
@@ -113,15 +103,15 @@ const Signuo = () => {
             </div>
           </section>
         </div>
-        <div className="Detail">
+        <div className="Details">
           <label>Last Name</label>
           <section className="EMAILOG">
-            <div className="locks">
+            <div className="lock">
               <img src={mail} alt="" srcset="" />
             </div>
-            <div className="inputs">
+            <div className="input">
               <input
-                className="ints"
+                className="int"
                 type="text"
                 placeholder="Enter your email address"
                 onChange={(e) => setLastname(e.target.value)}
@@ -129,15 +119,15 @@ const Signuo = () => {
             </div>
           </section>
         </div>
-        <div className="Detail">
+        <div className="Details">
           <label>Email Address</label>
           <section className="EMAILOG">
-            <div className="locks">
+            <div className="lock">
               <img src={mail} alt="" srcset="" />
             </div>
-            <div className="inputs">
+            <div className="input">
               <input
-                className="ints"
+                className="int"
                 type="email"
                 placeholder="Enter your email address"
                 onChange={(e) => setEmail(e.target.value)}
@@ -146,15 +136,15 @@ const Signuo = () => {
           </section>
         </div>
 
-        <div className="Detail">
+        <div className="Details">
           <label>Phone Number</label>
           <section className="EMAILOG">
-            <div className="locks">
+            <div className="lock">
               <img src={phonee} alt="" srcset="" />
             </div>
-            <div className="inputs">
+            <div className="input">
               <input
-                className="ints"
+                className="int"
                 type="phone number"
                 placeholder="Enter your phone number"
                 onChange={(e) => setPhone(e.target.value)}
@@ -162,16 +152,16 @@ const Signuo = () => {
             </div>
           </section>
         </div>
-      
-        <div className="Detail">
+
+        <div className="Details">
           <label> Password</label>
           <section className="EMAILOG">
-            <div className="locks">
+            <div className="lock">
               <img src={pass} alt="" srcset="" />
             </div>
-            <div className="inputs">
+            <div className="input">
               <input
-                className="ints"
+                className="int"
                 type={inputType}
                 placeholder="Enter your password"
                 onChange={(e) => setPassword(e.target.value)}
@@ -183,15 +173,15 @@ const Signuo = () => {
           </section>
         </div>
 
-        <div className="Detail">
+        <div className="Details">
           <label>Confirm Password</label>
           <section className="EMAILOG">
-            <div className="locks">
+            <div className="lock">
               <img src={pass} alt="" srcset="" />
             </div>
-            <div className="inputs">
+            <div className="input">
               <input
-                className="ints"
+                className="int"
                 type={inputType}
                 placeholder="Enter your password"
                 onChange={(e) => setConfirmassword(e.target.value)}
@@ -202,13 +192,17 @@ const Signuo = () => {
             </div>
           </section>
         </div>
+        <section className="enterr">
+          <button className="logs" onClick={handleSubmit}>
+            Sign up
+          </button>
+        </section>
 
-        <button className="enterr" onClick={handleSubmit}>
-          Sign up
-        </button>
-        <span className="signuplast">
+        <span className="lastLg">
           <p>Already have an account? </p>
-          <Link to="/">Login</Link>
+          <Link className="signd" to="/">
+            Login
+          </Link>
         </span>
       </div>
     </div>

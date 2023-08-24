@@ -5,7 +5,6 @@ import Signuo from "./signup pg/signuo";
 import Otp from "./Otp/Otpcode";
 import Verify from "./Veriftotp/verify";
 import Forget from "./Forget/forget";
-// import Reset from "./resetpass/Reset"
 import Confirm from "./reset/Confirm";
 import OnBoard from "./Onboard/Onboard";
 import Dash from "./Dashboard/dashboard";
@@ -17,7 +16,8 @@ import Checkoutspg from "./Checkout/Checkoutspg";
 import { Toaster } from "react-hot-toast";
 import WithCard from "./Paywithcard/WithCard";
 import Corosel from "./Caruosel/Carosel";
-// import test from "./test/test";
+import Test from "./test";
+import Editt from "./Profile/editprofile";
 import Reset from "./reset/Reset";
 import Ricee from "./Rice/Riced";
 
@@ -27,6 +27,7 @@ function App() {
       <Toaster />
       <Router>
         <Routes>
+          <Route path="/test" element={<Test />} />
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signuo />} />
           <Route path="/Otp" element={<Otp />} />
@@ -43,6 +44,7 @@ function App() {
           <Route path="/Withcard" element={<WithCard />} />
           <Route path="/logout" element={<Corosel />} />
           <Route path="/Rice" element={<Ricee />} />
+          <Route path="/prof" element={<Editt />} />
         </Routes>
       </Router>
     </>

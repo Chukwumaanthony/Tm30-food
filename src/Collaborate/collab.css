@@ -1,7 +1,7 @@
 .collabo {
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 25px;
 }
 .coll {
   display: flex;
@@ -13,7 +13,7 @@
   padding-block: 15px;
 }
 .collab-img {
-  width: 220px;
+  width: 12rem;
 }
 .vendone {
   display: flex;
@@ -31,22 +31,26 @@
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 .expand-coll {
   /* font-family: 'DM Sans'; */
   font-style: normal;
   font-weight: 400;
-  font-size: 19px;
+  font-size: 17px;
+  padding-block: 10px;
   color: #a3a3a3;
 }
 .vend-img {
   width: 250px;
 }
+.vend-head {
+  margin: 0;
+}
 .hold-coll {
   display: flex;
   justify-content: space-between;
-  padding: 70px;
+  padding: 10px 100px;
 }
 @media screen and (max-width: 40em) {
   .collab-img {

@@ -8,34 +8,36 @@
 }
 .right-side {
   width: 50%;
-  /* justify-content: center; */
   align-items: center;
   height: 100vh;
+  overflow: hidden;
+  overflow: scroll;
+  height: 100vh;
 }
-.right{
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
-    gap: 5px;
-    /* padding-top: 100px; */
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  gap: 5px;
+  /* padding-top: 100px; */
 }
 .loginbolds {
   font-weight: 700;
-  font-size: 25px;
+  font-size: 20px;
 }
-.paras{
+.paras {
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  color: #A3A3A3;
+  font-size: 15px;
+  color: #a3a3a3;
 }
 
 .img {
   padding: 40px;
   width: 200px;
 }
-.loginimg{
+.loginimg {
   width: 100px;
 }
 .food {
@@ -50,8 +52,8 @@
   line-height: 10px;
   color: #ffffff;
 }
-.Details label{
-  font-size: 18px;
+.Details label {
+  font-size: 14px;
   font-weight: 500;
 }
 .foods {
@@ -71,54 +73,53 @@
   display: flex;
   width: 100%;
 }
-.lock{
-    border: 1px solid #E6E6E6;
-    padding: 5px;
-    border-radius: 10px 0 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25px;
+.lock {
+  border: 1px solid #e6e6e6;
+  padding: 5px;
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
 }
-.int{
-    border: none;
-    outline: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    width: 100%;
-    padding: .45rem 0;
-    }
-.darticle{
+.int {
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  width: 100%;
+  padding: 0.45rem 0;
+}
+.darticle {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
 }
-.artdfirst{
+.artdfirst {
   justify-content: center;
   align-items: center;
-
 }
-.input{
-    border: 1px solid #E6E6E6;
-    border-radius:0px 10px 10px  0px  ;
-    width: 350px;
-    height: 30px;
-    padding: 5px;
-    padding-right: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    }
-.Details{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 35px;
-    font-style: normal;
-    font-weight: 400;
-    }
+.input {
+  border: 1px solid #e6e6e6;
+  border-radius: 0px 10px 10px 0px;
+  width: 350px;
+  height: 30px;
+  padding: 5px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 35px;
+  font-style: normal;
+  font-weight: 400;
+}
 .check {
   display: flex;
   color: #c7c2c2;
@@ -126,11 +127,10 @@
 .checks {
   display: flex;
   align-items: center;
-  justify-content: space-between ;
-  gap: 11px;
+  justify-content: space-between;
   color: #d7d7d7;
   font-weight: 400;
-  font-size: 15.5778px;
+  font-size: 15px;
 }
 .ints {
   outline: none;
@@ -150,18 +150,24 @@
   font-weight: 600;
   color: white;
 }
+.logsPg:disabled {
+  background: #9de0fa;
+}
 
 .sign {
   color: #56a4c4;
 }
-.lastLg{
+.lastLg {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  font-weight: 400;
-  font-size: 15.5778px;
-  line-height: 50px;
+  font-weight: 500;
+  font-size: 13px;
+  /* line-height: 50px; */
+}
+.signd {
+  color: #36aad9;
 }
 
 .btn {
@@ -170,76 +176,72 @@
   cursor: pointer;
 }
 @media screen and (max-width: 40em) {
-  .right-side{
+  .right-side {
     width: 100vh;
     height: 100vh;
   }
-  .right{
+  .right {
     padding-top: 15px;
   }
-  .loginimg{
-      width: 120px;
+  .loginimg {
+    width: 120px;
   }
-  .bolds{
+  .bolds {
     font-size: 10px;
     font-weight: 100;
   }
-  .paras{
+  .paras {
     font-size: 14px;
     font-weight: 500;
   }
-  .Details{
+  .Details {
     font-size: 12px;
     font-weight: 300;
     padding: 0;
   }
-  .input{
+  .input {
     width: 200px;
     height: 1.9rem;
     /* padding-left: 4px; */
-
   }
-  .lock{
+  .lock {
     width: 25px;
   }
-  .int{
+  .int {
     width: 200px;
     height: 1.9rem;
     padding-block: 3px;
     font-size: 9px;
   }
-  .check{
+  .check {
     font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .checks{
+  .checks {
     display: flex;
     align-items: center;
     gap: 60px;
   }
-  .enter{
+  .enter {
     /* width: 50vw; */
     display: flex;
     align-items: center;
     justify-content: center;
     padding-left: 5px;
   }
-  .logsPg{
-    width:255px;
+  .logsPg {
+    width: 255px;
     height: 1.7rem;
     font-size: 12px;
     font-weight: 500;
     padding-left: 0;
-  
-
   }
-  .lastLg{
+  .lastLg {
     display: flex;
     font-size: 12px;
     align-items: center;
     gap: 5px;
   }
-  
 }

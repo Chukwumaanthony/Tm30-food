@@ -20,7 +20,7 @@ const VendorContextProvider = ({ children }) => {
     axios
       .get(`http://89.38.135.41:7654/api/users/vendors/${vendorId}`, config)
       .then((response) => {
-        console.log(response?.data.data);
+        // console.log(response?.data.data);
         setdata(response.data.data);
         setLoading(false);
       });

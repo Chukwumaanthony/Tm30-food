@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import Onboardimg from "../image/tmonboard.svg";
-import Pics from "../image/pic.png";
 import Vendor from "../vendor/vendor";
 // import { BiSearch } from "react-icons/bi";
 import { MdNotificationsActive } from "react-icons/md";
-import { MdKeyboardArrowRight } from "react-icons/md";
+// import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiListIndefinite } from "react-icons/ri";
-import { BsExclamationCircleFill } from "react-icons/bs";
-import { AiFillEye, AiOutlineEyeInvisible } from "react-icons/ai";
+// import { BsExclamationCircleFill } from "react-icons/bs";
+// import { AiFillEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import Wave from "../image/wave.png";
 import HotDeals from "../HotDeals/HOTDEALS";
 import Collab from "../Collaborate/colab";
@@ -15,36 +15,40 @@ import Table from "../Onboardtable/table";
 import Fooddesk from "../image/onbordimg.png";
 import Media from "./Mediainput";
 import "./onboard.css";
+import { ProfileContext } from "../ContextApi/ProfileContext";
 
 const Onboard = () => {
-  const RecentTrx = [
-    {
-      Date: "7",
-      Month: "Aug",
-      Name: "Fund Deposit",
-      Math: "+",
-      Amount: "6,500",
-      Id: "ID",
-      No: "283947",
-      Outcome: true,
-    },
-    {
-      Date: "7",
-      Month: "Aug",
-      Name: "Food Purchased",
-      Math: "-",
-      Amount: "2,200",
-      Id: "ID",
-      No: "283947",
-      Outcome: false,
-    },
-  ];
+  // const RecentTrx = [
+  //   {
+  //     Date: "7",
+  //     Month: "Aug",
+  //     Name: "Fund Deposit",
+  //     Math: "+",
+  //     Amount: "6,500",
+  //     Id: "ID",
+  //     No: "283947",
+  //     Outcome: true,
+  //   },
+  //   {
+  //     Date: "7",
+  //     Month: "Aug",
+  //     Name: "Food Purchased",
+  //     Math: "-",
+  //     Amount: "2,200",
+  //     Id: "ID",
+  //     No: "283947",
+  //     Outcome: false,
+  //   },
+  // ];
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  const Click = () => {
-    setLoading(!loading);
-  };
+  // const Click = () => {
+  //   setLoading(!loading);
+  // };
+  const { data } = useContext(ProfileContext);
+
+  console.log(data);
 
   return (
     <div className="Onboard">
@@ -53,7 +57,10 @@ const Onboard = () => {
         <section className="navbarr">
           <div className="inputlogo">
             <img className="onboardlogo" src={Onboardimg} alt="" />
-
+            <div className="vendor-search">
+              <input type="text" placeholder="Search for vendor" />
+              <button>SEARCH</button>
+            </div>
             <span className="media-sp">
               <Media />
             </span>
@@ -68,15 +75,23 @@ const Onboard = () => {
                 <MdNotificationsActive />
               </div>
             </div>
-            <div className="navthree">
+            <Link to="/profile" className="navthree">
               <div className="pics-img">
-                <img className="picss" src={Pics} alt="" srcset="" />
+                <img
+                  className="picss"
+                  src={data.profilePictureUrl}
+                  alt=""
+                  srcset=""
+                />
               </div>
               <div className="nav-three">
-                <b className="adeleke">Adeleke Peters</b>
-                <span className="ade-mail">Adelekepet20@gmail.com</span>
+                <b className="adeleke">
+                  <span>{data.lastName}</span>
+                  <span>{data.firstName}</span>
+                </b>
+                <span className="ade-mail">{data.email}</span>
               </div>
-            </div>
+            </Link>
           </div>
         </section>
       </navbar>
@@ -84,7 +99,7 @@ const Onboard = () => {
 
       <div className="D-sec">
         <div className="food-platform">
-          <div>
+          <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             <span className="welcome-food">Welcome to TM30 Food Platform</span>
             <div className="border-meal"></div>
           </div>
@@ -95,19 +110,10 @@ const Onboard = () => {
           <div className="Delicious-food">
             Delicious food is waiting for you
           </div>
-          <div className="vendor-search">
-            <input type="text" placeholder="Search for vendor" />
-            <button>GO</button>
-          </div>
         </div>
         <div className="foodesk">
-          <div className="food-desk">
-            <img src={Fooddesk} alt="" />
-          </div>
+          <img src={Fooddesk} alt="" />
         </div>
-        {/* <div className="platform-img">
-            <img className="ricedbox" src={foodlogo} alt="" />
-          </div> */}
       </div>
       <section>
         <div className="peter-expense">
@@ -116,7 +122,7 @@ const Onboard = () => {
           </div>
           <div className="bal-expense">Balance and Expenses</div>
         </div>
-
+        {/* 
         <div className="ubalance-div">
           <section className="ubalance-sec">
             <div className="total-wallet">
@@ -187,7 +193,7 @@ const Onboard = () => {
               );
             })}
           </section>
-        </div>
+        </div> */}
       </section>
 
       <Vendor />

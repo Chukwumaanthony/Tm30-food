@@ -3,18 +3,15 @@
 }
 .back-img {
   background-image: url(./backimg.png);
-  /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
   height: 20vh;
-  /* width: 185vh; */
 }
 .select-parent {
   padding: 55px;
   display: flex;
   justify-content: space-between;
-  /* gap: 25px; */
-  /* background: #ededed; */
+ 
 }
 
 .father-one {

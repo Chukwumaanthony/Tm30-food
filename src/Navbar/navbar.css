@@ -1,32 +1,31 @@
-.navbar{
-    display: flex;
-    gap: 150px;
-    background-color: white;
-    /* border: 1px solid red; */
-    /* width: 100%; */
-    padding-inline:  30px 62px;
+.navbar {
+  display: flex;
+  background-color: white;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  border-left: 1px solid #ececec;
 }
-.notifyx{
- display: flex;
- align-items: center;
- justify-content: space-between;
- height: 10%;
+.notifyx {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10%;
 }
-.notifyme{
- font-size: 18px;
- font-weight: 500;
+.notifyme {
+  font-size: 18px;
+  font-weight: 500;
 }
-.notifydel{
+.notifydel {
   font-size: 20px;
   color: #36aad9;
   background: none;
   border: none;
   height: 2rem;
 }
-.dart{
+.dart {
   font-display: none;
 }
-.dart{
+.dart {
   display: none;
 }
 /* @media screen and (max-width:40em) {

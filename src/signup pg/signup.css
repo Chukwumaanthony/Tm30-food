@@ -2,28 +2,16 @@
   display: flex;
 }
 
-.left-side {
-  width: 50%;
-  background-color: #56a4c4;
-}
 .signimg {
-  width: 160px;
-}
-.right-side {
-  width: 50%;
-  overflow: hidden;
-  overflow: scroll;
-  height: 100vh;
+  width: 120px;
 }
 .rightone {
   display: flex;
   flex-direction: column;
   justify-self: center;
   align-items: center;
-  /* gap: 0.1px; */
-  padding-top: 300px;
+  padding-top: 150px;
 }
-
 .bolds {
   font-style: normal;
   font-weight: 700;
@@ -31,8 +19,8 @@
 }
 .parag {
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 500;
+  font-size: 17px;
   color: #a3a3a3;
 }
 .img {
@@ -111,7 +99,7 @@
   /* padding-left: 100px; */
   padding-block: 5px;
 }
-.Detail label{
+.Detail label {
   font-size: 17px;
   font-weight: 500;
 }
@@ -129,16 +117,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 82%;
+  width: 25.3rem;
   height: 40px;
   padding: 3px;
   font-weight: 600;
   color: white;
 }
 .enterr {
-  padding-left: 100px;
   cursor: pointer;
-  padding-block: 20px;
+  padding-block: 10px;
 }
 .sign {
   color: #56a4c4;
@@ -155,6 +142,8 @@
 
 .btn {
   border: none;
+  font-size: 15px;
+  color: #969494;
   background-color: transparent;
   cursor: pointer;
 }
