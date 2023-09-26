@@ -1,7 +1,7 @@
 import React from "react";
 import "./dashh.css";
 import Navbar from "../Navbar/Navbar";
-import Sidebar from "../SidebarDash/Sidebar";
+// import Sidebar from "../SidebarDash/Sidebar";
 import { Link } from "react-router-dom";
 import Breakfast from "../Breakfast/breakfast";
 import Servefood from "../image/servefood.png";
@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <div>
       <div className="ni">
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div>
           <Navbar />
           <section className="fatherss">
@@ -19,13 +19,12 @@ const Dashboard = () => {
               <div className="select-parent">
                 <section className="after-nav">
                   <div className="father-one">
-                   
                     <div className="ordertype-two">
                       <Carousel />
                     </div>
                   </div>
 
-                  <Breakfast/>
+                  <Breakfast />
                 </section>
 
                 {/* second div */}
@@ -54,7 +53,7 @@ const Dashboard = () => {
                         <span className="one-thousand">-&#8358;1000.00</span>
                       </span>
                       <Link to="/checkout" className="proceed-btn">
-                        PROCEED TO CHECKOUT
+                        SUBMIT ORDER
                       </Link>
                     </section>
                   </div>

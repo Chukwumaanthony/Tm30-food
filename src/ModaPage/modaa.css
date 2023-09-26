@@ -1,99 +1,96 @@
-.img-naira{
-    display: flex;  
-    align-items: center;
-    gap: 10px
-
+.img-naira {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.hundreds{
-    font-size: 17px;
-    font-weight: 500;
+.hundreds {
+  font-size: 15px;
+  font-weight: 500;
 }
-.Moad-Yam{
-    font-size: 15px;
-    font-weight: 500;
+.Moad-Yam {
+  font-size: 15px;
+  font-weight: 500;
 }
-.counter-img{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.counter-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.take-req{
-    display: flex;
-    gap: 10px;
-    padding-block: 20px;
-    align-items: center;
+.take-req {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
-.Takeaway{
-    font-size: 15px;
-    font-weight: 500;
-    color: #999797;
+.Takeaway {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999797;
 }
-.required{
-    border: none;
-    /* width: 5rem; */
-    background-color: #E6E6E6;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: 500;
+.required {
+  border: none;
+  /* width: 5rem; */
+  background-color: #e6e6e6;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
 }
-.add-drink{
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
+.add-drink {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
-.Clr-all{
- display: flex;
- align-items: center;
- gap: 5px;
- cursor: pointer;
- /* justify-content: center; */
+.Clr-all {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  /* justify-content: center; */
 }
-.canc-all{
-    border: 1px solid #E6E6E6;
-    padding: 0 2px;
-    background: white;
-    align-items: center;
-    display: flex;
-    cursor: pointer;
+.canc-all {
+  border: 1px solid #e6e6e6;
+  padding: 0 2px;
+  background: white;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
 }
-.clear-all{
-    font-size: 13px;
-    color: #999797;
+.clear-all {
+  font-size: 13px;
+  color: #999797;
 }
-.btn-one{
-    background-color: #36AAD9;
-    border: none;
-    border-radius: 7px;
-    padding: 5px;
-    cursor: pointer;
+.btn-one {
+  background-color: #36aad9;
+  border: none;
+  border-radius: 7px;
+  padding: 5px;
+  cursor: pointer;
 }
-.btn-two{
-    background-color: #36AAD9;
-    border: none;
-    color: white;
-    border-right: 1px solid white;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 5px;
-    width: 7rem;
-    cursor: pointer;
+.btn-two {
+  background-color: #36aad9;
+  border: none;
+  color: white;
+  border-right: 1px solid white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px;
+  width: 7rem;
+  cursor: pointer;
 }
-.btn-three{
-    background-color: #36AAD9;
-    border: none;
-    color: white;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 5px;
-    width: 7rem;
-    cursor: pointer;
-
+.btn-three {
+  background-color: #36aad9;
+  border: none;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px;
+  width: 7rem;
+  cursor: pointer;
 }
-.clear-btn{
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #E6E6E6;
-    padding-top: 10px;
+.clear-btn {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 10px;
 }

@@ -1,4 +1,6 @@
-.counter-cont{
-   display: flex;
-   gap: 5px;
+.counter-cont {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 10px;
 }

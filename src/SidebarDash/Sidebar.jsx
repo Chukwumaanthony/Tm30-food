@@ -4,8 +4,8 @@ import "./sidebar.css";
 import { RiDashboardLine } from "react-icons/ri";
 import { FiGlobe } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
-import {FiSettings} from "react-icons/fi";
-import {BiLogOut} from "react-icons/bi";
+import { FiSettings } from "react-icons/fi";
+import { BiLogOut } from "react-icons/bi";
 // import { icons } from 'react-icons';
 
 const Sidebar = () => {
@@ -26,18 +26,18 @@ const Sidebar = () => {
 
   const Dashtwo = [
     {
-      Name:"Settings",
-      icon: <FiSettings/>,
+      Name: "Settings",
+      icon: <FiSettings />,
       className: "Map",
       path: "/settings",
     },
     {
-      Name:"Log Out",
-      icon: <BiLogOut/>,
+      Name: "Log Out",
+      icon: <BiLogOut />,
       className: "Map",
       path: "/logout",
-    }
-]
+    },
+  ];
   return (
     <div className="side-bar">
       <div>
@@ -47,11 +47,15 @@ const Sidebar = () => {
         return (
           <NavLink to={e.path}>
             <div
-            className="dash-loc"
+              className="dash-loc"
               style={{
-                background: `${ window.location.pathname === e.path ? "#36AAD9" : "" }`,
+                background: `${
+                  window.location.pathname === e.path ? "#36AAD9" : ""
+                }`,
                 color: `${window.location.pathname === e.path ? "white" : ""}`,
-                borderRadius: `${window.location.pathname === e.path ? "10px" : ""}`
+                borderRadius: `${
+                  window.location.pathname === e.path ? "10px" : ""
+                }`,
               }}
             >
               <span
@@ -78,22 +82,25 @@ const Sidebar = () => {
               </span>
             </div>
           </NavLink>
-          
         );
       })}
-             <div>
-             <hr className="horiz" />
-             </div>
+      <div>
+        <hr className="horiz" />
+      </div>
 
-             {Dashtwo?.map((f) => {
+      {Dashtwo?.map((f) => {
         return (
           <NavLink to={f.path}>
             <div
-            className="dash-loc"
+              className="dash-loc"
               style={{
-                background: `${ window.location.pathname === f.path ? "#36AAD9" : "" }`,
+                background: `${
+                  window.location.pathname === f.path ? "#36AAD9" : ""
+                }`,
                 color: `${window.location.pathname === f.path ? "white" : ""}`,
-                borderRadius: `${window.location.pathname === f.path ? "10px" : ""}`
+                borderRadius: `${
+                  window.location.pathname === f.path ? "10px" : ""
+                }`,
               }}
             >
               <span
@@ -120,10 +127,8 @@ const Sidebar = () => {
               </span>
             </div>
           </NavLink>
-          
         );
       })}
-
     </div>
   );
 };

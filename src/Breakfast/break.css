@@ -174,12 +174,13 @@
   gap: 5px;
 }
 .mamaj-input {
-  border: 3px solid white;
-  border-radius: 10px;
+  border: 3px solid rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
   padding: 6px;
   display: flex;
-  font-size: 15px;
-  color: #3c3c3c;
+  color: rgba(0, 0, 0, 0.35);
+  /* font-size: 15px; */
+  background-color: white;
   align-items: center;
   padding-left: 15px;
 }
@@ -188,6 +189,7 @@
   width: 37rem;
   border: none;
   outline: none;
-  color: #3c3c3c;
-  background-color: #ededed;
+  color: rgba(0, 0, 0, 0.35);
+  /* color: #3c3c3c; */
+  /* background-color: #ededed; */
 }

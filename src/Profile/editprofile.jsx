@@ -10,6 +10,8 @@ import { ProfileContext } from "../ContextApi/ProfileContext";
 import "./profile.css";
 // import { Navigate } from "react-router-dom";
 import EditableInput from "../Reuseable/EditableInput";
+import axios from "axios";
+import styled from "styled-components";
 
 const EditProfile = () => {
   const { data } = useContext(ProfileContext);
@@ -22,7 +24,7 @@ const EditProfile = () => {
   const [lastName, setlastName] = useState(data?.lastName || "");
   const [phone, setPhone] = useState(data?.phone) || "";
 
-  const [profilePhoto, setprofilePhoto] = useState();
+  // const [profilePhoto, setprofilePhoto] = useState();
 
   const [email, setemail] = useState(data?.email || "");
 
@@ -30,72 +32,19 @@ const EditProfile = () => {
   const [disablelname, setdisablelname] = useState(true);
   const [disablenum, setdisablenum] = useState(true);
   const [disableemail, setdisableemail] = useState(false);
-  // console.log(profilePictureUrl);
+  const [selectedFile, setSelectedFile] = useState(null);
 
-  // const details = { firstName, lastName, phone, profilePhoto };
-  // const formData = new FormData();
+  const handfilechange = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+  };
 
-  // async function authenticateUser() {
-  //   formData.append("firstName", firstName);
-  //   formData.append("lastName", lastName);
-  //   formData.append("phone", phone);
-  //   formData.append("profilePhoto", profilePhoto);
-  //   try {
-  //     const response = await fetch(
-  //       "http://89.38.135.41:7654/api/users/update-profile",
-  //       {
-  //         method: "PUT",
-  //         headers: {
-  //           "Content-type": "multipart/form-data",
-  //           Authorization: `Bearer ${getToken}`,
-  //         },
-  //         body: formData,
-  //       }
-  //     );
-  //     const server = await response.json();
-  //     console.log(server);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
-  // const authenticateUser = async () => {
-  //   try {
-  //     const myHeaders = new Headers();
-  //     myHeaders.append("Content-Type", "application/json");
-
-  //     const raw = JSON.stringify({
-  //       firstName: firstName,
-  //       lastName: lastName,
-  //       phone: phone,
-  //       profilePhote: profilePhoto,
-  //     });
-
-  //     const requestOptions = {
-  //       method: "PUT",
-  //       headers: myHeaders,
-  //       body: raw,
-  //       redirect: "follow",
-  //     };
-
-  //     const response = await fetch(
-  //       "http://89.38.135.41:7654/api/users/update-profile",
-  //       requestOptions
-  //     );
-  //     const result = await response.json();
-  //     console.log(result.data.accessToken);
-  //     if (result.status) {
-  //       setTimeout(() => {
-  //         Navigate("/profile");
-  //       }, 5000);
-  //     }
-  //     setMessage(result.message);
-  //     console.log(result.status);
-  //     console.log(message);
-  //   } catch (error) {
-  //     console.log("error", error);
-  //   }
-  // };
+  const config = {
+    headers: {
+      Authorization: `Bearer ${getToken}`,
+      "Content-type": "application/x-www-form-urlencoded",
+    },
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -103,22 +52,19 @@ const EditProfile = () => {
     formData.append("firstName", firstName);
     formData.append("lastName", lastName);
     formData.append("phone", phone);
-    formData.append("profilePhoto", profilePhoto);
-
-    try {
-      const response = await fetch("http://your-api-url/update-profile", {
-        method: "PUT",
-        headers: {
-          "Content-type": "multipart/form-data",
-          Authorization: `Bearer ${getToken}`,
-        },
-        body: formData,
+    formData.append("profilePhoto", selectedFile);
+    axios
+      .put(
+        "http://89.38.135.41:7654/api/users/update-profile",
+        formData,
+        config
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      const serverResponse = await response.json();
-      console.log(serverResponse);
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   return (
@@ -126,7 +72,7 @@ const EditProfile = () => {
       <Sidebar />
       <div className="nnna">
         <Navbar />
-        <div className="prod-padd">
+        <Div className="prod-padd">
           <span className="backicon">
             <FaLongArrowAltLeft />
             Back
@@ -148,7 +94,7 @@ const EditProfile = () => {
               </section>
             </section>
           </div>
-          <section className="dpicssect">
+          <form encType="multipart/form-data" className="dpicssect">
             <div className="pics-change-delete">
               <span className="image-profine">
                 <img
@@ -159,12 +105,13 @@ const EditProfile = () => {
                 />{" "}
               </span>
               <span className="changeprofiles">
-                <div className="prof-pics">
+                {/* <div className="prof-pics">
                   <img style={{ width: "18px" }} src={Changeprofile} alt="" />
                   Change profile pictures
-                </div>
+                </div> */}
                 <input
-                  onChange={(e) => setprofilePhoto(e.target.files[0])}
+                  className="file-change"
+                  onChange={handfilechange}
                   type="file"
                 />
                 <div className="prof-pics">
@@ -181,7 +128,6 @@ const EditProfile = () => {
                 setIsDisabled={setdisablefname}
                 label={"First Name"}
               />
-
               <EditableInput
                 user={lastName}
                 setUser={setlastName}
@@ -211,11 +157,17 @@ const EditProfile = () => {
                 Save Changes
               </button>
             </div>
-          </section>
-        </div>
+          </form>
+        </Div>
       </div>
     </div>
   );
 };
 
 export default EditProfile;
+
+const Div = styled.section`
+  .file-change {
+    border: 1px solid red;
+  }
+`;

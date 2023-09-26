@@ -3,6 +3,7 @@ import Modal from "../Modal/Modal";
 import classes from "../styled.module.css";
 import MODA from "../ModaPage/moda";
 import { BsPlus } from "react-icons/bs";
+import { TiDelete } from "react-icons/ti";
 
 const Ricee = ({ item }) => {
   const [show, setShow] = useState(false);
@@ -33,13 +34,13 @@ const Ricee = ({ item }) => {
             <section className={classes.modalBackground}>
               <div className={classes.modalContent}>
                 <section className="cancel">
-                  <h3 className="Moad-Yam">Boiled Yam & Egg</h3>
+                  <h3 className="Moad-Yam">{item.itemName}</h3>
                   <button
-                    className="Canc-line"
+                    className="notifydel"
                     style={{ cursor: "pointer" }}
                     onClick={() => setShow(false)}
                   >
-                    x
+                    <TiDelete />
                   </button>
                 </section>
 
@@ -54,3 +55,14 @@ const Ricee = ({ item }) => {
 };
 
 export default Ricee;
+{
+  /* <section className="notifyx">
+  <span className="notifyme">Notification</span>
+  <button
+    className="notifydel"
+    onClick={() => {
+      setShow(false);
+    }}
+  ></button>
+</section>; */
+}

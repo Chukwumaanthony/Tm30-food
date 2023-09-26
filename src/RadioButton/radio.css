@@ -1,9 +1,23 @@
-.radio-sty{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 15px;
-    font-weight: 500;
-    padding-block: 20px 80px;
-    /* align-items: baseline; */
+.radio-sty {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  padding-block: 20px;
 }
+/* {data.map(({ supplementCategory, supplementName }, i) => {
+  return (
+    <div style={{ display: "flex" }}>
+      <div style={{ width: "100%", display: "flex", background: "red" }}>
+        <section>
+          {supplementCategory === "PROTEINS" && <p>{supplementName}</p>}
+        </section>
+        <section>
+          {supplementCategory === "DRINKS" && <p>{supplementName}</p>}
+        </section>
+      </div>
+    </div>
+  );
+})} */

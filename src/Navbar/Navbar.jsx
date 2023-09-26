@@ -2,36 +2,43 @@ import React, { useContext, useState } from "react";
 // import Onboardimg from "../image/tmonboard.svg";
 import Modal from "../Modal/Modal";
 import classes from "../styled.module.css";
-import { Link } from "react-router-dom";
-// import Nots from "../image/nots.png";
-// import Notss from "../image/notss.png";
-// import Pics from "../image/pic.png";
-// import { BiSearch } from "react-icons/bi";
+// import { Link } from "react-router-dom";
+import Tmlogo from "../image/tmlogo.png";
 import { TiDelete } from "react-icons/ti";
-// import {AiOutlineAlignLeft } from "react-icons/ai";
-// import Onboardimg from "../image/tmonboard.svg";
 import "./navbar.css";
-// import Media from "../Onboard/Mediainput"
 import Notify from "../Notify/Notification";
 import Order from "../Order/order";
 import { ProfileContext } from "../ContextApi/ProfileContext";
-import { RiListIndefinite } from "react-icons/ri";
+import {
+  RiArrowDownSFill,
+  RiArrowUpSFill,
+  RiListIndefinite,
+} from "react-icons/ri";
 import { MdNotificationsActive } from "react-icons/md";
+import { BiLogOut } from "react-icons/bi";
+import { FiSettings } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { data } = useContext(ProfileContext);
 
-  // console.log(data);
-
-  // const image = profile.data.profilePictureUrl;
   const [show, setShow] = useState(false);
   const [showtwo, setShowtwo] = useState(false);
 
+  const [drop, setDrop] = useState();
+
+  const toggle = () => {
+    setDrop(!drop);
+  };
   return (
     <div className="Onboard">
       {/* NavBar  */}
 
       <navbar className="navbar">
+        <div>
+          <img src={Tmlogo} alt="" style={{ width: "80px" }} />
+        </div>
+
         <div className="navtwo">
           <div className="nav-two">
             <section
@@ -89,7 +96,7 @@ const Navbar = () => {
               </section>
             </Modal>
           </div>
-          <Link to="/profile" className="navthree">
+          <section className="navthree">
             <div className="pics-img">
               <img
                 className="picss"
@@ -98,14 +105,74 @@ const Navbar = () => {
                 srcset=""
               />
             </div>
-            <div className="nav-three">
-              <b className="adeleke">
-                <span>{data.lastName}</span>
-                <span>{data.firstName}</span>
-              </b>
-              <span className="ade-mail">{data.email}</span>
-            </div>
-          </Link>
+            <section>
+              <div onClick={toggle} className="nav-three">
+                <b className="adeleke">
+                  <span>{data.lastName}</span>
+                  <span>{data.firstName}</span>
+                </b>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                  className="ade-mail"
+                >
+                  <span>TM30 STAFF</span>
+                  <span style={{ fontSize: "16px", display: "flex" }}>
+                    {drop ? <RiArrowUpSFill /> : <RiArrowDownSFill />}
+                  </span>
+                </div>
+                {drop && (
+                  <div className="drop-ss">
+                    <section
+                      style={{
+                        display: "flex",
+                        gap: ".3rem",
+                        borderBlock: "1px solid #e6e6e6",
+                        fontSize: "13px",
+                        alignItems: "center",
+                        padding: "1rem",
+                      }}
+                    >
+                      <FiSettings />
+                      <Link to="/profile">Profile</Link>
+                    </section>
+                    <section
+                      style={{
+                        display: "flex",
+                        gap: ".3rem",
+                        borderBlock: "1px solid #e6e6e6",
+                        fontSize: "13px",
+                        alignItems: "center",
+                        padding: "1rem",
+                      }}
+                    >
+                      <FiSettings />
+                      <Link to="/profile">Change Password</Link>
+                    </section>
+                    <section
+                      style={{
+                        display: "flex",
+                        color: "#d04747",
+                        gap: ".3rem",
+                        fontSize: "13px",
+                        alignItems: "center",
+                        padding: "1rem",
+                      }}
+                    >
+                      <BiLogOut />
+                      <Link
+                        to="/"
+                        style={{
+                          color: "#d04747",
+                        }}
+                      >
+                        Logout
+                      </Link>
+                    </section>
+                  </div>
+                )}
+              </div>
+            </section>
+          </section>
         </div>
       </navbar>
       {/* End of NavBar */}

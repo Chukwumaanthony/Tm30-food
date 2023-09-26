@@ -6,7 +6,7 @@ import logo from "../image/tmlogo.png";
 import food from "../image/Food.png";
 import mail from "../image/Mail.png";
 import pass from "../image/pass.png";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import styled from "styled-components";
 
@@ -45,16 +45,13 @@ const Login = () => {
       localStorage.setItem("token", result.data.accessToken);
 
       if (result.status) {
-        toast.success(result.data.message);
+        // toast.success(result.data.message);
         setTimeout(() => {
           Navigate("/Onboard");
         }, 5000);
         // console.log(result)
         sessionStorage.setItem("userDetails", JSON.stringify(result));
       }
-      // else {
-      //   toast.error(result.data.message);
-      // }
       setMessage(result.data.message);
       console.log(result.status);
       console.log(message);
@@ -139,7 +136,7 @@ const Login = () => {
             </div>
           </article>
           <div className="checks">
-            <p className="check">- Remember Me</p>
+            <p className="check"> Remember Me</p>
             <Link to="/forget">
               <p className="check">Forget Password?</p>
             </Link>
@@ -165,7 +162,7 @@ const Login = () => {
           </span>
         </article>
       </div>
-      <ToastContainer
+      {/* <ToastContainer
         position="top-center"
         autoClose={1000}
         hideProgressBar={false}
@@ -176,7 +173,7 @@ const Login = () => {
         draggable
         pauseOnHover
         theme="light"
-      />
+      /> */}
     </div>
   );
 };

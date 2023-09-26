@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./signup.css";
+import load from "../Animations/anime.svg";
 import logo from "../image/tmlogo.png";
 import food from "../image/Food.png";
 import mail from "../image/Mail.png";
@@ -15,6 +16,8 @@ const Signuo = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const [inputType, setInputType] = useState("password");
   const [show, setshow] = useState(false);
@@ -54,12 +57,14 @@ const Signuo = () => {
         console.log(result);
       }
       // console.log(message);
+      setMessage(result.message);
     } catch (error) {
       console.log("error", error);
     }
   };
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     SignupHandler();
   };
@@ -85,6 +90,7 @@ const Signuo = () => {
       <div className="right-side">
         <div className="rightone" onSubmit={handleSubmit}>
           <img src={logo} alt="" className="signimg" srcset="" />
+          {message}
           <p className="parag">Please fill in your details to get started</p>
         </div>
         <div className="Details">
@@ -194,7 +200,7 @@ const Signuo = () => {
         </div>
         <section className="enterr">
           <button className="logs" onClick={handleSubmit}>
-            Sign up
+            {loading ? <img src={load} alt="" /> : "Sign Up"}
           </button>
         </section>
 

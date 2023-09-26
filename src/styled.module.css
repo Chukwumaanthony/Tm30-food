@@ -14,16 +14,16 @@
   transition: linear 0.3s;
 }
 
-.modalContent{ 
-    padding: 1rem;
-    border-radius: 0.4rem;
-    width: 35%;
-    background-color: #fff;
-    color: rgba(0, 0, 0, 0.8);
-    /* max-height: ${(props) => props.MinHeight}; */
-    /* min-height: ${(props) => props.MinnHeight}; */
-    border: 1px solid  #dcdbdb;
-    overflow: hidden;
+.modalContent {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  width: 40%;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  /* max-height: ${(props) => props.MinHeight}; */
+  /* min-height: ${(props) => props.MinnHeight}; */
+  border: 1px solid #dcdbdb;
+  overflow: hidden;
 }
 .notificationBackground {
   width: 100vw;
@@ -42,15 +42,15 @@
   transition: linear 0.3s;
 }
 
-.notificationContent{ 
-    padding: 1rem 1rem 0 1rem;
-    border-radius: 1rem;
-    width: 25%;
-    height: 100%;
-    background-color: #f6f6f6;
-    color: rgba(0, 0, 0, 0.8);
-    border: 1px solid  #dcdbdb;
-    overflow: scroll;
+.notificationContent {
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 1rem;
+  width: 25%;
+  height: 100%;
+  background-color: #f6f6f6;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #dcdbdb;
+  overflow: scroll;
 }
 ::-webkit-scrollbar {
   width: 0;
