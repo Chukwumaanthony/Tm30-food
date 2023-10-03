@@ -35,7 +35,7 @@ function RadioButton() {
   let selectedItemsArray = [];
   const handleSelectChange = (e) => {
     const { checked, value, name } = e.target;
-    setSelectedSide(name);
+    // setSelectedSide(name);
     console.log(checked, name);
     if (checked) {
       selectedItemsArray.push(name);
@@ -72,9 +72,7 @@ function RadioButton() {
           }}
         >
           <span>ADD PROTIEN TO MEAL</span>
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-          >
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {data.map(
               ({ supplementCategory, supplementName, supplementPrice }, i) => {
                 return (
@@ -118,7 +116,9 @@ function RadioButton() {
                                     console.log(i);
                                   }}
                                 />
-                                <p>{supplementName}</p>
+                                <p style={{ marginBlock: "5px" }}>
+                                  {supplementName}
+                                </p>
                                 {supplementCategory === "PROTEINS" && (
                                   <div
                                     style={{
@@ -129,6 +129,7 @@ function RadioButton() {
                                     }}
                                   >
                                     {/* {supplementPrice} */}
+
                                     <Counter
                                       supplementPrice={supplementPrice}
                                       selectedItemsArray={selectedItemsArray}
@@ -138,7 +139,6 @@ function RadioButton() {
                                 )}
                               </div>
                             </div>
-                            <div></div>
                           </div>
                         )}
                       </section>
@@ -180,7 +180,9 @@ function RadioButton() {
                               <div>
                                 <input type="radio" />
                               </div>
-                              {supplementName}
+                              <p style={{ marginBlock: "5px" }}>
+                                {supplementName}
+                              </p>{" "}
                             </div>
                             <div>
                               {supplementCategory === "DRINKS" && (
@@ -189,10 +191,14 @@ function RadioButton() {
                                     display: "flex",
                                     fontSize: "13px",
                                     alignItems: "center",
-                                    gap: "10px",
+                                    // gap: "10px",
                                   }}
                                 >
-                                  <Counter supplementPrice={supplementPrice} />
+                                  <Counter
+                                    selectedItemsArray={selectedItemsArray}
+                                    supplementName={supplementName}
+                                    supplementPrice={supplementPrice}
+                                  />
                                 </div>
                               )}
                             </div>

@@ -10,6 +10,7 @@ const Foods = () => {
   const [itemMenus, setItemMenus] = useState();
 
   // console.log(food);
+  // console.log(itemMenus);
 
   const handleClick = (e, item) => {
     setCurrentTab(e?.target?.dataset?.foodname);

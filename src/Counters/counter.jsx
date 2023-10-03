@@ -4,25 +4,25 @@ import "./counters.css";
 function Counter({ supplementPrice, selectedItemsArray, supplementName }) {
   const [count, setCount] = useState(1);
 
-  // const increment = () => {
-  //   setCount((count) => count + 1);
+  const increment = () => {
+    setCount((count) => count + 1);
 
-  //   selectedItemsArray.push(supplementName);
-  //   console.log(selectedItemsArray);
-  // };
+    selectedItemsArray.push(supplementName);
+    console.log(selectedItemsArray);
+  };
 
-  // const decrement = () => {
-  //   if (count > 1) setCount((count) => count - 1);
-  //   // if(supplementName){
+  const decrement = () => {
+    if (count > 1) setCount((count) => count - 1);
+    // if(supplementName){
 
-  //   // }
+    // }
 
-  //   const index = selectedItemsArray.indexOf(supplementName);
-  //   if (index !== -1) {
-  //     selectedItemsArray.splice(index, 1);
-  //   }
-  //   console.log(selectedItemsArray);
-  // };
+    const index = selectedItemsArray.indexOf(supplementName);
+    if (index !== -1) {
+      selectedItemsArray.splice(index, 1);
+    }
+    console.log(selectedItemsArray);
+  };
 
   return (
     <div className="counter-cont">

@@ -12,12 +12,13 @@ const Topvend = () => {
     },
   };
 
-  const Url = "http://89.38.135.41:7654/api/admin/all-vendors";
+  const Url = "http://89.38.135.41:7654/api/users/dashboard";
   useEffect(() => {
     axios
       .get(Url, config)
       .then(function (response) {
         setVendorlist(response.data.data);
+        // console.log(response.data.data);
       })
       .catch(function (error) {
         console.log("Error:", error);
@@ -39,7 +40,7 @@ const Topvend = () => {
               <span>
                 <img className="mamaj" src={a.vendorImageUrl} alt="" />
               </span>
-              <span className="Mamajtext">{a.businessName}</span>
+              <span className="Mamajtext">{a.vendorBusinessName}</span>
             </section>
           );
         })}
