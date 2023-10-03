@@ -1,0 +1,99 @@
+.HOTDEALS {
+  background-image: url(../assets/images/watchcup.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 45vh; */
+  padding-block: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.HR {
+  width: 6rem;
+  color: white;
+  border-bottom: 1px solid white;
+}
+.hot-logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Hotext {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}
+.hotlogo {
+  /* padding-left: 350px; */
+  /* padding-top: 50px; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.hotimg-sty {
+  width: 25px;
+}
+
+.fast-food {
+  display: flex;
+  gap: 15px;
+}
+.fastfood {
+  border: 0.5px solid white;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+}
+.fastt {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media screen and (max-width: 40em) {
+  .HOTDEALS {
+    background-image: url(../assets/images/watchcup.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .hotlogo {
+    padding: 20px;
+    /* padding-top: 20px; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+  }
+  .Hotext {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    color: white;
+  }
+  .hotimg-sty {
+    width: 15px;
+  }
+  .HR {
+    width: 4rem;
+    color: white;
+    border-bottom: 1px solid white;
+  }
+  .fast-food {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .fastfood {
+    border: 0.5px solid white;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+}

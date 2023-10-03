@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./signup.css";
 import load from "../Animations/anime.svg";
-import logo from "../image/tmlogo.png";
-import food from "../image/Food.png";
-import mail from "../image/Mail.png";
-import pass from "../image/pass.png";
-import phonee from "../image/phone.png";
+import logo from "../assets/images/tmlogo.png";
+import food from "../assets/images/Food.png";
+import mail from "../assets/images/Mail.png";
+import pass from "../assets/images/pass.png";
+import phonee from "../assets/images/phone.png";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 const Signuo = () => {

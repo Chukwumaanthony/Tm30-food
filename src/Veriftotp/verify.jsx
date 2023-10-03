@@ -1,9 +1,9 @@
-import React from 'react'
-import logo from "../image/tmlogo.png";
-import food from "../image/Food.png";
-import check from "../image/check.png"
+import React from "react";
+import logo from "../assets/images/tmlogo.png";
+import food from "../assets/images/Food.png";
+import check from "../assets/images/check.png";
 import "./verify.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Verify = () => {
   return (
@@ -24,24 +24,24 @@ const Verify = () => {
         </div>
       </div>
 
-      <div className='right-side'>
-        <div className='awesome-cont'>
-            <div className='check-cont'>
-                <img  className='verifyimg' src={check} alt="" />
-                <span className='awesometext'>Awesome!</span>
-                <span className='text'>You're ready to proceed using this platform</span>
-            </div>
-            <div className='proceed-cont'>
-                <Link to= "/">
-                <button className='proceedbutton'>Proceed to login</button>
-                </Link>
-            </div>
+      <div className="right-side">
+        <div className="awesome-cont">
+          <div className="check-cont">
+            <img className="verifyimg" src={check} alt="" />
+            <span className="awesometext">Awesome!</span>
+            <span className="text">
+              You're ready to proceed using this platform
+            </span>
+          </div>
+          <div className="proceed-cont">
+            <Link to="/">
+              <button className="proceedbutton">Proceed to login</button>
+            </Link>
+          </div>
         </div>
-
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Verify 
+export default Verify;

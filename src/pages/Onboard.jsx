@@ -1,18 +1,14 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Onboardimg from "../image/tmonboard.svg";
-import Vendor from "../vendor/vendor";
-// import { BiSearch } from "react-icons/bi";
+import Onboardimg from "../assets/images/tmonboard.svg";
+import Vendor from "../components/Vendor";
 import { MdNotificationsActive } from "react-icons/md";
-// import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiListIndefinite } from "react-icons/ri";
-// import { BsExclamationCircleFill } from "react-icons/bs";
-// import { AiFillEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import Wave from "../image/wave.png";
+import Wave from "../assets/images/wave.png";
 import HotDeals from "../components/Hotdeals";
-import Collab from "../Collaborate/colab";
-import Table from "../Onboardtable/table";
-import Fooddesk from "../image/onbordimg.png";
+import Collab from "../components/Colab";
+import Table from "../components/Table";
+import Fooddesk from "../assets/images/onbordimg.png";
 import Media from "../components/Mediainput";
 import "./onboard.css";
 import { ProfileContext } from "../ContextApi/ProfileContext";
@@ -122,6 +118,78 @@ const Onboard = () => {
           </div>
           <div className="bal-expense">Balance and Expenses</div>
         </div>
+        {/* 
+        <div className="ubalance-div">
+          <section className="ubalance-sec">
+            <div className="total-wallet">
+              <div className="total-ubalc">
+                <span className="total-baley">
+                  <span>Total Balance</span>
+                  <button onClick={Click} className="baley-btn">
+                    {" "}
+                    {loading ? <AiOutlineEyeInvisible /> : <AiFillEye />}
+                  </button>
+                </span>
+                <button className="ubalc-button">
+                  UBALANCE
+                  <BsExclamationCircleFill />
+                </button>
+              </div>
+              <h3 style={{ margin: "0", paddingBlock: ".4rem 1.5rem" }}>
+                &#8358;{loading ? 6800.0 : "*****"}
+              </h3>
+            </div>
+            <button className="fund-wallet">Fund Wallet</button>
+          </section>
+          <section className="ubalance-tran">
+            <div className="rec-view">
+              <span className="rec-trn">Recent Transactions</span>
+              <span className="view-icn">
+                <span> View all</span>
+                <span className="right-arw">
+                  <MdKeyboardArrowRight />{" "}
+                </span>
+              </span>
+            </div>
+            {RecentTrx.slice(0, 2)?.map((t, i) => {
+              return (
+                <table className="mapped-tbl" key={i}>
+                  <tbody>
+                    <tr
+                      className=""
+                      style={{ background: i % 2 === 0 ? "#fafafa" : "#fff" }}
+                    >
+                      <td className="date-sec">
+                        <div>{t.Date}</div>
+                        <div> {t.Month}</div>
+                      </td>
+                      <td className="t-name">{t.Name}</td>
+                      <td className="t-amount" style={{ width: "20%" }}>
+                        <div>{t.Math}</div>
+                        <div> &#8358;{t.Amount}</div>
+                      </td>
+                      <td className="t-dnum" style={{ width: "20%" }}>
+                        <div>{t.Id}</div>
+                        <div className="d-idfort">{t.No}</div>
+                      </td>
+                      <td className="d-outcome">
+                        {t.Outcome ? (
+                          <button style={{ background: "green" }}>
+                            Successful
+                          </button>
+                        ) : (
+                          <button style={{ background: "rgb(240, 70, 70)" }}>
+                            Failed
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              );
+            })}
+          </section>
+        </div> */}
       </section>
 
       <Vendor />

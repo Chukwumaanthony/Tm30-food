@@ -1,22 +1,21 @@
 import "./App.css";
-import Login from "./Login/login";
+import Login from "./pages/Login";
 import Signuo from "./signup pg/signuo";
-import Otp from "./Otp/Otpcode";
+import Otp from "./pages/Otpcode";
 import Verify from "./Veriftotp/verify";
-import Forget from "./Forget/forget";
+import Forget from "./pages/Forget";
 import Confirm from "./reset/Confirm";
-import OnBoard from "./Onboard/Onboard";
-import Dash from "./Dashboard/dashboard";
-import Service from "./Servicess/servIces";
-import Settings from "./Settings/Settin";
-import Profile from "./Profile/Profile";
+import OnBoard from "./pages/Onboard";
+import Dash from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Checkoutspg from "./Checkout/Checkoutspg";
+// import Settings from "./Settings/Settin";
+// import Checkoutspg from "./components/Checkoutspg";
+// import WithCard from "./components/WithCard";
+// import Corosel from "./Caruosel/Carosel";
 import { Toaster } from "react-hot-toast";
-import WithCard from "./Paywithcard/WithCard";
-import Corosel from "./Caruosel/Carosel";
 import Test from "./test";
-import Editt from "./Profile/editprofile";
+import Editt from "./components/Editprofile";
 import Reset from "./reset/Reset";
 import Ricee from "./Rice/Riced";
 
@@ -29,20 +28,19 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signuo />} />
-          <Route path="/Otp" element={<Otp />} />
+          <Route path="/otp" element={<Otp />} />
           <Route path="/verifyy" element={<Verify />} />
           <Route path="/forget" element={<Forget />} />
           <Route path="/reset" element={<Reset />} />
-          <Route path="/Confirm" element={<Confirm />} />
-          <Route path="/Onboard" element={<OnBoard />} />
+          <Route path="/confirm" element={<Confirm />} />
+          <Route path="/onboard" element={<OnBoard />} />
           <Route path="/dash" element={<Dash />} />
-          <Route path="/services" element={<Service />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="/checkout" element={<Checkoutspg />} />
-          <Route path="/Withcard" element={<WithCard />} />
-          <Route path="/logout" element={<Corosel />} />
-          <Route path="/Rice" element={<Ricee />} />
+          <Route path="/profile" element={<Profile />} />
+          {/* <Route path="/settings" element={<Settings />} /> */}
+          {/* <Route path="/checkout" element={<Checkoutspg />} /> */}
+          {/* <Route path="/withcard" element={<WithCard />} /> */}
+          {/* <Route path="/logout" element={<Corosel />} /> */}
+          <Route path="/rice" element={<Ricee />} />
           <Route path="/prof" element={<Editt />} />
         </Routes>
       </Router>
