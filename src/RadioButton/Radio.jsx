@@ -108,17 +108,19 @@ function RadioButton() {
                                   width: "100%",
                                 }}
                               >
-                                <input
-                                  type="checkbox"
-                                  name={supplementName}
-                                  onChange={(e) => {
-                                    handleSelectChange(e);
-                                    console.log(i);
-                                  }}
-                                />
-                                <p style={{ marginBlock: "5px" }}>
-                                  {supplementName}
-                                </p>
+                                <div className="supplementname">
+                                  <input
+                                    type="checkbox"
+                                    name={supplementName}
+                                    onChange={(e) => {
+                                      handleSelectChange(e);
+                                      console.log(i);
+                                    }}
+                                  />
+                                  <p style={{ marginBlock: "5px" }}>
+                                    {supplementName}
+                                  </p>
+                                </div>
                                 {supplementCategory === "PROTEINS" && (
                                   <div
                                     style={{
@@ -151,9 +153,7 @@ function RadioButton() {
         </div>
         <div style={{ width: "45%" }}>
           <span>ADD DRINK?</span>
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-          >
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {data.map(
               ({ supplementCategory, supplementName, supplementPrice }, i) => {
                 return (
@@ -178,7 +178,7 @@ function RadioButton() {
                               style={{ display: "flex", alignItems: "center" }}
                             >
                               <div>
-                                <input type="radio" />
+                                <input type="checkbox" />
                               </div>
                               <p style={{ marginBlock: "5px" }}>
                                 {supplementName}
