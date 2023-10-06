@@ -2,21 +2,35 @@ import React, { useEffect, useState } from "react";
 import "./radio.css";
 import Counter from "../Counters/counter";
 import axios from "axios";
+import ProteinSides from "../components/ProteinSides";
 
-function RadioButton() {
+function RadioButton({
+  supplementItems,
+  setsupplementItems,
+  supplementCount,
+  setsupplementCount,
+  priceArr,
+  setpriceArr,
+}) {
   const [loading, setLoading] = useState([]);
-  const { selectedSide, setSelectedSide } = useState("");
   const [data, setData] = useState([]);
   const vendorId = localStorage.getItem("vendorId");
   const getToken = localStorage.getItem("token");
+  const { selectedSide, setSelectedSide } = useState("");
 
-  console.log(vendorId);
+  const proteinSupplements = data?.filter(
+    (supplement) => supplement.supplementCategory === "PROTEINS"
+  );
+  const drinkSupplements = data?.filter(
+    (supplement) => supplement.supplementCategory === "DRINKS"
+  );
 
   const config = {
     headers: {
       Authorization: `Bearer ${getToken}`,
     },
   };
+  let selectedItemsArray = [];
 
   useEffect(() => {
     setLoading(true);
@@ -26,22 +40,23 @@ function RadioButton() {
         config
       )
       .then((response) => {
-        console.log(response?.data);
         setData(response.data.data);
         setLoading(false);
       });
   }, []);
 
-  let selectedItemsArray = [];
   const handleSelectChange = (e) => {
     const { checked, value, name } = e.target;
-    // setSelectedSide(name);
     console.log(checked, name);
     if (checked) {
-      selectedItemsArray.push(name);
+      setsupplementItems((prev) => {
+        return [...prev, { supplementId: name, quantity: supplementCount }];
+      });
     } else {
-      selectedItemsArray = selectedItemsArray.filter((item) => {
-        return item !== name;
+      setsupplementItems((prev) => {
+        return prev.filter((item) => {
+          return item.supplementId !== name;
+        });
       });
     }
     console.log(selectedItemsArray);
@@ -73,79 +88,26 @@ function RadioButton() {
         >
           <span>ADD PROTIEN TO MEAL</span>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            {data.map(
-              ({ supplementCategory, supplementName, supplementPrice }, i) => {
+            {proteinSupplements?.map(
+              (
+                {
+                  supplementCategory,
+                  supplementName,
+                  supplementPrice,
+                  supplementId,
+                },
+                i
+              ) => {
                 return (
-                  <div style={{ display: "flex" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        // background: "red",
-                        width: "100%",
-                      }}
-                    >
-                      <section style={{ width: "100%" }}>
-                        {supplementCategory === "PROTEINS" && (
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                width: "100%",
-                              }}
-                            >
-                              <div
-                                style={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "space-between",
-                                  width: "100%",
-                                }}
-                              >
-                                <div className="supplementname">
-                                  <input
-                                    type="checkbox"
-                                    name={supplementName}
-                                    onChange={(e) => {
-                                      handleSelectChange(e);
-                                      console.log(i);
-                                    }}
-                                  />
-                                  <p style={{ marginBlock: "5px" }}>
-                                    {supplementName}
-                                  </p>
-                                </div>
-                                {supplementCategory === "PROTEINS" && (
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      fontSize: "13px",
-                                      alignItems: "center",
-                                      gap: "10px",
-                                    }}
-                                  >
-                                    {/* {supplementPrice} */}
-
-                                    <Counter
-                                      supplementPrice={supplementPrice}
-                                      selectedItemsArray={selectedItemsArray}
-                                      supplementName={supplementName}
-                                    />
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                      </section>
-                    </div>
-                  </div>
+                  <ProteinSides
+                    supplementName={supplementName}
+                    supplementId={supplementId}
+                    supplementPrice={supplementPrice}
+                    supplementItems={supplementItems}
+                    setsupplementItems={setsupplementItems}
+                    priceArr={priceArr}
+                    setpriceArr={setpriceArr}
+                  />
                 );
               }
             )}
@@ -154,59 +116,26 @@ function RadioButton() {
         <div style={{ width: "45%" }}>
           <span>ADD DRINK?</span>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            {data.map(
-              ({ supplementCategory, supplementName, supplementPrice }, i) => {
+            {drinkSupplements?.map(
+              (
+                {
+                  supplementCategory,
+                  supplementName,
+                  supplementPrice,
+                  supplementId,
+                },
+                i
+              ) => {
                 return (
-                  <div style={{ display: "flex" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        // background: "red",
-                        width: "100%",
-                      }}
-                    >
-                      <section style={{ width: "100%" }}>
-                        {supplementCategory === "DRINKS" && (
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <div
-                              style={{ display: "flex", alignItems: "center" }}
-                            >
-                              <div>
-                                <input type="checkbox" />
-                              </div>
-                              <p style={{ marginBlock: "5px" }}>
-                                {supplementName}
-                              </p>{" "}
-                            </div>
-                            <div>
-                              {supplementCategory === "DRINKS" && (
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    fontSize: "13px",
-                                    alignItems: "center",
-                                    // gap: "10px",
-                                  }}
-                                >
-                                  <Counter
-                                    selectedItemsArray={selectedItemsArray}
-                                    supplementName={supplementName}
-                                    supplementPrice={supplementPrice}
-                                  />
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        )}
-                      </section>
-                    </div>
-                  </div>
+                  <ProteinSides
+                    supplementName={supplementName}
+                    supplementId={supplementId}
+                    supplementPrice={supplementPrice}
+                    supplementItems={supplementItems}
+                    setsupplementItems={setsupplementItems}
+                    priceArr={priceArr}
+                    setpriceArr={setpriceArr}
+                  />
                 );
               }
             )}

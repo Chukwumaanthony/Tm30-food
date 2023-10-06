@@ -86,7 +86,7 @@ const EditProfile = () => {
                   className="picss"
                   src={data.profilePictureUrl}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />{" "}
               </section>
             </section>
@@ -98,7 +98,7 @@ const EditProfile = () => {
                   className="picss"
                   src={data.profilePictureUrl}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />{" "}
               </span>
               <span className="changeprofiles">

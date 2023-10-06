@@ -35,7 +35,7 @@ const Profile = () => {
                   className="picss"
                   src={data.profilePictureUrl}
                   alt=""
-                  srcset=""
+                  srcsSt=""
                 />{" "}
               </section>
             </section>
@@ -47,7 +47,7 @@ const Profile = () => {
                   className="picss"
                   src={data.profilePictureUrl}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />{" "}
               </span>
               <span className="changeprofiles">

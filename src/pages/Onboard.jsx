@@ -77,7 +77,7 @@ const Onboard = () => {
                   className="picss"
                   src={data.profilePictureUrl}
                   alt=""
-                  srcset=""
+                  srcSet=""
                 />
               </div>
               <div className="nav-three">

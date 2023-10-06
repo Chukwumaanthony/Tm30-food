@@ -32,7 +32,7 @@ const Navbar = () => {
     <div className="Onboard">
       {/* NavBar  */}
 
-      <navbar className="navbar">
+      <nav className="navbar">
         <div>
           <img src={Tmlogo} alt="" style={{ width: "80px" }} />
         </div>
@@ -100,7 +100,7 @@ const Navbar = () => {
                 className="picss"
                 src={data.profilePictureUrl}
                 alt=""
-                srcset=""
+                srcSet=""
               />
             </div>
             <section>
@@ -172,7 +172,7 @@ const Navbar = () => {
             </section>
           </section>
         </div>
-      </navbar>
+      </nav>
       {/* End of NavBar */}
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { VendorContext } from "../ContextApi/VendorContextProvider";
 import "./food.css";
 import Ricee from "../Rice/Riced";
@@ -9,10 +9,14 @@ const Foods = () => {
   const [food, setFood] = useState();
   const [itemMenus, setItemMenus] = useState();
 
-  // console.log(food);
-  // console.log(itemMenus);
+  useEffect(() => {
+    if (data && data?.itemCategories?.length > 0) {
+      setCurrentTab(data?.itemCategories[0]?.categoryName);
+    }
+  }, [data]);
 
   const handleClick = (e, item) => {
+    console.log(e?.target?.dataset?.foodname);
     setCurrentTab(e?.target?.dataset?.foodname);
     setItemMenus(item);
 
