@@ -10,20 +10,23 @@ const ProteinSides = ({
   setpriceArr,
 }) => {
   const [count, setCount] = useState(1);
+  const [price, setPrice] = useState();
   const [inputChecked, setinputChecked] = useState(false);
 
   const handleSelectChange = (e) => {
     const { checked, value, name } = e.target;
     if (checked) {
       setinputChecked(true);
+      setPrice(value);
       setsupplementItems((prev) => {
-        return [...prev, { supplementId: name, quantity: count }];
+        return [...prev, { supplementId: name, quantity: count, price: value }];
       });
-      setpriceArr((prev) => {
-        return [...prev, supplementId];
-      });
+      // setpriceArr((prev) => {
+      //   return [...prev, supplementId];
+      // });
     } else {
       setinputChecked(false);
+      setPrice();
       setsupplementItems((prev) => {
         return prev.filter((item) => {
           return item.supplementId !== name;
@@ -76,7 +79,7 @@ const ProteinSides = ({
       setsupplementItems((prev) => {
         const updatedItems = prev.map((item) => {
           if (item.supplementId === supplementId) {
-            return { ...item, quantity: count };
+            return { ...item, quantity: count, price: price };
           }
           return item;
         });

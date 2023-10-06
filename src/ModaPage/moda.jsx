@@ -10,12 +10,14 @@ const Moda = ({ data }) => {
   const [selectedItems, setselectedItems] = useState({});
   const [supplementCount, setsupplementCount] = useState(1);
   const [cartItems, setcartItems] = useState([
-    { itemId: `${data?.itemId}`, quantity: count },
+    { itemId: `${data?.itemId}`, quantity: count, price: data?.itemPrice },
   ]);
   const [supplementItems, setsupplementItems] = useState([]);
   const [priceArr, setpriceArr] = useState([data?.itemPrice]);
+  const [totalItemPrice, setTotalItemPrice] = useState();
+  const [totalSuppPrice, settotalSuppPrice] = useState();
 
-  console.log(data);
+  // console.log(data);
   const increment = () => {
     setCount((count) => count + 1);
   };
@@ -32,9 +34,39 @@ const Moda = ({ data }) => {
   };
   useEffect(() => {
     setcartItems(() => {
-      return [{ itemId: `${data?.itemId}`, quantity: count }];
+      return [
+        { itemId: `${data?.itemId}`, quantity: count, price: data?.itemPrice },
+      ];
     });
   }, [count]);
+
+  let suppArr = [];
+  const totalSupplementPriceConverter = () => {
+    suppArr.push(
+      supplementItems.map((item) => {
+        return item.quantity * Number(item.price);
+      })
+    );
+
+    console.log(suppArr);
+  };
+
+  let itemArr = [];
+  const totalItemPriceConverter = () => {
+    itemArr.push(
+      cartItems.map((item) => {
+        return item.quantity * Number(item.price);
+      })
+    );
+    setTotalItemPrice(itemArr[0]);
+
+    console.log(itemArr);
+  };
+
+  useEffect(() => {
+    totalSupplementPriceConverter();
+    totalItemPriceConverter();
+  }, [supplementItems, cartItems]);
   return (
     <div>
       <div className="counter-img">
