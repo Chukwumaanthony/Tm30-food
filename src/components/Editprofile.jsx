@@ -64,42 +64,44 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="nnna">
-      <Navbar />
-      <Div className="prod-padd">
-        <span className="backicon">
-          <FaLongArrowAltLeft />
-          Back
-        </span>
-        <div className="back-img">
-          <section className="Papawelcome">
-            <section className="Welcomepeter">
-              <span className="hipeter">Hi, {data.firstName}</span>
-              <span className="welcomepeter">Welcome to your profile!</span>
+    <div className="ni">
+      <Sidebar />
+      <div className="nnna">
+        <Navbar />
+        <Div className="prod-padd">
+          <span className="backicon">
+            <FaLongArrowAltLeft />
+            Back
+          </span>
+          <div className="back-img">
+            <section className="Papawelcome">
+              <section className="Welcomepeter">
+                <span className="hipeter">Hi, {data.firstName}</span>
+                <span className="welcomepeter">Welcome to your profile!</span>
+              </section>
+              <section className="ade-image">
+                {data.lastName} {data.firstName}
+                <img
+                  className="picss"
+                  src={data.profilePictureUrl}
+                  alt=""
+                  srcset=""
+                />{" "}
+              </section>
             </section>
-            <section className="ade-image">
-              {data.lastName} {data.firstName}
-              <img
-                className="picss"
-                src={data.profilePictureUrl}
-                alt=""
-                srcset=""
-              />{" "}
-            </section>
-          </section>
-        </div>
-        <form encType="multipart/form-data" className="dpicssect">
-          <div className="pics-change-delete">
-            <span className="image-profine">
-              <img
-                className="picss"
-                src={data.profilePictureUrl}
-                alt=""
-                srcset=""
-              />{" "}
-            </span>
-            <span className="changeprofiles">
-              {/* <div className="prof-pics">
+          </div>
+          <form encType="multipart/form-data" className="dpicssect">
+            <div className="pics-change-delete">
+              <span className="image-profine">
+                <img
+                  className="picss"
+                  src={data.profilePictureUrl}
+                  alt=""
+                  srcset=""
+                />{" "}
+              </span>
+              <span className="changeprofiles">
+                {/* <div className="prof-pics">
                   <img style={{ width: "18px" }} src={Changeprofile} alt="" />
                   Change profile pictures
                 </div> */}

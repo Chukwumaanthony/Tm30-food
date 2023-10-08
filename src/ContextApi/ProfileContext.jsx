@@ -16,13 +16,8 @@ const ProfileContextProvider = ({ children }) => {
     axios
       .get("http://89.38.135.41:7654/api/users/profile", config)
       .then((response) => {
-        console.log(response);
         setData(response.data.data);
-        // console.log(response.data);
       });
-    // .catch(function (error) {
-    //   console.log("Error:", error);
-    // });
   }, []);
   return (
     <ProfileContext.Provider value={{ data: data }}>

@@ -24,7 +24,7 @@ const VendorContextProvider = ({ children }) => {
         setdata(response.data.data);
         setLoading(false);
       });
-  }, []);
+  }, [window.location.pathname]);
   return (
     <VendorContext.Provider value={{ data: data, loading: loading }}>
       {children}

@@ -7,6 +7,10 @@
   font-weight: 500;
   padding-block: 20px;
 }
+.supplementname {
+  display: flex;
+  gap: 10px;
+}
 /* {data.map(({ supplementCategory, supplementName }, i) => {
   return (
     <div style={{ display: "flex" }}>
