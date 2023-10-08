@@ -14,34 +14,6 @@ import "./onboard.css";
 import { ProfileContext } from "../ContextApi/ProfileContext";
 
 const Onboard = () => {
-  // const RecentTrx = [
-  //   {
-  //     Date: "7",
-  //     Month: "Aug",
-  //     Name: "Fund Deposit",
-  //     Math: "+",
-  //     Amount: "6,500",
-  //     Id: "ID",
-  //     No: "283947",
-  //     Outcome: true,
-  //   },
-  //   {
-  //     Date: "7",
-  //     Month: "Aug",
-  //     Name: "Food Purchased",
-  //     Math: "-",
-  //     Amount: "2,200",
-  //     Id: "ID",
-  //     No: "283947",
-  //     Outcome: false,
-  //   },
-  // ];
-
-  // const [loading, setLoading] = useState(true);
-
-  // const Click = () => {
-  //   setLoading(!loading);
-  // };
   const { data } = useContext(ProfileContext);
 
   console.log(data);

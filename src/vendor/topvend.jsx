@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const Topvend = () => {
   const [vendorlist, setVendorlist] = useState([]);
@@ -33,18 +32,14 @@ const Topvend = () => {
             <section
               onClick={() => {
                 localStorage.setItem("vendorId", a.id);
+                window.location = "/dash";
               }}
               className="mamajsec"
             >
-              <Link
-                style={{ display: "flex", flexDirection: "column" }}
-                to="/dash"
-              >
-                <span>
-                  <img className="mamaj" src={a.vendorImageUrl} alt="" />
-                </span>
-                <span className="Mamajtext">{a.businessName}</span>
-              </Link>
+              <span>
+                <img className="mamaj" src={a.vendorImageUrl} alt="" />
+              </span>
+              <span className="Mamajtext">{a.businessName}</span>
             </section>
           );
         })}

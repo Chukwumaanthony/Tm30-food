@@ -151,9 +151,7 @@ function RadioButton() {
         </div>
         <div style={{ width: "45%" }}>
           <span>ADD DRINK?</span>
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-          >
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {data.map(
               ({ supplementCategory, supplementName, supplementPrice }, i) => {
                 return (

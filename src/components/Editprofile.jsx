@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import Sidebar from "../SidebarDash/Sidebar";
 import Navbar from "./Navbar";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import Deleteprofile from "../assets/images/Vector.png";
@@ -65,59 +64,65 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="ni">
-      <Sidebar />
-      <div className="nnna">
-        <Navbar />
-        <Div className="prod-padd">
-          <span className="backicon">
-            <FaLongArrowAltLeft />
-            Back
-          </span>
-          <div className="back-img">
-            <section className="Papawelcome">
-              <section className="Welcomepeter">
-                <span className="hipeter">Hi, {data.firstName}</span>
-                <span className="welcomepeter">Welcome to your profile!</span>
-              </section>
-              <section className="ade-image">
-                {data.lastName} {data.firstName}
-                <img
-                  className="picss"
-                  src={data.profilePictureUrl}
-                  alt=""
-                  srcset=""
-                />{" "}
-              </section>
+    <div className="nnna">
+      <Navbar />
+      <Div className="prod-padd">
+        <span className="backicon">
+          <FaLongArrowAltLeft />
+          Back
+        </span>
+        <div className="back-img">
+          <section className="Papawelcome">
+            <section className="Welcomepeter">
+              <span className="hipeter">Hi, {data.firstName}</span>
+              <span className="welcomepeter">Welcome to your profile!</span>
             </section>
-          </div>
-          <form encType="multipart/form-data" className="dpicssect">
-            <div className="pics-change-delete">
-              <span className="image-profine">
-                <img
-                  className="picss"
-                  src={data.profilePictureUrl}
-                  alt=""
-                  srcset=""
-                />{" "}
-              </span>
-              <span className="changeprofiles">
-                {/* <div className="prof-pics">
+            <section className="ade-image">
+              {data.lastName} {data.firstName}
+              <img
+                className="picss"
+                src={data.profilePictureUrl}
+                alt=""
+                srcset=""
+              />{" "}
+            </section>
+          </section>
+        </div>
+        <form encType="multipart/form-data" className="dpicssect">
+          <div className="pics-change-delete">
+            <span className="image-profine">
+              <img
+                className="picss"
+                src={data.profilePictureUrl}
+                alt=""
+                srcset=""
+              />{" "}
+            </span>
+            <span className="changeprofiles">
+              {/* <div className="prof-pics">
                   <img style={{ width: "18px" }} src={Changeprofile} alt="" />
                   Change profile pictures
                 </div> */}
-                <input
-                  className="file-change"
-                  onChange={handfilechange}
-                  type="file"
-                />
-                <div className="prof-pics">
-                  <img style={{ width: "20px" }} src={Deleteprofile} alt="" />
-                  Delete profile picture
-                </div>
-              </span>
-            </div>
-            <div style={{ display: "flex", width: "100%" }}>
+              <input
+                className="file-change"
+                onChange={handfilechange}
+                type="file"
+              />
+              <div className="prof-pics">
+                <img style={{ width: "20px" }} src={Deleteprofile} alt="" />
+                Delete profile picture
+              </div>
+            </span>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              border: "1px solid #ececec",
+            }}
+          >
+            <div className="edits">
               <EditableInput
                 user={firstName}
                 setUser={setFirstName}
@@ -132,7 +137,8 @@ const EditProfile = () => {
                 setIsDisabled={setdisablelname}
                 label={"Last Name"}
               />
-
+            </div>
+            <div className="edits">
               <EditableInput
                 user={phone}
                 setUser={setPhone}
@@ -146,17 +152,17 @@ const EditProfile = () => {
                 setUser={setemail}
                 isDisabled={disableemail}
                 setIsDisabled={setdisableemail}
-                label={"email"}
+                label={"Email"}
               />
             </div>
-            <div className="prof-butdiv">
-              <button onClick={handleSubmit} className="edit-prof">
-                Save Changes
-              </button>
-            </div>
-          </form>
-        </Div>
-      </div>
+          </div>
+          <div className="prof-butdiv">
+            <button onClick={handleSubmit} className="edit-prof">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </Div>
     </div>
   );
 };

@@ -44,21 +44,16 @@ const Foods = () => {
           );
         })}
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          overflowX: "hidden",
-          overflowY: "scroll",
-        }}
-      >
-        {itemMenus?.map((d) => {
-          return (
-            <div>
-              <Ricee key={d?.catergoryId} item={d} />
-            </div>
-          );
-        })}
+      <div className="itemMenus">
+        <section className="ditems">
+          {itemMenus?.map((d) => {
+            return (
+              <div>
+                <Ricee key={d?.catergoryId} item={d} />
+              </div>
+            );
+          })}
+        </section>
       </div>
     </div>
   );

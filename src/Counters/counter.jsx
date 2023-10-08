@@ -13,9 +13,6 @@ function Counter({ supplementPrice, selectedItemsArray, supplementName }) {
 
   const decrement = () => {
     if (count > 1) setCount((count) => count - 1);
-    // if(supplementName){
-
-    // }
 
     const index = selectedItemsArray.indexOf(supplementName);
     if (index !== -1) {

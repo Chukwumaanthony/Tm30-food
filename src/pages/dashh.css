@@ -1,16 +1,10 @@
 .ni {
   display: flex;
 }
-.back-img {
-  background-image: url(../assets/images/backimg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 20vh;
-}
+
 .select-parent {
-  padding: 10px 55px;
+  padding: 20px 55px;
   display: flex;
-  height: 100vh;
   background: #ededed;
   justify-content: space-between;
 }
