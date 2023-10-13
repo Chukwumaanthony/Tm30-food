@@ -11,54 +11,53 @@ const Profile = () => {
   const { data } = useContext(ProfileContext);
 
   return (
-    <div className="ni">
-      <Sidebar />
-      <div className="nnna">
-        <Navbar />
-        <div className="prod-padd">
-          <span className="backicon">
-            <FaLongArrowAltLeft />
-            Back
-          </span>
-          <div className="back-img">
-            <section className="Papawelcome">
-              <section className="Welcomepeter">
-                <span className="hipeter">Hi, {data.firstName}</span>
-                <span className="welcomepeter">Welcome to your profile!</span>
-              </section>
-              <section className="ade-image">
-                {data.lastName} {data.firstName}
-                <img
-                  className="picss"
-                  src={data.profilePictureUrl}
-                  alt=""
-                  srcset=""
-                />{" "}
-              </section>
+    <div className="nnna">
+      <Navbar />
+      <div className="prod-padd">
+        <span className="backicon">
+          <FaLongArrowAltLeft />
+          Back
+        </span>
+        <div className="back-img">
+          <section className="Papawelcome">
+            <section className="Welcomepeter">
+              <span className="hipeter">Hi, {data.firstName}</span>
+              <span className="welcomepeter">Welcome to your profile!</span>
             </section>
+            <section className="ade-image">
+              {data.lastName} {data.firstName}
+              <img
+                className="picss"
+                src={data.profilePictureUrl}
+                alt=""
+                srcset=""
+              />{" "}
+            </section>
+          </section>
+        </div>
+        <section className="dpicssect">
+          <div className="pics-change-delete">
+            <span className="image-profine">
+              <img
+                className="picss"
+                src={data.profilePictureUrl}
+                alt=""
+                srcset=""
+              />{" "}
+            </span>
+            <span className="changeprofiles">
+              <div className="prof-pics">
+                <img style={{ width: "18px" }} src={Changeprofile} alt="" />
+                Change profile picture
+              </div>
+              <div className="prof-pics">
+                <img style={{ width: "20px" }} src={Deleteprofile} alt="" />
+                Delete profile picture
+              </div>
+            </span>
           </div>
-          <section className="dpicssect">
-            <div className="pics-change-delete">
-              <span className="image-profine">
-                <img
-                  className="picss"
-                  src={data.profilePictureUrl}
-                  alt=""
-                  srcset=""
-                />{" "}
-              </span>
-              <span className="changeprofiles">
-                <div className="prof-pics">
-                  <img style={{ width: "18px" }} src={Changeprofile} alt="" />
-                  Change profile picture
-                </div>
-                <div className="prof-pics">
-                  <img style={{ width: "20px" }} src={Deleteprofile} alt="" />
-                  Delete profile picture
-                </div>
-              </span>
-            </div>
-            <div className="picdelsel">
+          <div className="picdelsel">
+            <div className="firstandlast">
               <span
                 style={{
                   borderBottom: "1px solid #ececec",
