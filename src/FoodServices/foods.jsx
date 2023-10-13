@@ -8,15 +8,16 @@ const Foods = () => {
   const [currentTab, setCurrentTab] = useState("");
   const [food, setFood] = useState();
   const [itemMenus, setItemMenus] = useState();
+  // console.log(data);
 
   useEffect(() => {
     if (data && data?.itemCategories?.length > 0) {
       setCurrentTab(data?.itemCategories[0]?.categoryName);
+      setItemMenus(data?.itemCategories[0]?.itemMenus);
     }
   }, [data]);
 
   const handleClick = (e, item) => {
-    console.log(e?.target?.dataset?.foodname);
     setCurrentTab(e?.target?.dataset?.foodname);
     setItemMenus(item);
 
@@ -26,10 +27,13 @@ const Foods = () => {
     }
   };
 
+  // console.log(currentTab);
+
   return (
     <div className="Declan-Rice">
       <div className="breakss">
         {data?.itemCategories?.map((m) => {
+          // console.log(m.categoryName);
           return (
             <div>
               <div className="brspo">
@@ -48,17 +52,10 @@ const Foods = () => {
           );
         })}
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          overflowX: "hidden",
-          overflowY: "scroll",
-        }}
-      >
+      <div className="itemenu-map">
         {itemMenus?.map((d) => {
           return (
-            <div>
+            <div style={{ width: "50%" }}>
               <Ricee key={d?.catergoryId} item={d} />
             </div>
           );

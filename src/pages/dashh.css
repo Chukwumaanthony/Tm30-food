@@ -1,16 +1,17 @@
 .ni {
   display: flex;
 }
-.back-img {
+/* .back-img {
   background-image: url(../assets/images/backimg.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 20vh;
-}
+} */
 .select-parent {
-  padding: 10px 55px;
+  padding: 20px 55px;
+  padding-bottom: 4rem;
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
   background: #ededed;
   justify-content: space-between;
 }
@@ -158,7 +159,39 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
+  justify-content: center;
+  height: 35rem;
+}
+.serv-foods {
+  width: 100%;
+  gap: 0.5rem;
+  display: flex;
+  height: 35rem;
+  padding: 1rem;
+}
+.serv-foods img {
+  width: 5.5rem;
+}
+.Item-name {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  width: 60%;
+  height: fit-content;
+}
+.Item-name p {
+  margin: 0;
+  padding: 0;
+  /* width: 100px; */
+}
+.item-map {
+  width: 26rem;
+  height: fit-content;
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+  border: 1px solid #7777;
+  border-radius: 0.3rem;
 }
 .NO-ITEMS {
   font-style: normal;
@@ -228,5 +261,6 @@
   align-items: center;
   justify-content: center;
 }
+
 @media screen and (max-width: 40em) {
 }

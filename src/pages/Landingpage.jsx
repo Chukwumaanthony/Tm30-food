@@ -1,51 +1,19 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Onboardimg from "../image/tmonboard.svg";
 import Vendor from "../vendor/vendor";
-// import { BiSearch } from "react-icons/bi";
 import { MdNotificationsActive } from "react-icons/md";
-// import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiListIndefinite } from "react-icons/ri";
-// import { BsExclamationCircleFill } from "react-icons/bs";
-// import { AiFillEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import Wave from "../image/wave.png";
+import Onboardimg from "../assets/images/tmonboard.svg";
+import Wave from "../assets/images/wave.png";
+import Fooddesk from "../assets/images/onbordimg.png";
 import HotDeals from "../components/Hotdeals";
 import Collab from "../Collaborate/colab";
 import Table from "../Onboardtable/table";
-import Fooddesk from "../image/onbordimg.png";
 import Media from "../components/Mediainput";
 import "./onboard.css";
 import { ProfileContext } from "../ContextApi/ProfileContext";
 
 const Onboard = () => {
-  // const RecentTrx = [
-  //   {
-  //     Date: "7",
-  //     Month: "Aug",
-  //     Name: "Fund Deposit",
-  //     Math: "+",
-  //     Amount: "6,500",
-  //     Id: "ID",
-  //     No: "283947",
-  //     Outcome: true,
-  //   },
-  //   {
-  //     Date: "7",
-  //     Month: "Aug",
-  //     Name: "Food Purchased",
-  //     Math: "-",
-  //     Amount: "2,200",
-  //     Id: "ID",
-  //     No: "283947",
-  //     Outcome: false,
-  //   },
-  // ];
-
-  // const [loading, setLoading] = useState(true);
-
-  // const Click = () => {
-  //   setLoading(!loading);
-  // };
   const { data } = useContext(ProfileContext);
 
   console.log(data);

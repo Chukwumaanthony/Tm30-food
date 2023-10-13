@@ -51,8 +51,10 @@ const Login = () => {
       setMessage(result.data.message);
       console.log(result.status);
       console.log(message);
+      setLoading(false);
     } catch (error) {
       console.log("error", error);
+      setLoading(false);
     }
   };
 

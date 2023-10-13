@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Topvend = () => {
   const [vendorlist, setVendorlist] = useState([]);
@@ -13,7 +14,7 @@ const Topvend = () => {
     },
   };
 
-  const Url = "http://89.38.135.41:7654/api/admin/all-vendors";
+  const Url = "http://89.38.135.41:7654/api/users/company-vendors";
   useEffect(() => {
     axios
       .get(Url, config)
@@ -25,7 +26,7 @@ const Topvend = () => {
       });
   }, []);
   return (
-    <div>
+    <Container>
       <div className="mamajline-top">
         {vendorlist.slice(0, 4)?.map((a) => {
           console.log(a);
@@ -36,18 +37,24 @@ const Topvend = () => {
               }}
               className="mamajsec"
             >
-              <Link to="/dash">
+              <Link className="the-dash" to="/dash">
                 <span>
                   <img className="mamaj" src={a.vendorImageUrl} alt="" />
                 </span>
-                <span className="Mamajtext">{a.businessName}</span>
+                <span className="Mamajtext">{a.vendorBusinessName}</span>
               </Link>
             </section>
           );
         })}
       </div>
-    </div>
+    </Container>
   );
 };
 
 export default Topvend;
+const Container = styled.div`
+  .the-dash {
+    display: flex;
+    flex-direction: column;
+  }
+`;

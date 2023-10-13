@@ -44,7 +44,7 @@ const Ricee = ({ item }) => {
                   </button>
                 </section>
 
-                <MODA data={item} />
+                <MODA data={item} setShow={setShow} />
               </div>
             </section>
           </Modal>

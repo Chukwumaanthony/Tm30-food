@@ -24,6 +24,7 @@
 }
 .Yam-Conts {
   display: flex;
+  width: 22rem;
   align-items: last baseline;
   gap: 50px;
   border: 1px solid #ececec;

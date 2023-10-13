@@ -6,8 +6,7 @@ const ProteinSides = ({
   supplementItems,
   setsupplementItems,
   supplementId,
-  priceArr,
-  setpriceArr,
+  clearAllOrder,
 }) => {
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState();
@@ -21,9 +20,6 @@ const ProteinSides = ({
       setsupplementItems((prev) => {
         return [...prev, { supplementId: name, quantity: count, price: value }];
       });
-      // setpriceArr((prev) => {
-      //   return [...prev, supplementId];
-      // });
     } else {
       setinputChecked(false);
       setPrice();
@@ -32,39 +28,11 @@ const ProteinSides = ({
           return item.supplementId !== name;
         });
       });
-      // setpriceArr((prev) => {
-      //   return prev.filter((item) => {
-      //     return item !==
-      //   })
-      // })
     }
-    console.log(supplementItems);
   };
-
-  // const increment = () => {
-  //   setCount((prevCount) => prevCount + 1);
-  //   alert(supplementId);
-  //   setsupplementItems((prev) => {
-  //     return prev.map((items) => {
-  //       if (supplementId === items.id) {
-  //         return { ...items, quantity: count };
-  //       }
-  //     });
-  //   });
-  // };
-  // const decrement = () => {
-  //   if (count > 1) {
-  //     setCount((prevCount) => prevCount - 1);
-  //     setsupplementItems((prevSelectedItems) =>
-  //       prevSelectedItems.filter((item) => item !== supplementId)
-  //     );
-  //   }
-  // };
 
   const increment = () => {
     setCount((prevCount) => prevCount + 1);
-    console.log(supplementPrice);
-    // setpriceArr(())
   };
 
   const decrement = () => {
@@ -74,7 +42,6 @@ const ProteinSides = ({
   };
 
   useEffect(() => {
-    // Whenever the count changes, update the supplementItems array
     if (inputChecked) {
       setsupplementItems((prev) => {
         const updatedItems = prev.map((item) => {
@@ -87,11 +54,7 @@ const ProteinSides = ({
       });
     }
   }, [count, inputChecked, supplementId, setsupplementItems]);
-  // useEffect(() => {
-  //   setsupplementItems(() => {
-  //     return [{ supplementId: `${supplementId}`, quantity: count }];
-  //   });
-  // }, [count]);
+
   return (
     <div
       className="protein-sides"
@@ -99,13 +62,13 @@ const ProteinSides = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        width: "100%",
       }}
     >
       <input
         type="checkbox"
         name={supplementId}
         value={supplementPrice}
-        // checked={supplementItems.includes(supplementId)}
         onChange={handleSelectChange}
       />
       <p>{supplementName}</p>
