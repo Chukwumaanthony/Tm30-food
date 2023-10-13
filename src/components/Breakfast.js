@@ -15,7 +15,9 @@ const Breakft = () => {
       <div className="father-two">
         <div className="exceptional">
           <section className="fathertwo">
-            <span className="mamj">{data.businessName}</span>
+            <span businessName={data.businessName} className="mamj">
+              {data.businessName}
+            </span>
             <span className="xeptional">Exceptional</span>
             <section className="taste-line">
               <span className="taste">Taste</span>

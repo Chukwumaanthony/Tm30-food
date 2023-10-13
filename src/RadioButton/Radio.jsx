@@ -11,6 +11,7 @@ function RadioButton({
   setsupplementCount,
   priceArr,
   setpriceArr,
+  clearAllOrder,
 }) {
   const [loading, setLoading] = useState([]);
   const [data, setData] = useState([]);
@@ -81,7 +82,7 @@ function RadioButton({
       >
         <div
           style={{
-            width: "45%",
+            width: "50%",
             borderRight: "1px solid #e6e6e6",
             paddingRight: "2rem",
           }}
@@ -107,13 +108,14 @@ function RadioButton({
                     setsupplementItems={setsupplementItems}
                     priceArr={priceArr}
                     setpriceArr={setpriceArr}
+                    clearAllOrder={clearAllOrder}
                   />
                 );
               }
             )}
           </div>
         </div>
-        <div style={{ width: "45%" }}>
+        <div style={{ width: "50%" }}>
           <span>ADD DRINK?</span>
           <div style={{ display: "flex", flexDirection: "column" }}>
             {drinkSupplements?.map(
@@ -135,6 +137,7 @@ function RadioButton({
                     setsupplementItems={setsupplementItems}
                     priceArr={priceArr}
                     setpriceArr={setpriceArr}
+                    clearAllOrder={clearAllOrder}
                   />
                 );
               }

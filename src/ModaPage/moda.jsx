@@ -5,19 +5,17 @@ import styled from "styled-components";
 import Radio from "../RadioButton/Radio";
 import "./modaa.css";
 
-const Moda = ({ data }) => {
+const Moda = ({ data, setShow }) => {
   const [count, setCount] = useState(1);
-  const [selectedItems, setselectedItems] = useState({});
   const [supplementCount, setsupplementCount] = useState(1);
   const [cartItems, setcartItems] = useState([
     { itemId: `${data?.itemId}`, quantity: count, price: data?.itemPrice },
   ]);
   const [supplementItems, setsupplementItems] = useState([]);
   const [priceArr, setpriceArr] = useState([data?.itemPrice]);
-  const [totalItemPrice, setTotalItemPrice] = useState();
-  const [totalSuppPrice, settotalSuppPrice] = useState();
+  const vendorId = localStorage.getItem("vendorId");
+  const getToken = localStorage.getItem("token");
 
-  // console.log(data);
   const increment = () => {
     setCount((count) => count + 1);
   };
@@ -25,12 +23,33 @@ const Moda = ({ data }) => {
   const decrement = () => {
     if (count > 1) setCount((count) => count - 1);
   };
-  let totalPrice = 0;
+
+  const closeModal = () => {
+    setShow(false);
+  };
 
   const handleAddToOrder = () => {
     console.log(cartItems);
     console.log(supplementItems);
     console.log(priceArr);
+    let convertedSupplementsArr = [];
+
+    totalItemPriceConverter();
+    const convertedItemArr = cartItems.map((item) => {
+      return { itemId: item.itemId, quantity: item.quantity };
+    });
+    convertedSupplementsArr = supplementItems
+      ? supplementItems.map((item) => {
+          return { supplementId: item.supplementId, quantity: item.quantity };
+        })
+      : [];
+    const foodOrderObject = {
+      cartItems: convertedItemArr,
+      supplementItems: convertedSupplementsArr,
+    };
+
+    console.log(foodOrderObject);
+    postOrder(foodOrderObject);
   };
   useEffect(() => {
     setcartItems(() => {
@@ -40,33 +59,56 @@ const Moda = ({ data }) => {
     });
   }, [count]);
 
-  let suppArr = [];
-  const totalSupplementPriceConverter = () => {
-    suppArr.push(
-      supplementItems.map((item) => {
-        return item.quantity * Number(item.price);
-      })
-    );
-
-    console.log(suppArr);
-  };
-
-  let itemArr = [];
   const totalItemPriceConverter = () => {
-    itemArr.push(
-      cartItems.map((item) => {
-        return item.quantity * Number(item.price);
-      })
-    );
-    setTotalItemPrice(itemArr[0]);
+    let totalSupplementPrice = 0;
+    const itemPrice = cartItems.map((item) => {
+      return Number(item.price) * item.quantity;
+    });
+    const supplementPrice = supplementItems.map((item) => {
+      return Number(item.price) * item.quantity;
+    });
 
-    console.log(itemArr);
+    totalSupplementPrice = supplementPrice.reduce((currPice, nextPrice) => {
+      return currPice + nextPrice;
+    }, 0);
+    const totalItemPrice = itemPrice.reduce((currPice, nextPrice) => {
+      return currPice + nextPrice;
+    }, 0);
+    const totalPrice = totalItemPrice + totalSupplementPrice;
+    return totalPrice;
   };
 
-  useEffect(() => {
-    totalSupplementPriceConverter();
-    totalItemPriceConverter();
-  }, [supplementItems, cartItems]);
+  const clearAllOrder = () => {
+    setsupplementItems([]);
+    setCount(1);
+    setcartItems([
+      { itemId: `${data?.itemId}`, quantity: 1, price: data?.itemPrice },
+    ]);
+    setsupplementCount(1);
+  };
+
+  useEffect(() => {}, [cartItems, supplementItems]);
+
+  const postOrder = async (body) => {
+    const response = await fetch(
+      `http://89.38.135.41:7654/api/orders/add-to-cart?vendorId=${vendorId}`,
+      {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken}`,
+          Accept: "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+    if (data?.status === true) {
+      window.location.reload();
+      closeModal();
+    }
+  };
+
   return (
     <div>
       <div className="counter-img">
@@ -119,11 +161,16 @@ const Moda = ({ data }) => {
           setsupplementCount={setsupplementCount}
           priceArr={priceArr}
           setpriceArr={setpriceArr}
+          clearAllOrder={clearAllOrder}
         />
       </section>
 
       <section className="clear-btn">
-        <span className="Clr-all" style={{ cursor: "pointer" }}>
+        <span
+          className="Clr-all"
+          style={{ cursor: "pointer" }}
+          onClick={clearAllOrder}
+        >
           <button className="canc-all">x</button>
           <span className="clear-all">Clear all</span>
         </span>
@@ -132,7 +179,7 @@ const Moda = ({ data }) => {
           <button className="btn-two" onClick={handleAddToOrder}>
             ADD TO ORDER
           </button>
-          <button className="btn-three">#{totalPrice}</button>
+          <button className="btn-three">₦ {totalItemPriceConverter()}</button>
         </button>
       </section>
     </div>
