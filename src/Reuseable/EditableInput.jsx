@@ -10,32 +10,32 @@ function EditableInput({ user, setUser, isDisabled, setIsDisabled, label }) {
   };
   return (
     <>
-      <Container className="picdelsel">
-        <span className="picdel">
-          <label htmlFor="Dele" className="firstnamelabel">
-            {label}
-          </label>
-          <span
-            className="deleke"
-            style={{
-              borderBottom: isDisabled ? "1px solid #ccc" : "1px solid #36aad9",
+      <Container>
+        {/* <span className="picdel"> */}
+        <label htmlFor="Dele" className="firstnamelabel">
+          {label}
+        </label>
+        <span
+          className="deleke"
+          style={{
+            borderBottom: isDisabled ? "1px solid #ccc" : "1px solid #36aad9",
+          }}
+        >
+          <input
+            style={{ width: "90%" }}
+            type="text"
+            id="Dele"
+            defaultValue={user}
+            onChange={(e) => {
+              setUser(e?.target?.value);
             }}
-          >
-            <input
-              style={{ width: "90%" }}
-              type="text"
-              id="Dele"
-              defaultValue={user}
-              onChange={(e) => {
-                setUser(e?.target?.value);
-              }}
-              disabled={isDisabled}
-            />
-            <button onClick={handleEdit}>
-              {isDisabled ? <FiEdit /> : <BsCheckAll />}
-            </button>
-          </span>
+            disabled={isDisabled}
+          />
+          <button onClick={handleEdit}>
+            {isDisabled ? <FiEdit /> : <BsCheckAll />}
+          </button>
         </span>
+        {/* </span> */}
       </Container>
     </>
   );
@@ -44,6 +44,8 @@ function EditableInput({ user, setUser, isDisabled, setIsDisabled, label }) {
 export default EditableInput;
 
 const Container = styled.section`
+  padding: 15px;
+  width: 100%;
   button {
     font-size: 1.1rem;
     cursor: pointer;
