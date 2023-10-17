@@ -123,7 +123,7 @@
   padding-left: 10px;
   font-weight: 500;
   font-size: 20px;
-  border-left: 0.2rem solid #36aad9;
+  border-left: 0.13rem solid #36aad9;
 }
 .D-sec {
   display: flex;
@@ -153,14 +153,14 @@
   padding-left: 10px;
   font-weight: 600;
   font-size: 23px;
-  border-left: 0.2rem solid #36aad9;
+  border-left: 0.13rem solid #36aad9;
 }
 .anytime {
   font-size: 17px;
   padding-left: 10px;
   font-weight: 500;
   font-size: 20px;
-  border-left: 0.2rem solid #36aad9;
+  border-left: 0.13rem solid #36aad9;
 }
 .taste-anytime {
   display: flex;
@@ -173,7 +173,7 @@
   padding-left: 10px;
   font-weight: 500;
   font-size: 17px;
-  border-left: 0.2rem solid #36aad9;
+  border-left: 0.13rem solid #36aad9;
 }
 .vendor-search {
   border: 1px solid#DDDDDD;
@@ -384,9 +384,9 @@ tr {
 }
 @media screen and (max-width: 40em) {
   .D-sec {
-    width: 20rem;
     display: flex;
-    color: #fff;
+    flex-direction: column;
+    padding: 0.5rem;
     gap: 10px;
   }
   .Dsec {
@@ -398,12 +398,42 @@ tr {
   .nots {
     display: none;
   }
+  .food-platform {
+    padding: 0 0 0 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .foodesk {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .foodesk img {
+    width: 100%;
+  }
+  .desk-food {
+    width: 60%;
+  }
+  .Delicious-food {
+    font-size: 14px;
+  }
+  .welcome-food {
+    font-size: 14px;
+  }
   .navbarr {
     display: flex;
+    background-color: #36aad9;
+    padding: 0.3rem;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
     width: 100%;
+    position: relative;
+  }
+  .vendor-search {
+    display: none;
   }
   .onboardint {
     width: 60%;
@@ -443,7 +473,6 @@ tr {
   .Onboard {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
   }
   .media-sp {

@@ -22,3 +22,27 @@ footer {
   padding: 1rem 2rem;
   gap: 10px;
 }
+@media screen and (max-width: 40em) {
+  .parent-tb {
+    color: white;
+    background-color: #36aad9;
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+  .places {
+    display: flex;
+    font-weight: 400;
+  }
+  footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-size: 12px;
+    gap: 10px;
+  }
+}

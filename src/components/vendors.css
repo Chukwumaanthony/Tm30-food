@@ -22,7 +22,6 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: scroll;
-  justify-content: space-between;
   width: 96%;
   margin: 0 0.2%;
   padding-top: 5px;
@@ -30,10 +29,12 @@
   /* gap: 35px; */
 }
 .mamajline-top {
+  overflow-y: hidden;
+  overflow-x: scroll;
   display: flex;
   width: 96%;
   margin: 0 0.2%;
-  padding-top: 5px;
+  padding-block: 2rem;
   column-gap: 15px;
   /* gap: 35px; */
 }
@@ -79,7 +80,7 @@
 .topvend {
   width: fit-content;
   border: 1px solid #ddd;
-  padding: 0.2rem;
+  padding: 0.4rem;
   border-radius: 10px;
 }
 .topvend button {
@@ -95,10 +96,10 @@
 }
 @media screen and (max-width: 40em) {
   .mamaj {
-    width: 120px;
+    width: 11rem;
   }
   .Mamajtext {
-    font-size: 10px;
+    font-size: 14px;
   }
   .mamajline {
     display: flex;
@@ -125,5 +126,12 @@
   }
   .fhund {
     font-size: 12px;
+  }
+  .Flexcontainer {
+    padding: 0 2rem;
+  }
+
+  .mamajline-top {
+    padding-block: 1rem;
   }
 }

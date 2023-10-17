@@ -6,8 +6,8 @@ import styled from "styled-components";
 function AnimatedInput() {
   return (
     <Container>
-      <input placeholder="Search" type="search"/>
-      <div>
+      <input placeholder="Search" type="search" />
+      <div style={{ paddingRight: ".22rem" }}>
         <LuSearch />
       </div>
     </Container>
@@ -17,24 +17,18 @@ function AnimatedInput() {
 export default AnimatedInput;
 
 const Container = styled.div`
-  height: 10px;
+  /* height: 10px; */
   display: flex;
   cursor: pointer;
-  padding: 5px 8px;
+  padding: 0.25rem;
+  padding-inline: 0.1rem;
   background-color: white;
-  border-radius: 30rem;
+  border-radius: 1rem;
   align-items: center;
   justify-content: center;
-   box-shadow: 0px 0px 5px black;
 
   &:hover input {
-    width: 180px;
-  }
-  &:hover {
-    box-shadow: 0px 0px 2px black;
-  }
-  &:focus-within {
-    box-shadow: 0px 0px 4px black;
+    width: 200px;
   }
 
   input {
@@ -57,6 +51,5 @@ const Container = styled.div`
     font-size: 18px;
     display: flex;
     align-items: center;
-
- }`
-;
+  }
+`;

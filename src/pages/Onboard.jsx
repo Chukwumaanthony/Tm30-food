@@ -6,7 +6,6 @@ import { MdNotificationsActive } from "react-icons/md";
 import { RiListIndefinite } from "react-icons/ri";
 import Wave from "../assets/images/wave.png";
 import HotDeals from "../components/Hotdeals";
-import Collab from "../components/Colab";
 import Table from "../components/Table";
 import Fooddesk from "../assets/images/onbordimg.png";
 import Media from "../components/Mediainput";
@@ -194,7 +193,6 @@ const Onboard = () => {
 
       <Vendor />
       <HotDeals />
-      <Collab />
       <Table />
     </div>
   );

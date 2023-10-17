@@ -9,15 +9,11 @@ import OnBoard from "./pages/Onboard";
 import Dash from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Settings from "./Settings/Settin";
-// import Checkoutspg from "./components/Checkoutspg";
-// import WithCard from "./components/WithCard";
-// import Corosel from "./Caruosel/Carosel";
 import { Toaster } from "react-hot-toast";
-import Test from "./test";
 import Editt from "./components/Editprofile";
 import Reset from "./reset/Reset";
 import Ricee from "./Rice/Riced";
+import Landingpage from "./pages/Landingpage";
 
 function App() {
   return (
@@ -25,8 +21,8 @@ function App() {
       <Toaster />
       <Router>
         <Routes>
-          <Route path="/test" element={<Test />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Landingpage />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signuo />} />
           <Route path="/otp" element={<Otp />} />
           <Route path="/verifyy" element={<Verify />} />
@@ -36,10 +32,6 @@ function App() {
           <Route path="/onboard" element={<OnBoard />} />
           <Route path="/dash" element={<Dash />} />
           <Route path="/profile" element={<Profile />} />
-          {/* <Route path="/settings" element={<Settings />} /> */}
-          {/* <Route path="/checkout" element={<Checkoutspg />} /> */}
-          {/* <Route path="/withcard" element={<WithCard />} /> */}
-          {/* <Route path="/logout" element={<Corosel />} /> */}
           <Route path="/rice" element={<Ricee />} />
           <Route path="/prof" element={<Editt />} />
         </Routes>

@@ -12,7 +12,7 @@ const Othervend = () => {
     },
   };
 
-  const Url = "http://89.38.135.41:7654/api/admin/all-vendors";
+  const Url = "http://89.38.135.41:7654/api/users/company-vendors";
   useEffect(() => {
     axios
       .get(Url, config)
@@ -26,7 +26,7 @@ const Othervend = () => {
   }, []);
   return (
     <div>
-      <div className="mamajline">
+      <div className="mamajline-top">
         {vendorlist?.map((a) => {
           console.log(a);
           return (
@@ -40,7 +40,7 @@ const Othervend = () => {
               <span>
                 <img className="mamaj" src={a.vendorImageUrl} alt="" />
               </span>
-              <span className="Mamajtext">{a.businessName}</span>
+              <span className="Mamajtext">{a.vendorBusinessName}</span>
             </section>
           );
         })}

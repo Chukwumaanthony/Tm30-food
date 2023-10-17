@@ -18,7 +18,10 @@ const VendorContextProvider = ({ children }) => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://89.38.135.41:7654/api/users/vendors/${vendorId}`, config)
+      .get(
+        `http://89.38.135.41:7654/api/users/vendors?vendorId=${vendorId}`,
+        config
+      )
       .then((response) => {
         // console.log(response?.data.data);
         setdata(response.data.data);
