@@ -83,81 +83,85 @@ const Login = () => {
 
       <div className="right-side" onSubmit={handleSubmit}>
         <article className="artdfirst">
-          <Div1 className="right">
-            <div>{message}</div>
-            <img src={logo} alt="" className="loginimg" srcset="" />
-            <b className="loginbolds">Welcome Back</b>
-            <p className="paras">
-              Sign in with your email address and password
-            </p>
-          </Div1>
+          <section>
+            <Div1 className="right">
+              <div>{message}</div>
+              <img src={logo} alt="" className="loginimg" srcset="" />
+              <b className="loginbolds">Welcome Back</b>
+              <p className="paras">
+                Sign in with your email address and password
+              </p>
+            </Div1>
 
-          <article className="darticle">
-            <div className="Details">
-              <label>Email Address</label>
-              <section className="EMAILOG">
-                <div className="lock">
-                  <img src={mail} alt="" srcset="" />
-                </div>
-                <div className="input">
-                  <input
-                    className="int"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                  />
-                </div>
-              </section>
+            <article className="darticle">
+              <div className="Details">
+                <label>Email Address</label>
+                <section className="EMAILOG">
+                  <div className="lock">
+                    <img src={mail} alt="" srcset="" />
+                  </div>
+                  <div className="input">
+                    <input
+                      className="int"
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+                </section>
+              </div>
+
+              <div className="Details">
+                <label>Password</label>
+                <section className="EMAILOG">
+                  <div className="lock">
+                    <img src={pass} alt="" srcset="" />
+                  </div>
+                  <div className="input">
+                    <input
+                      className="int"
+                      type={show ? "text" : "password"}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter your password"
+                    />
+                    <button onClick={() => setshow(!show)} className="btn">
+                      {show ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </article>
+            <div className="checks">
+              <div style={{ display: "flex", gap: "5px" }}>
+                <input type="checkbox" />
+                <p className="check"> Remember Me</p>
+              </div>
+              <Link to="/forget">
+                <p className="check">Forget Password?</p>
+              </Link>
             </div>
 
-            <div className="Details">
-              <label>Password</label>
-              <section className="EMAILOG">
-                <div className="lock">
-                  <img src={pass} alt="" srcset="" />
-                </div>
-                <div className="input">
-                  <input
-                    className="int"
-                    // type={inputType}
-                    type={show ? "text" : "password"}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
-                  />
-                  <button onClick={() => setshow(!show)} className="btn">
-                    {show ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-                  </button>
-                </div>
-              </section>
-            </div>
-          </article>
-          <div className="checks">
-            <p className="check"> Remember Me</p>
-            <Link to="/forget">
-              <p className="check">Forget Password?</p>
-            </Link>
-          </div>
+            {/* <Link to= "/Onboard" type="submit"> */}
+            <section className="enter">
+              <button
+                disabled={!email && !password}
+                onClick={handleSubmit}
+                className="logsPg"
+              >
+                {loading ? <img src={Load} alt="" /> : "Login"}
+              </button>
+            </section>
+            {/* </Link> */}
 
-          {/* <Link to= "/Onboard" type="submit"> */}
-          <section className="enter">
-            <button
-              disabled={!email && !password}
-              onClick={handleSubmit}
-              className="logsPg"
-            >
-              {loading ? <img src={Load} alt="" /> : "Login"}
-            </button>
+            <span className="lastLg">
+              <p>Don't have an account? </p>
+              <Link className="signd" to="/signup">
+                Register
+              </Link>
+            </span>
           </section>
-          {/* </Link> */}
-
-          <span className="lastLg">
-            <p>Don't have an account? </p>
-            <Link className="signd" to="/signup">
-              Register
-            </Link>
-          </span>
         </article>
       </div>
       {/* <ToastContainer

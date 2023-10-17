@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import Onboardimg from "../assets/images/tmonboard.svg";
 import Wave from "../assets/images/wave.png";
 import Fooddesk from "../assets/images/onbordimg.png";
 import tech from "../assets/images/cancel.svg";
 import mobilelogo from "../assets/images/mobilelogo.svg";
+import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import mobilelogos from "../assets/images/tmlogo.png";
 import HotDeals from "../components/Hotdeals";
 import Vendorlist from "../components/FullVendors";
@@ -148,7 +148,7 @@ const Div = styled.div`
       font-size: 20px;
     }
     .onboardlogos {
-      width: 50px;
+      width: 70px;
     }
     .onboardlogo {
       display: none;

@@ -12,7 +12,6 @@
   height: 100vh;
   overflow: hidden;
   overflow: scroll;
-  height: 100vh;
 }
 .right {
   display: flex;
@@ -32,7 +31,6 @@
   font-size: 15px;
   color: #a3a3a3;
 }
-
 .img {
   padding: 40px;
   width: 200px;
@@ -54,7 +52,7 @@
 }
 .Details label {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .foods {
   padding: 15px;
@@ -98,6 +96,10 @@
   align-items: baseline;
 }
 .artdfirst {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -120,10 +122,10 @@
   font-style: normal;
   font-weight: 400;
 }
-.check {
+/* .check {
   display: flex;
   color: #c7c2c2;
-}
+} */
 .checks {
   display: flex;
   align-items: center;
@@ -177,14 +179,26 @@
 }
 @media screen and (max-width: 40em) {
   .right-side {
-    width: 100vh;
+    width: 100%;
     height: 100vh;
+  }
+  .left-side {
+    display: none;
   }
   .right {
     padding-top: 15px;
   }
   .loginimg {
     width: 120px;
+  }
+  .loginbolds {
+    color: #36aad9;
+    font-weight: 400;
+    font-size: 23px;
+  }
+  .Details label {
+    color: #36aad9;
+    font-size: 17px;
   }
   .bolds {
     font-size: 10px;
@@ -198,30 +212,43 @@
     font-size: 12px;
     font-weight: 300;
     padding: 0;
+    width: 100%;
+  }
+  .int::placeholder {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
   }
   .input {
-    width: 200px;
-    height: 1.9rem;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #36aad9;
+
     /* padding-left: 4px; */
   }
   .lock {
     width: 25px;
+    padding: 0.7rem;
+    border: 1px solid #36aad9;
   }
   .int {
     width: 200px;
     height: 1.9rem;
     padding-block: 3px;
-    font-size: 9px;
+    font-size: 13px;
   }
   .check {
     font-size: 12px;
     display: flex;
     align-items: center;
+    color: #36aad9;
+    font-weight: 400;
     justify-content: center;
   }
   .checks {
     display: flex;
     align-items: center;
+    color: #36aad9;
     gap: 60px;
   }
   .enter {
@@ -232,11 +259,9 @@
     padding-left: 5px;
   }
   .logsPg {
-    width: 255px;
-    height: 1.7rem;
     font-size: 12px;
     font-weight: 500;
-    padding-left: 0;
+    padding: 1rem;
   }
   .lastLg {
     display: flex;

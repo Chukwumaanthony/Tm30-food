@@ -104,11 +104,6 @@
   font-weight: 500;
 }
 
-.check {
-  display: flex;
-  color: #c7c2c2;
-}
-
 .logs {
   border: 1px solid transparent;
   outline: none;

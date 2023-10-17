@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import Modal from "../Modal/Modal";
 import classes from "../styled.module.css";
-import Tmlogo from "../assets/images/tmlogo.png";
 import { TiDelete } from "react-icons/ti";
-import "./navbar.css";
 import Notify from "./Notification";
 import Order from "./Order";
+import Tmlogo from "../assets/images/tmlogo.png";
+import "./navbar.css";
 import { ProfileContext } from "../ContextApi/ProfileContext";
 import {
   RiArrowDownSFill,

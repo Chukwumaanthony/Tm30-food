@@ -3,10 +3,11 @@ import "./tablerafce.css";
 import Facebook from "../assets/images/Facebook.png";
 import Twitter from "../assets/images/Twitter.png";
 import Reserved from "../assets/images/reserved.png";
+import styled from "styled-components";
 
 const table = () => {
   return (
-    <section>
+    <Section>
       <div className="parent-tb">
         <div className="places">
           <h3>Places</h3>
@@ -70,8 +71,11 @@ const table = () => {
         <img src={Reserved} alt="" />
         2023 TM30 Food Platform All rights reserved
       </footer>
-    </section>
+    </Section>
   );
 };
 
 export default table;
+const Section = styled.section`
+  border-top: 2px solid white;
+`;

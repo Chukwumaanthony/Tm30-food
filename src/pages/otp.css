@@ -137,9 +137,6 @@
   margin: 0;
 }
 @media screen and (max-width: 40em) {
-  .left-side {
-    display: none;
-  }
   .otpimg {
     width: 120px;
   }
