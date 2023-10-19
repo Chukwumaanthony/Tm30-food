@@ -18,7 +18,15 @@ const ProteinSides = ({
       setinputChecked(true);
       setPrice(value);
       setsupplementItems((prev) => {
-        return [...prev, { supplementId: name, quantity: count, price: value }];
+        return [
+          ...prev,
+          {
+            supplementId: name,
+            quantity: count,
+            price: value,
+            // supplementName: name,
+          },
+        ];
       });
     } else {
       setinputChecked(false);
@@ -46,7 +54,12 @@ const ProteinSides = ({
       setsupplementItems((prev) => {
         const updatedItems = prev.map((item) => {
           if (item.supplementId === supplementId) {
-            return { ...item, quantity: count, price: price };
+            return {
+              ...item,
+              quantity: count,
+              price: price,
+              supplementName: supplementName,
+            };
           }
           return item;
         });

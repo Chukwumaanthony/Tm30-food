@@ -9,12 +9,18 @@ const Moda = ({ data, setShow }) => {
   const [count, setCount] = useState(1);
   const [supplementCount, setsupplementCount] = useState(1);
   const [cartItems, setcartItems] = useState([
-    { itemId: `${data?.itemId}`, quantity: count, price: data?.itemPrice },
+    {
+      itemId: `${data?.itemId}`,
+      itemName: `${data?.itemName}`,
+      imageUrl: `${data?.imageUrl}`,
+      quantity: count,
+      price: data?.itemPrice,
+    },
   ]);
   const [supplementItems, setsupplementItems] = useState([]);
   const [priceArr, setpriceArr] = useState([data?.itemPrice]);
-  const vendorId = localStorage.getItem("vendorId");
-  const getToken = localStorage.getItem("token");
+  // const vendorId = localStorage.getItem("vendorId");
+  // const getToken = localStorage.getItem("token");
 
   const increment = () => {
     setCount((count) => count + 1);
@@ -27,20 +33,32 @@ const Moda = ({ data, setShow }) => {
   const closeModal = () => {
     setShow(false);
   };
+  // console.log(data);
 
   const handleAddToOrder = () => {
     console.log(cartItems);
     console.log(supplementItems);
     console.log(priceArr);
+
     let convertedSupplementsArr = [];
 
     totalItemPriceConverter();
     const convertedItemArr = cartItems.map((item) => {
-      return { itemId: item.itemId, quantity: item.quantity };
+      return {
+        itemId: item.itemId,
+        itemName: `${data.itemName} `,
+        imageUrl: `${data?.imageUrl}`,
+        quantity: item.quantity,
+      };
     });
     convertedSupplementsArr = supplementItems
       ? supplementItems.map((item) => {
-          return { supplementId: item.supplementId, quantity: item.quantity };
+          return {
+            supplementId: item.supplementId,
+            supplementName: item.supplementName,
+            quantity: item.quantity,
+            price: item.price,
+          };
         })
       : [];
     const foodOrderObject = {
@@ -49,12 +67,19 @@ const Moda = ({ data, setShow }) => {
     };
 
     console.log(foodOrderObject);
-    postOrder(foodOrderObject);
+    localStorage.setItem("food", JSON.stringify(foodOrderObject));
+
+    // postOrder(foodOrderObject);
   };
   useEffect(() => {
     setcartItems(() => {
       return [
-        { itemId: `${data?.itemId}`, quantity: count, price: data?.itemPrice },
+        {
+          itemId: `${data?.itemId}`,
+          itemName: `${data?.itemName}`,
+          quantity: count,
+          price: data?.itemPrice,
+        },
       ];
     });
   }, [count]);
@@ -89,25 +114,25 @@ const Moda = ({ data, setShow }) => {
 
   useEffect(() => {}, [cartItems, supplementItems]);
 
-  const postOrder = async (body) => {
-    const response = await fetch(
-      `http://89.38.135.41:7654/api/orders/add-to-cart?vendorId=${vendorId}`,
-      {
-        method: "POST",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${getToken}`,
-          Accept: "application/json",
-        },
-      }
-    );
-    const data = await response.json();
-    if (data?.status === true) {
-      window.location.reload();
-      closeModal();
-    }
-  };
+  // const postOrder = async (body) => {
+  //   const response = await fetch(
+  //     `http://89.38.135.41:7654/api/orders/add-to-cart?vendorId=${vendorId}`,
+  //     {
+  //       method: "POST",
+  //       body: JSON.stringify(body),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization: `Bearer ${getToken}`,
+  //         Accept: "application/json",
+  //       },
+  //     }
+  //   );
+  //   const data = await response.json();
+  //   if (data?.status === true) {
+  //     window.location.reload();
+  //     closeModal();
+  //   }
+  // };
 
   return (
     <div>

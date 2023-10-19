@@ -46,3 +46,15 @@
   overflow: scroll;
   height: 25rem;
 }
+
+@media screen and (max-width: 40em) {
+  .itemenu-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+  }
+  /* .Declan-Rice{
+    
+  } */
+}

@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Breakfast from "../components/Breakfast";
 import Servefood from "../assets/images/servefood.png";
 import Carousel from "../Caruosel/Carosel";
+import styled from "styled-components";
 // import axios from "axios";
 
 const Dashboard = () => {
@@ -13,7 +14,8 @@ const Dashboard = () => {
   // const [data, setData] = useState({});
   // const [itemName, setItemName] = useState([]);
   // const [orderId, setOrderId] = useState("");
-  // const getToken = localStorage.getItem("token");
+  // const getToken = localStorage.getItem("food");
+  // console.log(getToken);
 
   // const config = {
   //   headers: {
@@ -73,7 +75,7 @@ const Dashboard = () => {
   //   }
   // };
   return (
-    <div>
+    <Div>
       <div className="ni">
         {/* <Sidebar /> */}
         <div>
@@ -125,6 +127,7 @@ const Dashboard = () => {
                         </div>
                       </section>
                     ) : ( */}
+
                     <section className="serv-food">
                       <img src={Servefood} alt="" />
                       <span className="NO-ITEMS">No Item Yet</span>
@@ -152,8 +155,15 @@ const Dashboard = () => {
           </section>
         </div>
       </div>
-    </div>
+    </Div>
   );
 };
 
 export default Dashboard;
+const Div = styled.div`
+  @media screen and (max-width: 40em) {
+    .ORDER-POPS {
+      display: none;
+    }
+  }
+`;

@@ -4,7 +4,9 @@ import classes from "../styled.module.css";
 import { TiDelete } from "react-icons/ti";
 import Notify from "./Notification";
 import Order from "./Order";
-import Tmlogo from "../assets/images/tmlogo.png";
+// import Tmlogo from "../assets/images/tmlogo.png";
+import mobilelogo from "../assets/images/mobilelogo.svg";
+
 import "./navbar.css";
 import { ProfileContext } from "../ContextApi/ProfileContext";
 import {
@@ -16,6 +18,7 @@ import { MdNotificationsActive } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { FiSettings } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Navbar = () => {
   const { data } = useContext(ProfileContext);
@@ -29,12 +32,12 @@ const Navbar = () => {
     setDrop(!drop);
   };
   return (
-    <div className="Onboard">
+    <Div className="Onboard">
       {/* NavBar  */}
 
       <nav className="navbar">
         <div>
-          <img src={Tmlogo} alt="" style={{ width: "80px" }} />
+          <img src={mobilelogo} alt="" style={{ width: "80px" }} />
         </div>
 
         <div className="navtwo">
@@ -174,11 +177,14 @@ const Navbar = () => {
         </div>
       </nav>
       {/* End of NavBar */}
-    </div>
+    </Div>
   );
 };
 
 export default Navbar;
+const Div = styled.section`
+  width: 100vw;
+`;
 
 /* 
          {/* medianav }

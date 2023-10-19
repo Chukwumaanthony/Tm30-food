@@ -37,37 +37,10 @@
   right: 55px;
   box-shadow: 1px 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
-/* @media screen and (max-width:40em) {
-  .inputlogo{
-    display: none;
-  }
-  .nots{
-   display: none;
-  }
-  .navthree{
-    display: none;
-  }
-  .navtwo{
-    display: flex;
-    align-items: center;
-    gap: 2px;
-  }
-  .navbar{
+@media screen and (max-width: 40em) {
+  .navbar {
     width: 100vw;
-    padding:5px ;
+    padding: 1rem;
     background-color: #36aad9;
   }
-  .media-logo{
-    width: 55px;
-  }
-  .media-dash{
-    color: white;
-    font-size: 20px;
-  }
-  .dart{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-} */
+}

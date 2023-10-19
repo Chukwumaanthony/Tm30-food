@@ -1,17 +1,10 @@
-.ni {
+/* .ni {
   display: flex;
-}
-/* .back-img {
-  background-image: url(../assets/images/backimg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 20vh;
 } */
 .select-parent {
   padding: 20px 55px;
   padding-bottom: 4rem;
   display: flex;
-  /* height: 100vh; */
   background: #ededed;
   justify-content: space-between;
 }
@@ -263,4 +256,10 @@
 }
 
 @media screen and (max-width: 40em) {
+  /* .select-parent {
+    width: 100vw;
+  } */
+  /* .after-nav {
+    width: 100%;
+  } */
 }
