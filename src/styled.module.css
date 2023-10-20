@@ -50,6 +50,13 @@
   border: 1px solid #dcdbdb;
   overflow: scroll;
 }
+.loadingState {
+  width: 5rem;
+  color: #36aad9;
+}
+.loadingState {
+  fill: #000;
+}
 ::-webkit-scrollbar {
   width: 0;
 }

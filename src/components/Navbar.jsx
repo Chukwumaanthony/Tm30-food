@@ -4,7 +4,7 @@ import classes from "../styled.module.css";
 import { TiDelete } from "react-icons/ti";
 import Notify from "./Notification";
 import Order from "./Order";
-// import Tmlogo from "../assets/images/tmlogo.png";
+import Tmlogo from "../assets/images/tmlogo.png";
 import mobilelogo from "../assets/images/mobilelogo.svg";
 
 import "./navbar.css";
@@ -37,7 +37,7 @@ const Navbar = () => {
 
       <nav className="navbar">
         <div>
-          <img src={mobilelogo} alt="" style={{ width: "80px" }} />
+          <img src={Tmlogo} alt="" style={{ width: "80px" }} />
         </div>
 
         <div className="navtwo">

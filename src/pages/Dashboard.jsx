@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./dashh.css";
 import Navbar from "../components/Navbar";
 // import Sidebar from "../SidebarDash/Sidebar";
@@ -14,9 +14,17 @@ const Dashboard = () => {
   // const [data, setData] = useState({});
   // const [itemName, setItemName] = useState([]);
   // const [orderId, setOrderId] = useState("");
-  // const getToken = localStorage.getItem("food");
-  // console.log(getToken);
+  const [cart, setCart] = useState();
 
+  useEffect(() => {
+    const Food = localStorage.getItem("food");
+    if (Food) {
+      setCart(Food);
+      console.log(cart.itemName);
+    }
+  }, []);
+
+  const recieveCart = () => {};
   // const config = {
   //   headers: {
   //     Authorization: `Bearer ${getToken}`,
@@ -127,7 +135,13 @@ const Dashboard = () => {
                         </div>
                       </section>
                     ) : ( */}
-
+                    {cart?.map((e) => {
+                      return (
+                        <div>
+                          <div>{e.itemName}</div>
+                        </div>
+                      );
+                    })}
                     <section className="serv-food">
                       <img src={Servefood} alt="" />
                       <span className="NO-ITEMS">No Item Yet</span>

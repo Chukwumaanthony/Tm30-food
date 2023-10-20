@@ -2,21 +2,34 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Loadingstate from "../Animations/loadingstate.svg";
+import Modal from "../Modal/Modal";
+import classes from "../styled.module.css";
 
 const Fulltopvendors = () => {
   const [vendorlist, setVendorlist] = useState([]);
+  const [loading, setloading] = useState(true);
 
   //   const [data, setData] = useState({});
 
   console.log(vendorlist);
 
   useEffect(() => {
+    setloading(true);
+
     axios
       .get("http://89.38.135.41:7654/api/auth/landing-page")
       .then((response) => {
         setVendorlist(response.data.data);
+      })
+      .then((res) => {
+        setloading(false);
+      })
+      .catch((err) => {
+        setloading(false);
       });
   }, []);
+
   return (
     <Container>
       <div className="mamajline-top">
@@ -39,6 +52,18 @@ const Fulltopvendors = () => {
           );
         })}
       </div>
+      <Modal open={loading}>
+        <section className={classes.modalBackground}>
+          <div>
+            <img
+              className={classes.loadingState}
+              src={Loadingstate}
+              alt=""
+              srcset=""
+            />
+          </div>
+        </section>
+      </Modal>
     </Container>
   );
 };
