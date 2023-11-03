@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import styled from "styled-components";
-// import EGG from "../image/Englishbreakfast.png";
-// import Counter from "../Counters/counter";
 import Radio from "../RadioButton/Radio";
 import "./modaa.css";
+import { VendorContext } from "../ContextApi/VendorContextProvider";
 
 const Moda = ({ data, setShow }) => {
+  const { cartChecker, setCartChecker } = useContext(VendorContext);
+  console.log(cartChecker);
   const [count, setCount] = useState(1);
   const [supplementCount, setsupplementCount] = useState(1);
   const [cartItems, setcartItems] = useState([
@@ -19,8 +20,10 @@ const Moda = ({ data, setShow }) => {
   ]);
   const [supplementItems, setsupplementItems] = useState([]);
   const [priceArr, setpriceArr] = useState([data?.itemPrice]);
-  // const vendorId = localStorage.getItem("vendorId");
-  // const getToken = localStorage.getItem("token");
+
+  const GetarrToLocalstorage = JSON.parse(localStorage.getItem("food")) || [];
+
+  const arrToLocalstorage = useRef(GetarrToLocalstorage);
 
   const increment = () => {
     setCount((count) => count + 1);
@@ -30,12 +33,10 @@ const Moda = ({ data, setShow }) => {
     if (count > 1) setCount((count) => count - 1);
   };
 
-  const closeModal = () => {
-    setShow(false);
-  };
-  // console.log(data);
+  console.log(GetarrToLocalstorage);
 
   const handleAddToOrder = () => {
+    setShow(false);
     console.log(cartItems);
     console.log(supplementItems);
     console.log(priceArr);
@@ -64,10 +65,22 @@ const Moda = ({ data, setShow }) => {
     const foodOrderObject = {
       cartItems: convertedItemArr,
       supplementItems: convertedSupplementsArr,
+      totalPrice: totalItemPriceConverter(),
     };
 
-    console.log(foodOrderObject);
-    localStorage.setItem("food", JSON.stringify(foodOrderObject));
+    if (arrToLocalstorage.current.length) {
+      arrToLocalstorage.current = [
+        ...arrToLocalstorage.current,
+        foodOrderObject,
+      ];
+    } else {
+      arrToLocalstorage.current = [
+        ...arrToLocalstorage.current,
+        foodOrderObject,
+      ];
+    }
+    localStorage.setItem("food", JSON.stringify(arrToLocalstorage.current));
+    setCartChecker(!cartChecker);
 
     // postOrder(foodOrderObject);
   };
@@ -162,14 +175,12 @@ const Moda = ({ data, setShow }) => {
           <button
             style={{
               border: "none",
-              width: "1.5rem",
               display: "flex",
-              height: "1.5rem",
               alignItems: "center",
               justifyContent: "center",
               background: "#36aad9",
               color: "white",
-              borderRadius: ".3rem",
+              borderRadius: ".1rem",
             }}
             onClick={increment}
           >
@@ -216,13 +227,11 @@ export default Moda;
 const DecrementBtn = styled.button`
   background: rgb(54, 170, 217);
   border: none;
-  width: 1.5rem;
   display: flex;
-  height: 1.5rem;
   align-items: center;
   justify-content: center;
   color: white;
-  border-radius: 0.3rem;
+  border-radius: 0.1rem;
   &:disabled {
     background: #a3a3a3;
   }

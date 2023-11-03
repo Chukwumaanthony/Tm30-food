@@ -1,4 +1,7 @@
 import axios from "axios";
+import Loadingstate from "../Animations/anime.svg";
+import Modal from "../Modal/Modal";
+import classes from "../styled.module.css";
 import React, { createContext, useEffect, useState } from "react";
 
 export const VendorContext = createContext();
@@ -8,6 +11,7 @@ const VendorContextProvider = ({ children }) => {
   const [data, setdata] = useState([]);
   const vendorId = localStorage.getItem("vendorId");
   const getToken = localStorage.getItem("token");
+  const [cartChecker, setCartChecker] = useState(false);
 
   const config = {
     headers: {
@@ -23,15 +27,41 @@ const VendorContextProvider = ({ children }) => {
         config
       )
       .then((response) => {
-        // console.log(response?.data.data);
         setdata(response.data.data);
+      })
+      .then((res) => {
+        setLoading(false);
+      })
+      .catch((err) => {
         setLoading(false);
       });
   }, [window.location.pathname]);
   return (
-    <VendorContext.Provider value={{ data: data, loading: loading }}>
-      {children}
-    </VendorContext.Provider>
+    <div>
+      {" "}
+      <VendorContext.Provider
+        value={{
+          data: data,
+          loading: loading,
+          cartChecker: cartChecker,
+          setCartChecker: setCartChecker,
+        }}
+      >
+        {children}
+      </VendorContext.Provider>
+      <Modal open={loading}>
+        <section className={classes.modalBackground}>
+          <div>
+            <img
+              className={classes.loadingState}
+              src={Loadingstate}
+              alt=""
+              srcset=""
+            />
+          </div>
+        </section>
+      </Modal>
+    </div>
   );
 };
 

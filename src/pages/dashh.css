@@ -127,7 +127,6 @@
 .ORDERS-HOLDER {
   background-color: white;
   border-radius: 10px;
-
   border: 1px solid #e6e6e6;
 }
 .ORDER {
@@ -254,7 +253,36 @@
   align-items: center;
   justify-content: center;
 }
-
+.cart {
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+.cart-img {
+  width: 100px;
+}
+.cart-food {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+.cart-mapp {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  height: 35rem;
+}
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 @media screen and (max-width: 40em) {
   /* .select-parent {
     width: 100vw;

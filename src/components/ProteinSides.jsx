@@ -69,7 +69,7 @@ const ProteinSides = ({
   }, [count, inputChecked, supplementId, setsupplementItems]);
 
   return (
-    <div
+    <Div
       className="protein-sides"
       style={{
         display: "flex",
@@ -78,24 +78,30 @@ const ProteinSides = ({
         width: "100%",
       }}
     >
-      <input
-        type="checkbox"
-        name={supplementId}
-        value={supplementPrice}
-        onChange={handleSelectChange}
-      />
-      <p>{supplementName}</p>
-      <div className="counter-cont">
-        <span>{count === 1 ? supplementPrice : count * supplementPrice}</span>
-        <Button onClick={decrement} disabled={count === 1 || !inputChecked}>
-          -
-        </Button>
-        <span>{count}</span>
-        <Button onClick={increment} disabled={!inputChecked}>
-          +
-        </Button>
+      <div className="namechecked">
+        <input
+          type="checkbox"
+          name={supplementId}
+          value={supplementPrice}
+          onChange={handleSelectChange}
+        />
+        <p>{supplementName}</p>
       </div>
-    </div>
+      <div className="counter-cont">
+        <span className="supp-price">
+          {count === 1 ? supplementPrice : count * supplementPrice}
+        </span>
+        <div className="dec-incre">
+          <Button onClick={decrement} disabled={count === 1 || !inputChecked}>
+            -
+          </Button>
+          <span>{count}</span>
+          <Button onClick={increment} disabled={!inputChecked}>
+            +
+          </Button>
+        </div>
+      </div>
+    </Div>
   );
 };
 
@@ -104,14 +110,29 @@ export default ProteinSides;
 const Button = styled.button`
   background: rgb(54, 170, 217);
   border: none;
-  width: 1.5rem;
+  // width: 1.5rem;
   display: flex;
-  height: 1.5rem;
+  // height: 1.5rem;
   align-items: center;
   justify-content: center;
   color: white;
-  border-radius: 0.3rem;
+  border-radius: 0.1rem;
   &:disabled {
     background: #a3a3a3;
+  }
+`;
+const Div = styled.section`
+  .namechecked {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .supp-price {
+    width: 2.5rem;
+  }
+  .dec-incre {
+    display: flex;
+    width: 3.5rem;
+    justify-content: space-between;
+    align-items: center;
   }
 `;

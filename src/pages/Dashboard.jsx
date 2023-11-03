@@ -1,87 +1,71 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./dashh.css";
 import Navbar from "../components/Navbar";
-// import Sidebar from "../SidebarDash/Sidebar";
-// import { Link } from "react-router-dom";
 import Breakfast from "../components/Breakfast";
 import Servefood from "../assets/images/servefood.png";
 import Carousel from "../Caruosel/Carosel";
+import { VendorContext } from "../ContextApi/VendorContextProvider";
 import styled from "styled-components";
-// import axios from "axios";
 
 const Dashboard = () => {
-  // const [item, setItem] = useState(false);
-  // const [data, setData] = useState({});
-  // const [itemName, setItemName] = useState([]);
-  // const [orderId, setOrderId] = useState("");
-  const [cart, setCart] = useState();
+  const { cartChecker } = useContext(VendorContext);
+  const [dataStatus, setDataStatus] = useState(false);
+
+  const [getCart, setGetCart] = useState();
+  const localvalue = JSON.parse(localStorage.getItem("food"));
 
   useEffect(() => {
-    const Food = localStorage.getItem("food");
-    if (Food) {
-      setCart(Food);
-      console.log(cart.itemName);
+    if (localvalue) {
+      setGetCart(localvalue);
     }
-  }, []);
+  }, [cartChecker]);
 
-  const recieveCart = () => {};
-  // const config = {
-  //   headers: {
-  //     Authorization: `Bearer ${getToken}`,
-  //   },
-  // };
-  // useEffect(() => {
-  //   axios
-  //     .get("http://89.38.135.41:7654/api/orders/carts", config)
-  //     .then((response) => {
-  //       setData(response.data.data);
-  //       setItem(true);
-  //       setItemName(
-  //         response.data.data.orderResponses?.length !== 0
-  //           ? response.data.data.orderResponses[0].items
-  //           : []
-  //       );
+  useEffect(() => {}, [dataStatus]);
 
-  //       setOrderId(
-  //         response.data.data.orderResponses?.length !== 0
-  //           ? response.data.data.orderResponses[0].orderId
-  //           : ""
-  //       );
-  //       // setOrderId(data?.orderResponses[0]?.orderId);
-  //       // console.log(orderId);
-  //       //  work on optimistic update
-  //       // console.log(data?.orderResponses[0]?.orderId);
-  //       // console.log(data);
-  //     });
-  // }, []);
+  console.log(localvalue);
 
-  // console.log({ itemName });
+  const r = localvalue?.map((d) => {
+    return {
+      itemId: d?.cartItems[0]?.itemId,
+      quantity: d?.cartItems[0]?.quantity,
+      supplementItems: d?.supplementItems?.map((e) => {
+        return {
+          supplementId: e?.supplementId,
+          quantity: e?.quantity,
+        };
+      }),
+    };
+  });
 
-  // useEffect(() => {
-  //   if (itemName.length !== 0) {
-  //     setItem(true);
-  //   } else {
-  //     setItem(false);
-  //   }
-  // }, [item]);
+  console.log(r);
 
-  // const submitOrder = async () => {
-  //   const response = await fetch(
-  //     `http://89.38.135.41:7654/api/orders/submit-cart?orderId=${orderId}`,
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: `Bearer ${getToken}`,
-  //         Accept: "application/json",
-  //       },
-  //     }
-  //   );
-  //   const data = await response.json();
-  //   if (data?.status === true) {
-  //     window.location.reload();
-  //   }
-  // };
+  const vendorId = localStorage.getItem("vendorId");
+  const getToken = localStorage.getItem("token");
+
+  const details = {};
+
+  const postOrder = async () => {
+    const response = await fetch(
+      `http://89.38.135.41:7654/api/orders/add-to-cart?vendorId=${vendorId}`,
+      {
+        method: "POST",
+        body: JSON.stringify(r),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getToken}`,
+          Accept: "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+    if (data?.status === true) {
+      localStorage.removeItem("food");
+      setDataStatus(!dataStatus);
+      setGetCart();
+      // window.location.reload();
+    }
+  };
+
   return (
     <Div>
       <div className="ni">
@@ -108,47 +92,57 @@ const Dashboard = () => {
                       <span className="MAMAJ-ORDER">ORDER FROM</span>
                       <span className="ORDER-MAMAJ">Mama J Bukka</span>
                     </section>
-                    {/* {item ? (
-                      <section className="serv-foods">
-                        <div className="item-map">
-                          <span>
-                            <img
-                              src={
-                                itemName.length === 0
-                                  ? ""
-                                  : itemName[0].imageUri
-                              }
-                              alt=""
-                            />
-                          </span>
-                          <span className="Item-name">
-                            {itemName.map((m) => {
-                              return <p>{m.itemName},</p>;
-                            })}
-                          </span>
-                          <span>
-                            &#8358;
-                            {itemName.length !== 0
-                              ? data.orderResponses[0].totalAmount
-                              : ""}
-                          </span>
-                        </div>
+                    {getCart ? (
+                      <div className="cart-mapp">
+                        {" "}
+                        {getCart?.map((e) => {
+                          return (
+                            <section className="cart">
+                              <div className="cart-food">
+                                <div className="cart-img">
+                                  <img
+                                    src={e.cartItems[0]?.imageUrl}
+                                    alt=""
+                                    width="100%"
+                                  />
+                                </div>
+                                <div className="cart-items">
+                                  <section style={{ display: "flex" }}>
+                                    <div
+                                      style={{
+                                        width: "fit-content",
+                                        height: "fit-content",
+                                      }}
+                                    >
+                                      {e.cartItems[0]?.itemName}
+                                    </div>
+                                  </section>
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      flexWrap: "wrap",
+                                    }}
+                                  >
+                                    {e?.supplementItems?.map((e) => {
+                                      return <div>{e?.supplementName}, </div>;
+                                    })}
+                                  </div>
+                                </div>
+                                <section>{e.totalPrice}</section>
+                              </div>
+                            </section>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <section className="serv-food">
+                        <img src={Servefood} alt="" />
+                        <span className="NO-ITEMS">No Item Yet</span>
+                        <span className="MADE-ORDER">
+                          Looks like you have'nt made your order yet
+                        </span>
                       </section>
-                    ) : ( */}
-                    {cart?.map((e) => {
-                      return (
-                        <div>
-                          <div>{e.itemName}</div>
-                        </div>
-                      );
-                    })}
-                    <section className="serv-food">
-                      <img src={Servefood} alt="" />
-                      <span className="NO-ITEMS">No Item Yet</span>
-                      <span className="MADE-ORDER">
-                        Looks like you have'nt made your order yet
-                      </span>
-                    </section>
+                    )}
                     {/* // )} */}
                     <section className="Order-btn">
                       <span className="order-int">
@@ -159,7 +153,9 @@ const Dashboard = () => {
                         />
                         <span className="one-thousand">-&#8358;1000.00</span>
                       </span>
-                      <div className="proceed-btn">SUBMIT ORDER</div>
+                      <div onClick={postOrder} className="proceed-btn">
+                        SUBMIT ORDER
+                      </div>
                     </section>
                   </div>
                 </section>

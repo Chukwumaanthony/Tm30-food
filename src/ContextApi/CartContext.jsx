@@ -1,15 +1,20 @@
-import React, { useState, useEffect, createContext } from "react";
+// import React, { useState, useEffect, createContext } from "react";
 
-export const CartContext = createContext();
+// export const CartContext = createContext();
 
-const CartContextProvider = ({ children }) => {
-  const addedTtoCardOrder = [];
+// const CartContextProvider = ({ children }) => {
+//   const addedTtoCardOrder = [];
 
-  return (
-    <CartContext.Provider value={{ addedTtoCardOrder: addedTtoCardOrder }}>
-      {children}
-    </CartContext.Provider>
-  );
-};
+//   return (
+//     <CartContext.Provider
+//       value={{
+//         addedTtoCardOrder: addedTtoCardOrder,
+//         //
+//       }}
+//     >
+//       {children}
+//     </CartContext.Provider>
+//   );
+// };
 
-export default CartContextProvider;
+// export default CartContextProvider;

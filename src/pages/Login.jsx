@@ -6,7 +6,9 @@ import logo from "../assets/images/tmlogo.png";
 import food from "../assets/images/Food.png";
 import mail from "../assets/images/Mail.png";
 import pass from "../assets/images/pass.png";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for styling
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import styled from "styled-components";
 
@@ -46,7 +48,10 @@ const Login = () => {
 
       if (result.status) {
         sessionStorage.setItem("userDetails", JSON.stringify(result));
-        Navigate("/onboard");
+        setTimeout(() => {
+          Navigate("/onboard");
+        }, 4000);
+        toast.success("Company Staff Login Successful!");
       }
       setMessage(result.data.message);
       console.log(result.status);
@@ -55,6 +60,7 @@ const Login = () => {
     } catch (error) {
       console.log("error", error);
       setLoading(false);
+      toast.error("Company Staff Login Failed!");
     }
   };
 
@@ -164,8 +170,8 @@ const Login = () => {
           </section>
         </article>
       </div>
-      {/* <ToastContainer
-        position="top-center"
+      <ToastContainer
+        position="top-right"
         autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -175,7 +181,7 @@ const Login = () => {
         draggable
         pauseOnHover
         theme="light"
-      /> */}
+      />
     </div>
   );
 };

@@ -84,7 +84,7 @@ function RadioButton({
           style={{
             width: "50%",
             borderRight: "1px solid #e6e6e6",
-            paddingRight: "2rem",
+            paddingRight: "1rem",
           }}
         >
           <span>ADD PROTIEN TO MEAL</span>
@@ -115,7 +115,7 @@ function RadioButton({
             )}
           </div>
         </div>
-        <div style={{ width: "50%" }}>
+        <div style={{ width: "50%", paddingLeft: "1rem" }}>
           <span>ADD DRINK?</span>
           <div style={{ display: "flex", flexDirection: "column" }}>
             {drinkSupplements?.map(

@@ -2,19 +2,29 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Loadingstate from "../Animations/anime.svg";
+import Modal from "../Modal/Modal";
+import classes from "../styled.module.css";
 
 const Fullothervendors = () => {
+  const [loading, setloading] = useState(true);
   const [vendorlist, setVendorlist] = useState([]);
-
-  //   const [data, setData] = useState({});
 
   console.log(vendorlist);
 
   useEffect(() => {
+    setloading(true);
+
     axios
       .get("http://89.38.135.41:7654/api/auth/landing-page")
       .then((response) => {
         setVendorlist(response.data.data);
+      })
+      .then((res) => {
+        setloading(false);
+      })
+      .catch((err) => {
+        setloading(false);
       });
   }, []);
   return (
@@ -39,6 +49,19 @@ const Fullothervendors = () => {
           );
         })}
       </div>
+
+      <Modal open={loading}>
+        <section className={classes.modalBackground}>
+          <div>
+            <img
+              className={classes.loadingState}
+              src={Loadingstate}
+              alt=""
+              srcset=""
+            />
+          </div>
+        </section>
+      </Modal>
     </Container>
   );
 };

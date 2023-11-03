@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Loadingstate from "../Animations/loadingstate.svg";
+import Loadingstate from "../Animations/anime.svg";
 import Modal from "../Modal/Modal";
 import classes from "../styled.module.css";
 
 const Fulltopvendors = () => {
   const [vendorlist, setVendorlist] = useState([]);
   const [loading, setloading] = useState(true);
-
-  //   const [data, setData] = useState({});
 
   console.log(vendorlist);
 

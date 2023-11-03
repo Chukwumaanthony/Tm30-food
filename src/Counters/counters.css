@@ -1,6 +1,9 @@
 .counter-cont {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 13px;
   gap: 10px;
+  /* background-color: red; */
+  /* width: 8rem; */
 }
