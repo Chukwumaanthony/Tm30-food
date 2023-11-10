@@ -173,12 +173,13 @@
     width: 25px;
   }
   .enterr {
-    padding: 5px;
-    padding-left: 15px;
+    width: 100%;
+    padding: 1rem;
+    /* padding-left: 15px; */
   }
   .logs {
-    width: 250px;
-    height: 1.8rem;
+    width: 100%;
+    /* height: 1.8rem; */
     font-size: 10px;
     font-weight: 500;
   }

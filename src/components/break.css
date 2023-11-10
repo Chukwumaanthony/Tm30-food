@@ -84,6 +84,7 @@
 }
 .plusicon {
   background-color: #d7eef7;
+  cursor: pointer;
   color: #158dbe;
   border-radius: 7px;
   display: flex;

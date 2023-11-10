@@ -55,7 +55,7 @@ const Foods = () => {
       <div className="itemenu-map">
         {itemMenus?.map((d) => {
           return (
-            <div style={{ width: "50%" }}>
+            <div className="width-s">
               <Ricee key={d?.catergoryId} item={d} />
             </div>
           );
@@ -65,3 +65,6 @@ const Foods = () => {
   );
 };
 export default Foods;
+// my baby come out hustle don pay why you dey hide when mooney dey, enter the whip make we dey go, far away, no worries money dey
+
+// we enter city come jolly, 2 days money don finsh, we go back to drinking garri,waiting for raining days even rain dey fall

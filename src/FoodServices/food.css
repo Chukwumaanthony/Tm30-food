@@ -14,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid #e6e6e6;
+  /* overflow: hidden; */
   padding: 0.8rem;
 }
 .Breaks-btns {
@@ -46,13 +47,26 @@
   overflow: scroll;
   height: 25rem;
 }
+.width-s {
+  width: 50%;
+}
 
 @media screen and (max-width: 40em) {
   .itemenu-map {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
     gap: 10px;
+    height: auto;
+  }
+  .breakfast-sect {
+    padding: 0;
+  }
+  .width-s {
+    width: 100%;
+  }
+  .breakss {
+    padding: 0;
+    /* overflow: scroll; */
+    padding-block: 0.8rem;
   }
   /* .Declan-Rice{
     

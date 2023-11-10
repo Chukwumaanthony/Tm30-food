@@ -85,7 +85,7 @@ const ProteinSides = ({
           value={supplementPrice}
           onChange={handleSelectChange}
         />
-        <p>{supplementName}</p>
+        <p style={{ margin: "8px" }}>{supplementName}</p>
       </div>
       <div className="counter-cont">
         <span className="supp-price">
@@ -124,14 +124,14 @@ const Button = styled.button`
 const Div = styled.section`
   .namechecked {
     display: flex;
-    gap: 0.5rem;
+    // gap: 0.5rem;
   }
   .supp-price {
     width: 2.5rem;
   }
   .dec-incre {
     display: flex;
-    width: 3.5rem;
+    width: 3.8rem;
     justify-content: space-between;
     align-items: center;
   }

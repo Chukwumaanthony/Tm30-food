@@ -10,6 +10,11 @@
   width: 50%;
   align-items: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+  justify-content: center;
   overflow: hidden;
   overflow: scroll;
 }

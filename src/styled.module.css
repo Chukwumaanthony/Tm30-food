@@ -92,7 +92,7 @@
     display: flex;
     padding: 2.5rem;
     box-sizing: border-box;
-    justify-content: end;
+    justify-content: flex-end;
     top: 0;
     left: 0;
     right: 0;

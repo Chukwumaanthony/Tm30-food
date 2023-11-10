@@ -128,6 +128,7 @@ const Div = styled.div`
     border-radius: 0.7rem;
     outline: none;
     border: none;
+    cursor: pointer;
   }
   .h-icon {
     display: none;

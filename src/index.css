@@ -15,7 +15,7 @@ a {
 
 .slide-container {
   overflow: hidden;
-  width: 100%;
+  /* width: 100%; */
   /* width: 345px; */
 }
 .slide {
